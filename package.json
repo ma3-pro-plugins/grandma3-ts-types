@@ -1,0 +1,16 @@
+{
+  "name": "grandma3-types",
+  "version": "0.0.1",
+  "description": "TypeScript definitions for grandMA3 Lua library.",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LightYourWay/grandMA3-types.git"
+  },
+  "author": "Lukas Runge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LightYourWay/grandMA3-types/issues"
+  },
+  "homepage": "https://github.com/LightYourWay/grandMA3-types#readme"
+}
