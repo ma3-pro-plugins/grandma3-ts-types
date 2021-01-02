@@ -1,5 +1,7 @@
 # grandMA3 types for TypeScriptToLua
 
+:warning: **OPEN ALPHA** &rarr; as there is no official API reference from MAlighting avaliable type declarations may be faulty or incomplete.
+
 TypeScript definitions for grandMA3 Lua API.
 
 ## install
@@ -19,3 +21,7 @@ npm link ../grandMA3-types
 	}
 }
 ```
+
+## developers
+
+If you have something to contribute / add to the type declarations - **AWESOME** :tada: feel free to create a **GitHub Issue** for it.
