@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"rootDir": "src",
+		"target": "esnext",
+		"lib": ["esnext"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"types": ["typescript-to-lua/language-extensions"],
+		"strict": true
+	},
+	"tstl": {
+		"luaTarget": "5.3",
+		"noImplicitSelf": true
+	}
+}
