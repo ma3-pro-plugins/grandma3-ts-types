@@ -4337,7 +4337,7 @@ declare namespace Obj {
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(...args: any): any;
 declare function PluginVars(...args: any): any;
-declare function PopupInput(...args: any): any;
+declare function PopupInput(...args: any): MultiReturn<[any, any]>;
 declare function Printf(...args: any): any;
 declare function Programmer(...args: any): any;
 declare function ProgrammerPart(...args: any): any;
@@ -4345,6 +4345,37 @@ declare function Pult(...args: any): any;
 declare function RefreshLibrary(...args: any): any;
 declare function ReleaseType(...args: any): any;
 declare function RenewLayoutHook(...args: any): any;
+type Pool = {
+	[index: string]: any; // any string access that is unspecified, treat as any
+	Sequences: Sequence[];
+};
+
+type Sequence = {
+	[index: string]: any; // any string access that is unspecified, treat as any
+	GetClass: () => string;
+	Children: () => Cue[];
+	CurrentChild: () => MultiReturn<[Cue | undefined, string]>;
+	Index: () => number;
+	Name: string;
+};
+
+type Cue = {
+	[index: string]: any; // any string access that is unspecified, treat as any
+	Name: string;
+	No: number;
+};
+
+declare function Root(): {
+	ShowData: {
+		DataPools: {
+			[index: string]: any; // any string access that is unspecified, treat as any
+			[key: number]: Pool;
+			Default: Pool;
+		};
+		[index: string]: any; // any string access that is unspecified, treat as any
+	};
+	[index: string]: any; // any string access that is unspecified, treat as any
+};
 declare function Root(...args: any): any;
 declare function SaveExecConfig(...args: any): any;
 declare function SaveStorePreferencesToProfile(...args: any): any;
