@@ -1,3 +1,2 @@
-import './Sequence';
-import './Cue';
-import './Part';
+import './Sequences';
+import './Layouts';
