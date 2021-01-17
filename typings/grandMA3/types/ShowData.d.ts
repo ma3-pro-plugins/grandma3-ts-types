@@ -3,4 +3,5 @@ type ShowData = Obj<Root, any> &
 		DataPools: DataPools;
 		ImagePools: ImagePools;
 		UserProfiles: UserProfiles;
+		Appearances: Appearances;
 	};
