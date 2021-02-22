@@ -29,7 +29,7 @@ interface Obj<ParentType, ChildType> {
 	Copy(...args: any): any;
 	Count(...args: any): any;
 	Create(...args: any): any;
-	CurrentChild(...args: any): MultiReturn<[any, any]>;
+	CurrentChild(...args: any): LuaMultiReturn<[any, any]>;
 	Delete(...args: any): any;
 	Export(...args: any): any;
 	Find(...args: any): any;

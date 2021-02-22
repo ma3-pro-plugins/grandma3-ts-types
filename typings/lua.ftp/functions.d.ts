@@ -113,7 +113,7 @@ declare module 'ftp' {
 		type?: 'i' | 'a';
 		step?: LTN12_pump_step;
 		create?: (...args: any) => any;
-	}): MultiReturn<[string, 1] | [string, null]>;
+	}): LuaMultiReturn<[string, 1] | [string, null]>;
 
 	/**
 	 * The `get` function has two forms. The simple form has fixed functionality: it downloads the contents of a URL and returns it as a string. The generic form allows a lot more control, as explained below.
@@ -139,13 +139,13 @@ declare module 'ftp' {
 		type?: 'i' | 'a';
 		step?: LTN12_pump_step;
 		create?: (...args: any) => any;
-	}): MultiReturn<[string, 1] | [string, null]>;
+	}): LuaMultiReturn<[string, 1] | [string, null]>;
 
 	/**
 	 * The `get` function has two forms. The simple form has fixed functionality: it downloads the contents of a URL and returns it as a string.
 	 * @param url is a `string` in the form: `[ftp://][<user>[:<password>]@]<host>[:<port>][/<path>][type=a|i]`
 	 */
-	export function get(url: string): MultiReturn<[string, 1] | [string, null]>;
+	export function get(url: string): LuaMultiReturn<[string, 1] | [string, null]>;
 
 	/**
 	 * The put function has two forms. The simple form has fixed functionality: it uploads a string of content into a URL. The generic form allows a lot more control, as explained below.
@@ -171,7 +171,7 @@ declare module 'ftp' {
 		type?: 'i' | 'a';
 		step?: LTN12_pump_step;
 		create?: (...args: any) => any;
-	}): MultiReturn<[1] | [string, null]>;
+	}): LuaMultiReturn<[1] | [string, null]>;
 
 	/**
 	 * The put function has two forms. The simple form has fixed functionality: it uploads a string of content into a URL. The generic form allows a lot more control, as explained below.
@@ -197,12 +197,12 @@ declare module 'ftp' {
 		type?: 'i' | 'a';
 		step?: LTN12_pump_step;
 		create?: (...args: any) => any;
-	}): MultiReturn<[1] | [string, null]>;
+	}): LuaMultiReturn<[1] | [string, null]>;
 
 	/**
 	 * The put function has two forms. The simple form has fixed functionality: it uploads a string of content into a URL.
 	 * @param url is a `string` in the form: `[ftp://][<user>[:<password>]@]<host>[:<port>][/<path>][type=a|i]`
 	 * @param content string of content which will be uploaded to the `url`
 	 */
-	export function put(url: string, content: string): MultiReturn<[1] | [string, null]>;
+	export function put(url: string, content: string): LuaMultiReturn<[1] | [string, null]>;
 }
