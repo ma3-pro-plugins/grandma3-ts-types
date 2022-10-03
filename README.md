@@ -29,4 +29,4 @@ npm link ../grandMA3-types
 
 ## developers
 
-If you have something to contribute / add to the type declarations - **AWESOME** :tada: feel free to create a **GitHub Issue** for it.
+If you have something to contribute / add to the type declarations - **AWESOME** :tada: feel free to [create a **GitHub Issue**](https://github.com/LightYourWay/grandMA3-types/issues/new/choose) for it.
