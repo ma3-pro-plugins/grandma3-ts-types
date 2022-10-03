@@ -17,7 +17,7 @@ npm link ../grandMA3-types
 ```json
 {
 	"compilerOptions": {
-		"types": ["grandMA3-types/lua"]
+		"types": ["grandMA3-types"]
 	}
 }
 ```
