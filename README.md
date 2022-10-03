@@ -4,7 +4,12 @@
 
 TypeScript definitions for grandMA3 Lua API.
 
-## install
+## install for production
+```bash
+npm install -D grandMA3-tstl-plugin
+```
+
+## install for development
 
 ```bash
 git clone https://github.com/LightYourWay/grandMA3-types.git && \
