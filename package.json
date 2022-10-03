@@ -25,7 +25,7 @@
 	},
 	"homepage": "https://github.com/LightYourWay/grandMA3-types#readme",
 	"devDependencies": {
-		"prettier": "^2.6.2",
-		"typescript-to-lua": "^1.4.3"
+		"prettier": "^2.7.1",
+		"typescript-to-lua": "^1.10.1"
 	}
 }
