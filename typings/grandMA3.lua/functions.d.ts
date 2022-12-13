@@ -4,19 +4,24 @@
 
 /** @noSelfInFile */
 
+declare type UndoUserData = any // TODO: find a way to represent this handle
+declare type ObjectUserData = any // TODO: find a way to represent this handle
+declare type DisplayHandle = any
+
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
 declare function BuildDetails(...args: any): any;
 declare function CheckDMXCollision(...args: any): any;
 declare function CheckFIDCollision(...args: any): any;
 declare function CloseAllOverlays(...args: any): any;
-declare function CloseUndo(...args: any): any;
-declare function Cmd(...args: any): any;
+declare function CloseUndo(undoRef: UndoUserData): any;
+declare function Cmd(cmd: string, undo?: UndoUserData): string;
 declare function CmdIndirect(...args: any): any;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(...args: any): any;
 declare function Confirm(...args: any): any;
-declare function CreateUndo(...args: any): any;
+
+declare function CreateUndo(...args: any): UndoUserData;
 declare function CurrentExecPage(...args: any): any;
 declare function CurrentProfile(...args: any): any;
 declare function CurrentUser(...args: any): any;
@@ -26,6 +31,9 @@ declare function DeleteIPAddress(...args: any): any;
 declare function DelVar(...args: any): any;
 declare function DeskLocked(...args: any): any;
 declare function DirList(...args: any): any;
+/**
+ * Prints to System Monitor only
+ */
 declare function Echo(...args: any): any;
 declare function ErrEcho(...args: any): any;
 declare function ErrPrintf(...args: any): any;
@@ -54,7 +62,7 @@ declare function GetFocus(...args: any): any;
 declare function GetFocusDisplay(...args: any): any;
 declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
-declare function GetPathSeparator(...args: any): any;
+declare function GetPathSeparator(): string;
 declare function GetPathType(...args: any): any;
 declare function GetPresetData(...args: any): any;
 declare function GetProgPhaser(...args: any): any;
@@ -74,11 +82,12 @@ declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
 declare function GetUIChannels(...args: any): any;
 declare function GetUIObjectAtPosition(...args: any): any;
-declare function GetVar(...args: any): any;
+declare function GetVar(...args: any): string | null;
 declare function GlobalVars(...args: any): any;
-declare function HandleToInt(...args: any): any;
+declare function HandleToInt(...args: any): number;
 declare function HandleToStr(...args: any): any;
-declare function HookObjectChange(...args: any): any;
+declare type HookIndex = number
+declare function HookObjectChange<T extends Obj<any, any>>(callback: (obj: T, changeType: number) => void, obj: T, pluginHandle: any): HookIndex;
 declare function HostOS(...args: any): any;
 declare function HostSubType(...args: any): any;
 declare function HostType(...args: any): any;
@@ -90,7 +99,54 @@ declare function Keyboard(...args: any): any;
 declare function KeyboardObj(...args: any): any;
 declare function LoadExecConfig(...args: any): any;
 declare function LoadStorePreferencesFromProfile(...args: any): any;
-declare function MessageBox(...args: any): any;
+declare interface MessageBoxInputOptions {
+    name: string,
+    value: string,
+    /** Custom field added by HEPI. Deprecated! Use MessageBoxHelper. TODO: reomve this ! */
+    type?: string,
+    /** String containing characters to be blocked from user input */
+    blackFilter?: string,
+    /** String containing characters that are allowed from user input */
+    whiteFilter?: string,
+    /** A named ID reference to a special virtual keyboard which will be displayed when the user clicks on the virtual-keyboard icon next tot eh field input. See [this](https://github.com/hossimo/GMA3Plugins/wiki/Text-Input-Plugins) */
+    vkPlugin?: 'CueNumberInput' | 'IP4Prefix' | 'NumericInput' | 'RelCueNumberInput' | 'TextInput' | 'TextInputNumOnly' | 'TextInputNumOnlyRange' | 'TextInputTimeOnly',
+    maxTextLength?: number
+}
+declare interface MessageBoxOptions {
+    title: string,
+    backColor?: string,
+    timeout?: number, // (ms)
+    timeoutResultCancel?: boolean,
+    timeoutResultID?: number,
+    icon?: string,
+    titleTextColor?: string,
+    messageTextColor?: string,
+    message?: string,
+    display?: number | Obj<any, any>,
+    commands: { value: number, name: string }[],
+    inputs?: MessageBoxInputOptions[],
+    states?:
+    {
+        name: string,
+        state: boolean,
+        group?: number
+    }[],
+    selectors?:
+    {
+        name: string,
+        selectedValue: number,
+        values: { [key: string]: number },
+        type?: 0 | 1 //  0-swipe, 1-radio
+    }[]
+}
+declare interface MessageBoxResult {
+    success: boolean,
+    result: number,
+    inputs: { [key: string]: string },
+    selectors: { [key: string]: number },
+    states: { [key: string]: boolean }
+}
+declare function MessageBox(options: MessageBoxOptions): MessageBoxResult;
 declare function Mouse(...args: any): any;
 declare function MouseObj(...args: any): any;
 declare const MultiLanguage: Array<[string, string]>;
@@ -98,7 +154,24 @@ declare const Obj: Obj<any, any>;
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;
-declare function PopupInput(...args: any): LuaMultiReturn<[any, any]>;
+declare interface PopupInputOptions {
+    title: string,
+    caller: DisplayHandle,
+    items: string[],
+    selectedValue: string,
+    x?: number,
+    y?: number,
+    target?: any,
+    render_options?: {
+        left_icon: any, right_icon: any
+    },
+    useTopLeft?: boolean,
+    properties?: { [key: string]: number }
+}
+declare function PopupInput(options: PopupInputOptions): LuaMultiReturn<[number, string]>;
+/**
+ * Prints to both System Monitor and Command Line History
+ */
 declare function Printf(...args: any): any;
 declare function Programmer(...args: any): any;
 declare function ProgrammerPart(...args: any): any;
@@ -142,8 +215,8 @@ declare function Timer(...args: any): any;
 declare function ToAddr(...args: any): any;
 declare function Touch(...args: any): any;
 declare function TouchObj(...args: any): any;
-declare function Unhook(...args: any): any;
-declare function UnhookMultiple(...args: any): any;
+declare function Unhook(hookIndex: HookIndex): any;
+declare function UnhookMultiple(callbackFn: () => any, obj: Obj<any, any>): number;
 declare function UserVars(...args: any): any;
 /**
  * Returns software version of grandMA3.
