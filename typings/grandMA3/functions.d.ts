@@ -1,5 +1,6 @@
 interface Obj<ParentType, ChildType> {
 	name: string;
+	index: number;
 	AddListChildren(...args: any): any;
 	AddListChildrenNames(...args: any): any;
 	AddListLuaItem(...args: any): any;
@@ -29,7 +30,7 @@ interface Obj<ParentType, ChildType> {
 	Copy(...args: any): any;
 	Count(...args: any): any;
 	Create(...args: any): any;
-	CurrentChild(...args: any): LuaMultiReturn<[any, any]>;
+	CurrentChild(...args: any): ChildType | undefined;
 	Delete(...args: any): any;
 	Export(...args: any): any;
 	Find(...args: any): any;
