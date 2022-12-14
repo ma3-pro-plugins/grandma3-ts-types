@@ -3,7 +3,7 @@ type ScreenConfigurations = Obj<UserProfile, ScreenConfiguration> &
 
 type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents>
 
-type ScreenContents = Obj<ScreenConfiguration, ScreenContent>
+type ScreenContents = Obj<ScreenConfiguration, ScreenContent | ViewButtonScreens>
 
 type ScreenContent = Obj<ScreenContents, WindowBase>
 
@@ -26,3 +26,9 @@ interface LayoutViewSettingsProps {
     AutoFit: boolean
 }
 type LayoutViewSettings = Obj<WindowBase, null> & LayoutViewSettingsProps
+
+type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen>
+
+type ViewButtonScreen = Obj<ViewButtonScreens, ViewButton>
+
+type ViewButton = Obj<ViewButtonScreen, null>
