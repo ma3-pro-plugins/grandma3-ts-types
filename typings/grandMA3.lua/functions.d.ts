@@ -6,7 +6,7 @@
 
 declare type UndoUserData = any // TODO: find a way to represent this handle
 declare type ObjectUserData = any // TODO: find a way to represent this handle
-declare type DisplayHandle = any
+declare type DisplayHandle = Obj<any, any>
 
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
