@@ -20,7 +20,7 @@ interface WindowLayoutView extends WindowBase {
 }
 
 interface LayoutViewSettingsProps {
-    Layout: Layout,
+    Layout: Layout
     FitType: 'Elements' | 'Canvas' | 'Both'
     ShowTitleBar: boolean
     AutoFit: boolean
