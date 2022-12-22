@@ -1,4 +1,4 @@
-interface Obj<ParentType, ChildType> {
+interface Obj<ParentType, ChildType, PropName extends string = string> {
 	name: string;
 	index: number;
 	AddListChildren(...args: any): any;
@@ -38,7 +38,7 @@ interface Obj<ParentType, ChildType> {
 	FindListItemByValueStr(...args: any): any;
 	FindParent(...args: any): any;
 	FindRecursive(...args: any): any;
-	Get(...args: any): any;
+	Get(propName: PropName): any;
 	GetAssignedObj(...args: any): any;
 	GetChildClass(...args: any): any;
 	GetClass: () => string;

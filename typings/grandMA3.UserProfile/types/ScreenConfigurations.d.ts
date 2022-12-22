@@ -7,7 +7,8 @@ type ScreenContents = Obj<ScreenConfiguration, ScreenContent | ViewButtonScreens
 
 type ScreenContent = Obj<ScreenContents, WindowBase>
 
-interface WindowBase extends Obj<ScreenContent, any> {
+type WindowBaseProp = 'APPEARANCE' | 'X' | 'Y' | 'W' | 'H'
+interface WindowBase extends Obj<ScreenContent, any, WindowBaseProp> {
     WindowAppearance: WindowAppearance,
     WindowScrollPositions: WindowScrollPositions
 }
@@ -24,6 +25,10 @@ interface LayoutViewSettingsProps {
     FitType: 'Elements' | 'Canvas' | 'Both'
     ShowTitleBar: boolean
     AutoFit: boolean
+    PaddingLeft: number
+    PaddingRight: number
+    PaddingBottom: number
+    PaddingTop: number
 }
 type LayoutViewSettings = Obj<WindowBase, null> & LayoutViewSettingsProps
 
