@@ -4,7 +4,7 @@
 
 /** @noSelfInFile */
 
-declare type UndoUserData = any // TODO: find a way to represent this handle
+declare type UndoHandle = any // TODO: find a way to represent this handle
 declare type ObjectUserData = any // TODO: find a way to represent this handle
 declare type DisplayHandle = Obj<any, any>
 
@@ -14,14 +14,14 @@ declare function BuildDetails(...args: any): any;
 declare function CheckDMXCollision(...args: any): any;
 declare function CheckFIDCollision(...args: any): any;
 declare function CloseAllOverlays(...args: any): any;
-declare function CloseUndo(undoRef: UndoUserData): any;
-declare function Cmd(cmd: string, undo?: UndoUserData): string;
+declare function CloseUndo(undoRef: UndoHandle): any;
+declare function Cmd(cmd: string, undo?: UndoHandle): string;
 declare function CmdIndirect(...args: any): any;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(...args: any): any;
 declare function Confirm(...args: any): any;
 
-declare function CreateUndo(...args: any): UndoUserData;
+declare function CreateUndo(...args: any): UndoHandle;
 declare function CurrentExecPage(...args: any): any;
 declare function CurrentProfile(...args: any): any;
 declare function CurrentUser(...args: any): any;
@@ -150,7 +150,7 @@ declare function MessageBox(options: MessageBoxOptions): MessageBoxResult;
 declare function Mouse(...args: any): any;
 declare function MouseObj(...args: any): any;
 declare const MultiLanguage: Array<[string, string]>;
-declare const Obj: Obj<any, any>;
+declare const Obj: Obj<any, any, string>;
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;
