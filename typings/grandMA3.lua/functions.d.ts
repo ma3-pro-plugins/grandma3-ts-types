@@ -112,6 +112,17 @@ declare interface MessageBoxInputOptions {
     vkPlugin?: 'CueNumberInput' | 'IP4Prefix' | 'NumericInput' | 'RelCueNumberInput' | 'TextInput' | 'TextInputNumOnly' | 'TextInputNumOnlyRange' | 'TextInputTimeOnly',
     maxTextLength?: number
 }
+declare interface MessageBoxStateOptions {
+    name: string,
+    state: boolean,
+    group?: number
+}
+declare interface MessageBoxSelectorOptions {
+    name: string,
+    selectedValue: number,
+    values: { [key: string]: number },
+    type?: 0 | 1 //  0-swipe, 1-radio
+}
 declare interface MessageBoxOptions {
     title: string,
     backColor?: string,
@@ -125,19 +136,8 @@ declare interface MessageBoxOptions {
     display?: number | Obj<any, any>,
     commands: { value: number, name: string }[],
     inputs?: MessageBoxInputOptions[],
-    states?:
-    {
-        name: string,
-        state: boolean,
-        group?: number
-    }[],
-    selectors?:
-    {
-        name: string,
-        selectedValue: number,
-        values: { [key: string]: number },
-        type?: 0 | 1 //  0-swipe, 1-radio
-    }[]
+    states?: MessageBoxStateOptions[],
+    selectors?: MessageBoxSelectorOptions[]
 }
 declare interface MessageBoxResult {
     success: boolean,
