@@ -13,7 +13,10 @@ interface WindowBase extends Obj<ScreenContent, any, WindowBaseProp> {
     WindowScrollPositions: WindowScrollPositions
 }
 type WindowAppearance = Obj<WindowBase, null>
-type WindowScrollPositions = Obj<WindowBase, null>
+type WindowScrollPositions = Obj<WindowBase, null> & {
+    scrollV: string,
+    scrollH: string
+}
 
 interface WindowLayoutView extends WindowBase {
     name: 'WindowLayoutView'
