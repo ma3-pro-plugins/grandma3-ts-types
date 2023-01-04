@@ -15,7 +15,8 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	AddListStringItems(...args: any): any;
 	Addr(...args: any): any;
 	AddrNative(...args: any): any;
-	Append(...args: any): any;
+	/** Adds a child to this object */
+	Append(clazz: string): ChildType;
 	Aquire(...args: any): any;
 	Changed(...args: any): any;
 	Children(): ChildType[];
@@ -40,7 +41,8 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	FindRecursive(...args: any): any;
 	Get(propName: PropName): any;
 	GetAssignedObj(...args: any): any;
-	GetChildClass(...args: any): any;
+	/** Get the child class name */
+	GetChildClass(): string;
 	GetClass: () => string;
 	GetDisplay(...args: any): any;
 	GetDisplayIndex(...args: any): any;
