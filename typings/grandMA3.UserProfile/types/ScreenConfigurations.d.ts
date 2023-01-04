@@ -7,16 +7,30 @@ type ScreenContents = Obj<ScreenConfiguration, ScreenContent | ViewButtonScreens
 
 type ScreenContent = Obj<ScreenContents, WindowBase>
 
-type WindowBaseProp = 'APPEARANCE' | 'X' | 'Y' | 'W' | 'H'
-interface WindowBase extends Obj<ScreenContent, any, WindowBaseProp> {
+type WindowBaseProps = {
+    appearance: Obj<any, any>
+    minH: number
+    minW: number
+    x: number
+    y: number
+    w: number
+    h: number
+    display: number
+    snapToBlockSize: boolean
+    presetPoolType: number
+}
+
+interface WindowBase extends Obj<ScreenContent, any, WindowBaseProps>, WindowBaseProps {
     WindowAppearance: WindowAppearance,
     WindowScrollPositions: WindowScrollPositions
 }
+
 type WindowAppearance = Obj<WindowBase, null>
 type WindowScrollPositions = Obj<WindowBase, null> & {
     scrollV: string,
     scrollH: string
 }
+
 
 interface WindowLayoutView extends WindowBase {
     name: 'WindowLayoutView'

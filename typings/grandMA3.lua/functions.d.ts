@@ -150,7 +150,7 @@ declare function MessageBox(options: MessageBoxOptions): MessageBoxResult;
 declare function Mouse(...args: any): any;
 declare function MouseObj(...args: any): any;
 declare const MultiLanguage: Array<[string, string]>;
-declare const Obj: Obj<any, any, string>;
+declare const Obj: Obj<any, any>;
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;

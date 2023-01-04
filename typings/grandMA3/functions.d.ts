@@ -1,5 +1,6 @@
-interface Obj<ParentType, ChildType, PropName extends string = string> {
+interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [key: string]: any }> {
 	name: string;
+	nameAndApp: string;
 	index: number;
 	AddListChildren(...args: any): any;
 	AddListChildrenNames(...args: any): any;
@@ -15,7 +16,7 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	AddListStringItems(...args: any): any;
 	Addr(...args: any): any;
 	AddrNative(...args: any): any;
-	/** Adds a child to this object */
+	/** Adds a child to the end of this object childrens list */
 	Append(clazz: string): ChildType;
 	Aquire(...args: any): any;
 	Changed(...args: any): any;
@@ -39,7 +40,7 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	FindListItemByValueStr(...args: any): any;
 	FindParent(...args: any): any;
 	FindRecursive(...args: any): any;
-	Get(propName: PropName): any;
+	Get(propName: keyof Props): any;
 	GetAssignedObj(...args: any): any;
 	/** Get the child class name */
 	GetChildClass(): string;
@@ -87,6 +88,7 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	InputSetAdditionalParameter(...args: any): any;
 	InputSetEditTitle(...args: any): any;
 	InputSetTitle(...args: any): any;
+	/** Insert a child at a given index, pushing all other children forward */
 	Insert(...args: any): any;
 	IsClass(...args: any): any;
 	IsEmpty(...args: any): any;
@@ -114,7 +116,7 @@ interface Obj<ParentType, ChildType, PropName extends string = string> {
 	SelectListItemByIndex(...args: any): any;
 	SelectListItemByName(...args: any): any;
 	SelectListItemByValue(...args: any): any;
-	Set(...args: any): any;
+	Set(propName: keyof Props, value: any): any;
 	SetChildren(...args: any): any;
 	SetEmptyListItem(...args: any): any;
 	SetEnabledListItem(...args: any): any;
