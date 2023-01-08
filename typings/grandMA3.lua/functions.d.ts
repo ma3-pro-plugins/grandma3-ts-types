@@ -211,7 +211,7 @@ declare function StrToHandle(...args: any): any;
 declare function SyncFS(...args: any): any;
 declare function TextInput(...args: any): string;
 declare function Time(...args: any): any;
-declare function Timer(...args: any): any;
+declare function Timer(callback: () => void, delaySec: number, repeatTimes: number): void;
 declare function ToAddr(...args: any): any;
 declare function Touch(...args: any): any;
 declare function TouchObj(...args: any): any;
