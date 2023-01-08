@@ -31,8 +31,14 @@ interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [k
 	Compare(...args: any): any;
 	Copy(...args: any): any;
 	Count(...args: any): any;
-	Create(...args: any): any;
-	CurrentChild(...args: any): ChildType | undefined;
+	/**
+	 * Create a child at the given index
+	 * @param childIndex 1-based
+	 * @param clazz class of child
+	 * @param undo 
+	 */
+	Create(childIndex: number, clazz?: string, undo?: UndoHandle): ChildType;
+	CurrentChild(): ChildType | undefined;
 	Delete(...args: any): any;
 	Export(...args: any): any;
 	Find(...args: any): any;
