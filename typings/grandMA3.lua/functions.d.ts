@@ -216,7 +216,13 @@ declare function ToAddr(...args: any): any;
 declare function Touch(...args: any): any;
 declare function TouchObj(...args: any): any;
 declare function Unhook(hookIndex: HookIndex): any;
-declare function UnhookMultiple(callbackFn: () => any, obj: Obj<any, any>): number;
+/**
+ * Unhook all hooks referncing the given function OR object
+ * @param callbackFn 
+ * @param obj 
+ * @return The number of removed hooks
+ */
+declare function UnhookMultiple(callbackFn?: () => any, obj?: Obj<any, any>): number;
 declare function UserVars(...args: any): any;
 /**
  * Returns software version of grandMA3.
