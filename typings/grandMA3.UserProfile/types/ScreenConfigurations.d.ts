@@ -27,7 +27,17 @@ interface WindowBase extends Obj<ScreenContent, any, WindowBaseProps>, WindowBas
 
 type WindowAppearance = Obj<WindowBase, null>
 type WindowScrollPositions = Obj<WindowBase, null> & {
+    /** 
+     * A string with 2 integer numbers separated by a comma.
+     * The first number is the vertical scroll position.
+     * The second number is the vertical cursor position.
+     */
     scrollV: string,
+    /** 
+     * A string with 2 integer numbers separated by a comma.
+     * The first number is the horizontal scroll position.
+     * The second number is the horizontal cursor position.
+     */
     scrollH: string
 }
 
