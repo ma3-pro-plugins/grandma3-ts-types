@@ -54,7 +54,13 @@ interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [k
 	GetDisplay(...args: any): any;
 	GetDisplayIndex(...args: any): any;
 	GetExportFileName(...args: any): any;
-	GetFader(...args: any): any;
+	/**
+	 * Get Fader value
+	 * If the object is an executor, then the options param can be empty, it does nothing.
+	 * If the object is a sequence, then the options.token is used to select which fader's value wil be retrieved.
+	 * @return double 0-100
+	 */
+	GetFader(options: GetFaderOptions): number;
 	GetFaderText(...args: any): any;
 	GetListItemAppearance(...args: any): any;
 	GetListItemButton(...args: any): any;
@@ -141,4 +147,9 @@ interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [k
 	UILGGetRowHeight(...args: any): any;
 	WaitChildren(...args: any): any;
 	WaitInit(...args: any): any;
+}
+
+type GetFaderOptions = {
+	token?: 'FaderMaster' | 'FaderTemp'
+	index?: number
 }
