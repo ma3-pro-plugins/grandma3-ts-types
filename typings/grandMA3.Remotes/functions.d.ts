@@ -1,15 +1,15 @@
-type Remotes = Obj<ShowData, MidiRemotes | DCRemotes | DmxRemotes> & {
+type Remotes = Obj<ShowData, MIDIRemotes | DCRemotes | DmxRemotes> & {
 	DCRemotes: DCRemotes;
-	MidiRemotes: MidiRemotes;
+	MIDIRemotes: MIDIRemotes;
 	DmxRemotes: DmxRemotes;
 };
 
 type DCRemotes = Obj<ShowData, any>;
 type DmxRemotes = Obj<ShowData, any>;
 
-type MidiRemotes = Obj<ShowData, MidiRemote> &
+type MIDIRemotes = Obj<ShowData, MidiRemote> &
 	null[] & { [index: string]: null } & {
 		Image: Image;
 	};
 
-type MidiRemote = Obj<MidiRemotes, null>;
+type MidiRemote = Obj<MIDIRemotes, null>;
