@@ -15,15 +15,25 @@ declare function CheckDMXCollision(...args: any): any;
 declare function CheckFIDCollision(...args: any): any;
 declare function CloseAllOverlays(...args: any): any;
 declare function CloseUndo(undoRef: UndoHandle): any;
+/**
+ * Run a command in a LUA thread
+ * @param cmd 
+ * @param undo 
+ * @return returns "OK" if successful, or an error message if the command fails.
+ */
 declare function Cmd(cmd: string, undo?: UndoHandle): string;
-declare function CmdIndirect(...args: any): any;
+/**
+ * Run a command in the MainTask thread
+ * @param args 
+ */
+declare function CmdIndirect(cmd: string, undo?: UndoHandle): void;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(...args: any): any;
 declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;
 declare function CurrentExecPage(...args: any): any;
-declare function CurrentProfile(...args: any): any;
+declare function CurrentProfile(): UserProfile;
 declare function CurrentUser(...args: any): any;
 declare function DataPool(): DataPool;
 declare function DefaultDisplayPositions(...args: any): any;
@@ -46,14 +56,18 @@ declare function FindBestFocus(...args: any): any;
 declare function FindNextFocus(...args: any): any;
 declare function FindTexture(...args: any): any;
 declare function FixtureType(...args: any): any;
-declare function FromAddr(...args: any): any;
+/**
+ * This function should be called FromNativeAddr.
+ * I acccepts the result of AddrNative() function.
+ */
+declare function FromAddr(nativeAddr: string): Obj<any, any>;
 declare function GetAttributeByUIChannel(...args: any): any;
 declare function GetAttributeCount(...args: any): any;
 declare function GetAttributeIndex(...args: any): any;
 declare function GetButton(...args: any): any;
 declare function GetChannelFunction(...args: any): any;
 declare function GetChannelFunctionIndex(...args: any): any;
-declare function GetDisplayByIndex(...args: any): any;
+declare function GetDisplayByIndex(displayNumber: number): DisplayHandle;
 declare function GetDisplayCollect(...args: any): any;
 declare function GetDMXUniverse(...args: any): any;
 declare function GetDMXValue(...args: any): any;

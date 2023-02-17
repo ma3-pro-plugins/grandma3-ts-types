@@ -1,9 +1,18 @@
 type ScreenConfigurations = Obj<UserProfile, ScreenConfiguration> &
-    ScreenConfiguration[] & { [index: string]: ScreenConfiguration };
+    ScreenConfiguration[] &
+{
+    Default: ScreenConfiguration,
+    [index: string]: ScreenConfiguration
+};
 
-type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents>
+type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents | ViewButtonScreens> & {
+    ScreenContents: ScreenContents,
+    "ViewButtonScreens 2": ViewButtonScreens
+}
 
-type ScreenContents = Obj<ScreenConfiguration, ScreenContent | ViewButtonScreens>
+type ScreenNumber = number
+type ScreenContentKey = `ScreenContent ${ScreenNumber}`
+type ScreenContents = Obj<ScreenConfiguration, ScreenContent> & Record<ScreenContentKey, ScreenContent>
 
 type ScreenContent = Obj<ScreenContents, WindowBase>
 
@@ -59,7 +68,8 @@ interface LayoutViewSettingsProps {
 }
 type LayoutViewSettings = Obj<WindowBase, null> & LayoutViewSettingsProps
 
-type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen>
+type ViewButtonScreenKey = `ViewButtonScreen ${number}`
+type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen> & Record<ViewButtonScreenKey, ViewButtonScreen>
 
 type ViewButtonScreen = Obj<ViewButtonScreens, ViewButton>
 

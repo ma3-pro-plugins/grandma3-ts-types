@@ -4,4 +4,5 @@ type ShowData = Obj<Root, any> &
 		ImagePools: ImagePools;
 		UserProfiles: UserProfiles;
 		Appearances: Appearances;
+		Remotes: Remotes;
 	};
