@@ -1,6 +1,6 @@
 {
   "name": "grandma3-ts-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript definitions for grandMA3 Lua library.",
   "types": "index.d.ts",
   "scripts": {
