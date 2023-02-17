@@ -1,31 +1,40 @@
 {
-	"name": "grandma3-ts-types",
-	"version": "1.0.0",
-	"description": "TypeScript definitions for grandMA3 Lua library.",
-	"types": "index.d.ts",
-	"scripts": {
-		"lint:check": "prettier --check **/*.{ts}",
-		"lint:fix": "prettier --write '**/*.ts'"
-	},
-	"prettier": {
-		"printWidth": 100,
-		"proseWrap": "never",
-		"singleQuote": true,
-		"trailingComma": "all",
-		"useTabs": true
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ma3-pro-plugins/grandma3-types.git"
-	},
-	"author": "Lukas Runge",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/ma3-pro-plugins/grandma3-types/issues"
-	},
-	"homepage": "https://github.com/ma3-pro-plugins/grandma3-types#readme",
-	"devDependencies": {
-		"prettier": "^2.7.1",
-		"typescript-to-lua": "^1.10.1"
-	}
+  "name": "grandma3-ts-types",
+  "version": "1.0.0",
+  "description": "TypeScript definitions for grandMA3 Lua library.",
+  "types": "index.d.ts",
+  "scripts": {
+    "lint:check": "prettier --check **/*.{ts}",
+    "lint:fix": "prettier --write '**/*.ts'"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "proseWrap": "never",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma3-pro-plugins/grandma3-types.git"
+  },
+  "author": "Lukas Runge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ma3-pro-plugins/grandma3-types/issues"
+  },
+  "homepage": "https://github.com/ma3-pro-plugins/grandma3-types#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript-to-lua": "^1.10.1"
+  },
+  "dependencies": {},
+  "keywords": [
+    "grandma3",
+    "ma",
+    "lighting",
+    "typescript",
+    "types",
+    "typings"
+  ]
 }
