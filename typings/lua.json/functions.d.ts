@@ -2,8 +2,7 @@
 
 /** @noSelfInFile */
 
-
-declare module "json" {
+declare module 'json' {
 	export function decode(str: string): object;
 	export function encode(data: object): string;
 }

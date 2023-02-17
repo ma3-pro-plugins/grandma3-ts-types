@@ -4,9 +4,9 @@
 
 /** @noSelfInFile */
 
-declare type UndoHandle = any // TODO: find a way to represent this handle
-declare type ObjectUserData = any // TODO: find a way to represent this handle
-declare type DisplayHandle = Obj<any, any>
+declare type UndoHandle = any; // TODO: find a way to represent this handle
+declare type ObjectUserData = any; // TODO: find a way to represent this handle
+declare type DisplayHandle = Obj<any, any>;
 
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
@@ -17,14 +17,14 @@ declare function CloseAllOverlays(...args: any): any;
 declare function CloseUndo(undoRef: UndoHandle): any;
 /**
  * Run a command in a LUA thread
- * @param cmd 
- * @param undo 
+ * @param cmd
+ * @param undo
  * @return returns "OK" if successful, or an error message if the command fails.
  */
 declare function Cmd(cmd: string, undo?: UndoHandle): string;
 /**
  * Run a command in the MainTask thread
- * @param args 
+ * @param args
  */
 declare function CmdIndirect(cmd: string, undo?: UndoHandle): void;
 declare function CmdIndirectWait(...args: any): any;
@@ -100,8 +100,12 @@ declare function GetVar(...args: any): string | null;
 declare function GlobalVars(...args: any): any;
 declare function HandleToInt(...args: any): number;
 declare function HandleToStr(...args: any): any;
-declare type HookIndex = number
-declare function HookObjectChange<T extends Obj<any, any>>(callback: (obj: T, changeType: number) => void, obj: T, pluginHandle: any): HookIndex;
+declare type HookIndex = number;
+declare function HookObjectChange<T extends Obj<any, any>>(
+	callback: (obj: T, changeType: number) => void,
+	obj: T,
+	pluginHandle: any,
+): HookIndex;
 declare function HostOS(...args: any): any;
 declare function HostSubType(...args: any): any;
 declare function HostType(...args: any): any;
@@ -114,51 +118,59 @@ declare function KeyboardObj(...args: any): any;
 declare function LoadExecConfig(...args: any): any;
 declare function LoadStorePreferencesFromProfile(...args: any): any;
 declare interface MessageBoxInputOptions {
-    name: string,
-    value: string,
-    /** Custom field added by HEPI. Deprecated! Use MessageBoxHelper. TODO: reomve this ! */
-    type?: string,
-    /** String containing characters to be blocked from user input */
-    blackFilter?: string,
-    /** String containing characters that are allowed from user input */
-    whiteFilter?: string,
-    /** A named ID reference to a special virtual keyboard which will be displayed when the user clicks on the virtual-keyboard icon next tot eh field input. See [this](https://github.com/hossimo/GMA3Plugins/wiki/Text-Input-Plugins) */
-    vkPlugin?: 'CueNumberInput' | 'IP4Prefix' | 'NumericInput' | 'RelCueNumberInput' | 'TextInput' | 'TextInputNumOnly' | 'TextInputNumOnlyRange' | 'TextInputTimeOnly',
-    maxTextLength?: number
+	name: string;
+	value: string;
+	/** Custom field added by HEPI. Deprecated! Use MessageBoxHelper. TODO: reomve this ! */
+	type?: string;
+	/** String containing characters to be blocked from user input */
+	blackFilter?: string;
+	/** String containing characters that are allowed from user input */
+	whiteFilter?: string;
+	/** A named ID reference to a special virtual keyboard which will be displayed when the user clicks on the virtual-keyboard icon next tot eh field input. See [this](https://github.com/hossimo/GMA3Plugins/wiki/Text-Input-Plugins) */
+	vkPlugin?:
+		| 'CueNumberInput'
+		| 'IP4Prefix'
+		| 'NumericInput'
+		| 'RelCueNumberInput'
+		| 'TextInput'
+		| 'TextInputNumOnly'
+		| 'TextInputNumOnlyRange'
+		| 'TextInputTimeOnly';
+	maxTextLength?: number;
 }
 declare interface MessageBoxStateOptions {
-    name: string,
-    state: boolean,
-    group?: number
+	name: string;
+	state: boolean;
+	group?: number;
 }
 declare interface MessageBoxSelectorOptions {
-    name: string,
-    selectedValue: number,
-    values: { [key: string]: number },
-    type?: 0 | 1 //  0-swipe, 1-radio
+	name: string;
+	selectedValue: number;
+	values: { [key: string]: number };
+	type?: 0 | 1; //  0-swipe, 1-radio
 }
 declare interface MessageBoxOptions {
-    title: string,
-    backColor?: string,
-    timeout?: number, // (ms)
-    timeoutResultCancel?: boolean,
-    timeoutResultID?: number,
-    icon?: string,
-    titleTextColor?: string,
-    messageTextColor?: string,
-    message?: string,
-    display?: number | Obj<any, any>,
-    commands: { value: number, name: string }[],
-    inputs?: MessageBoxInputOptions[],
-    states?: MessageBoxStateOptions[],
-    selectors?: MessageBoxSelectorOptions[]
+	title: string;
+	backColor?: string;
+	timeout?: number; // (ms)
+	timeoutResultCancel?: boolean;
+	timeoutResultID?: number;
+	icon?: string;
+	titleTextColor?: string;
+	messageTextColor?: string;
+	message?: string;
+	display?: number | Obj<any, any>;
+	commands: { value: number; name: string }[];
+	inputs?: MessageBoxInputOptions[];
+	states?: MessageBoxStateOptions[];
+	selectors?: MessageBoxSelectorOptions[];
 }
 declare interface MessageBoxResult {
-    success: boolean,
-    result: number,
-    inputs: { [key: string]: string },
-    selectors: { [key: string]: number },
-    states: { [key: string]: boolean }
+	success: boolean;
+	result: number;
+	inputs: { [key: string]: string };
+	selectors: { [key: string]: number };
+	states: { [key: string]: boolean };
 }
 declare function MessageBox(options: MessageBoxOptions): MessageBoxResult;
 declare function Mouse(...args: any): any;
@@ -169,18 +181,19 @@ declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;
 declare interface PopupInputOptions {
-    title: string,
-    caller: DisplayHandle,
-    items: string[],
-    selectedValue: string,
-    x?: number,
-    y?: number,
-    target?: any,
-    render_options?: {
-        left_icon: any, right_icon: any
-    },
-    useTopLeft?: boolean,
-    properties?: { [key: string]: number }
+	title: string;
+	caller: DisplayHandle;
+	items: string[];
+	selectedValue: string;
+	x?: number;
+	y?: number;
+	target?: any;
+	render_options?: {
+		left_icon: any;
+		right_icon: any;
+	};
+	useTopLeft?: boolean;
+	properties?: { [key: string]: number };
 }
 declare function PopupInput(options: PopupInputOptions): LuaMultiReturn<[number, string]>;
 /**
@@ -232,8 +245,8 @@ declare function TouchObj(...args: any): any;
 declare function Unhook(hookIndex: HookIndex): any;
 /**
  * Unhook all hooks referncing the given function OR object
- * @param callbackFn 
- * @param obj 
+ * @param callbackFn
+ * @param obj
  * @return The number of removed hooks
  */
 declare function UnhookMultiple(callbackFn?: () => any, obj?: Obj<any, any>): number;

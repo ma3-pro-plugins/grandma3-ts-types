@@ -1,4 +1,8 @@
-interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [key: string]: any }> {
+interface Obj<
+	ParentType,
+	ChildType,
+	Props extends { [key: string]: any } = { [key: string]: any },
+> {
 	name: string;
 	nameAndApp: string;
 	index: number;
@@ -35,7 +39,7 @@ interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [k
 	 * Create a child at the given index
 	 * @param childIndex 1-based
 	 * @param clazz class of child
-	 * @param undo 
+	 * @param undo
 	 */
 	Create(childIndex: number, clazz?: string, undo?: UndoHandle): ChildType;
 	CurrentChild(): ChildType | undefined;
@@ -150,6 +154,6 @@ interface Obj<ParentType, ChildType, Props extends { [key: string]: any } = { [k
 }
 
 type GetFaderOptions = {
-	token?: 'FaderMaster' | 'FaderTemp'
-	index?: number
-}
+	token?: 'FaderMaster' | 'FaderTemp';
+	index?: number;
+};
