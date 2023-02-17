@@ -3,18 +3,11 @@
 :warning: **OPEN ALPHA** &rarr; as there is no official API reference from MAlighting avaliable type declarations may be faulty or incomplete.
 
 TypeScript definitions for grandMA3 Lua API.
+This is a fork of https://www.npmjs.com/package/grandma3-types, by [Lukas Runge](https://www.npmjs.com/~lukas-runge). Since he is not responsive, I detached this fork and started maintaining it myself.
 
-## install for production
+## Install
 ```bash
-npm install -D grandMA3-tstl-plugin
-```
-
-## install for development
-
-```bash
-git clone https://github.com/LightYourWay/grandMA3-types.git && \
-cd <your-plugin-folder> && \
-npm link ../grandMA3-types
+npm install -D grandma3-ts-types
 ```
 
 ## integrate into `tsconfig.json`
@@ -22,11 +15,13 @@ npm link ../grandMA3-types
 ```json
 {
 	"compilerOptions": {
-		"types": ["grandMA3-types"]
+		"types": ["grandma3-ts-types"]
 	}
 }
 ```
 
-## developers
+## Contributors
 
-If you have something to contribute / add to the type declarations - **AWESOME** :tada: feel free to [create a **GitHub Issue**](https://github.com/LightYourWay/grandMA3-types/issues/new/choose) for it.
+If you have something to contribute / add to the type declarations - **AWESOME** :tada: feel free to:
+- [create a **GitHub Issue**](https://github.com/LightYourWay/grandMA3-types/issues/new/choose) for it.
+- Or better yet, fork and create a PR with your changes.
