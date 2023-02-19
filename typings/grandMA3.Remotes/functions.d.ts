@@ -51,9 +51,9 @@ type MIDIKeyType = "" |
 	"Toggle" |
 	"Top"
 type MIDIMidiType = "Note" | "NoteAttack" | "NoteAttackDecay" | "Control"
-type MIDILocktype = "" | "Yes"
+type MIDILockType = "" | "Yes"
 type MIDIRemoteProps = {
-	lock: MIDILocktype
+	lock: MIDILockType
 	target: Obj<any, any>
 	fader: MIDIFaderType
 	key: MIDIKeyType

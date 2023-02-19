@@ -3,6 +3,7 @@ interface Obj<
 	ChildType,
 	Props extends { [key: string]: any } = { [key: string]: any },
 > {
+	readonly lock: "" | "Yes" | "SS"
 	name: string;
 	nameAndApp: string;
 	index: number;
