@@ -1,12 +1,15 @@
+type GenericObj = Obj & { [key: string]: GenericObj }
+
 interface Obj<
-	ParentType,
-	ChildType,
+	ParentType = Obj<any, any>,
+	ChildType = Obj<any, any>,
 	Props extends { [key: string]: any } = { [key: string]: any },
 > {
 	readonly lock: "" | "Yes" | "SS"
 	name: string;
 	nameAndApp: string;
 	index: number;
+
 	AddListChildren(...args: any): any;
 	AddListChildrenNames(...args: any): any;
 	AddListLuaItem(...args: any): any;
@@ -51,7 +54,12 @@ interface Obj<
 	FindListItemByName(...args: any): any;
 	FindListItemByValueStr(...args: any): any;
 	FindParent(...args: any): any;
-	FindRecursive(...args: any): any;
+	/**
+	 * Find recursivly an object by name an/or class
+	 * @param name exact name of object. If undefined then only class will be matched.
+	 * @param clazz partial name of the class
+	 */
+	FindRecursive(name: string | undefined, clazz?: string): Obj<any, any>;
 	Get(propName: keyof Props): any;
 	GetAssignedObj(...args: any): any;
 	/** Get the child class name */
@@ -153,6 +161,7 @@ interface Obj<
 	UILGGetRowHeight(...args: any): any;
 	WaitChildren(...args: any): any;
 	WaitInit(...args: any): any;
+
 }
 
 type GetFaderOptions = {

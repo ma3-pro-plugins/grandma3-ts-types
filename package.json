@@ -5,7 +5,8 @@
   "types": "index.d.ts",
   "scripts": {
     "lint:check": "prettier --check **/*.{ts}",
-    "lint:fix": "prettier --write '**/*.ts'"
+    "lint:fix": "prettier --write '**/*.ts'",
+    "tsc": "tsc --watch"
   },
   "prettier": {
     "printWidth": 100,
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/ma3-pro-plugins/grandma3-ts-types#readme",
   "devDependencies": {
     "prettier": "^2.7.1",
+    "typescript": "^4.9.5",
     "typescript-to-lua": "^1.10.1"
   },
   "dependencies": {},

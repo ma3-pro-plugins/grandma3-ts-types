@@ -6,7 +6,6 @@
 
 declare type UndoHandle = any; // TODO: find a way to represent this handle
 declare type ObjectUserData = any; // TODO: find a way to represent this handle
-declare type DisplayHandle = Obj<any, any>;
 
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
@@ -67,7 +66,7 @@ declare function GetAttributeIndex(...args: any): any;
 declare function GetButton(...args: any): any;
 declare function GetChannelFunction(...args: any): any;
 declare function GetChannelFunctionIndex(...args: any): any;
-declare function GetDisplayByIndex(displayNumber: number): DisplayHandle;
+declare function GetDisplayByIndex(displayNumber: number): Display
 declare function GetDisplayCollect(...args: any): any;
 declare function GetDMXUniverse(...args: any): any;
 declare function GetDMXValue(...args: any): any;
@@ -128,14 +127,14 @@ declare interface MessageBoxInputOptions {
 	whiteFilter?: string;
 	/** A named ID reference to a special virtual keyboard which will be displayed when the user clicks on the virtual-keyboard icon next tot eh field input. See [this](https://github.com/hossimo/GMA3Plugins/wiki/Text-Input-Plugins) */
 	vkPlugin?:
-		| 'CueNumberInput'
-		| 'IP4Prefix'
-		| 'NumericInput'
-		| 'RelCueNumberInput'
-		| 'TextInput'
-		| 'TextInputNumOnly'
-		| 'TextInputNumOnlyRange'
-		| 'TextInputTimeOnly';
+	| 'CueNumberInput'
+	| 'IP4Prefix'
+	| 'NumericInput'
+	| 'RelCueNumberInput'
+	| 'TextInput'
+	| 'TextInputNumOnly'
+	| 'TextInputNumOnlyRange'
+	| 'TextInputTimeOnly';
 	maxTextLength?: number;
 }
 declare interface MessageBoxStateOptions {
@@ -182,7 +181,7 @@ declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;
 declare interface PopupInputOptions {
 	title: string;
-	caller: DisplayHandle;
+	caller: Display;
 	items: string[];
 	selectedValue: string;
 	x?: number;
@@ -240,7 +239,7 @@ declare function TextInput(...args: any): string;
 declare function Time(...args: any): any;
 declare function Timer(callback: () => void, delaySec: number, repeatTimes: number): void;
 declare function ToAddr(...args: any): any;
-declare function Touch(...args: any): any;
+declare function Touch(displayNumber: number, action: 'press' | 'move' | 'release', touchId: number, x: number, y: number): void;
 declare function TouchObj(...args: any): any;
 declare function Unhook(hookIndex: HookIndex): any;
 /**
