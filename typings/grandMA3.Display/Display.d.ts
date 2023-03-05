@@ -1,6 +1,4 @@
-type Display = Obj<any, any> & UIComponent & {
-	Rows: Rows;
-	Columns: Columns;
+type Display = GenericObj & UILayoutGrid & {
 	CmdLineSection: CmdLineSection
 	MainMenuCnt: MainMenuCnt
 	ScrollIndicatorBox: ScrollIndicatorBox
@@ -11,10 +9,10 @@ type Display = Obj<any, any> & UIComponent & {
 	FullScreen: FullScreen
 	ScreenOverlay: ScreenOverlay
 	ModalOverlay: ModalOverlay
+	w: number
+	h: number
 };
 
-type Rows = GenericObj
-type Columns = GenericObj
 type CmdLineSection = GenericObj
 type MainMenuCnt = GenericObj
 type ScrollIndicatorBox = GenericObj
@@ -23,12 +21,12 @@ type EncoderBarContainer = GenericObj
 type MainDialog = GenericObj
 type MainOverlay = GenericObj
 type FullScreen = GenericObj
-type ScreenOverlay = Obj<Display, any> & {
+type ScreenOverlay = Obj<Display, any> & UILayoutGrid & {
 	ClearUIChildren(): void
+	Close(): void
 }
-type ModalOverlay = GenericObj
+type ModalOverlay = Obj<Display, any> & UILayoutGrid & {
+	ClearUIChildren(): void
+	Close(): void
+}
 
-type UIComponent = Rect & {
-	absRect: Rect
-	absClientRect: Rect
-}

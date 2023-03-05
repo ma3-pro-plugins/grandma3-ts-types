@@ -1,4 +1,4 @@
-type GenericObj = Obj & { [key: string]: GenericObj }
+type GenericObj = Obj<GenericObj, GenericObj> & { [key: string]: GenericObj }
 
 interface Obj<
 	ParentType = Obj<any, any>,
@@ -25,8 +25,8 @@ interface Obj<
 	Addr(...args: any): any;
 	AddrNative(...args: any): any;
 	/** Adds a child to the end of this object childrens list */
-	Append(clazz: string): ChildType;
-	Aquire(...args: any): any;
+	Append(clazz?: string, undo?: UndoHandle, count?: number): ChildType;
+	Aquire(clazz?: string, undo?: UndoHandle): ChildType;
 	Changed(...args: any): any;
 	Children(): ChildType[];
 	ClearList(...args: any): any;

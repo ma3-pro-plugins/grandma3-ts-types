@@ -1,6 +1,6 @@
 type Rect = {
-    X: number
-    Y: number
-    W: number
-    H: number
+    x: number
+    y: number
+    w: number
+    h: number
 }
