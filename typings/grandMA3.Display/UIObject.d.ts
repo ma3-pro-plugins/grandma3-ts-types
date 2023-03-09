@@ -40,6 +40,7 @@ type UIObjectProps = {
 
 type UIObjectSignals = {
     onLoad: SignalId
+    onVisible: SignalId
     keyDown: SignalId
     keyUp: SignalId
     doubleClicked: SignalId
@@ -51,5 +52,5 @@ type UIObjectSignals = {
 type UIObject = UIObjectProps & UIObjectSignals & {
     readonly absRect: Rect
     readonly absClientRect: Rect
-    GetOverlay(): ScreenOverlay | ModalOverlay
+    GetOverlay(): Popup
 }

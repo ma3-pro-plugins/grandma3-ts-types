@@ -27,6 +27,5 @@ type ScreenOverlay = Obj<Display, any> & UILayoutGrid & {
 }
 type ModalOverlay = Obj<Display, any> & UILayoutGrid & {
 	ClearUIChildren(): void
-	Close(): void
 }
 

@@ -123,13 +123,36 @@ interface Obj<
 	IsValid(...args: any): any;
 	Load(...args: any): any;
 	MaxCount(...args: any): any;
-	OverlaySetCloseCallback(...args: any): any;
+	/**
+	 *  Set a callback that is called when the overlay is closed by one of the following:
+	 * - overlay.Close() was called
+	 * - CloseAllOverlays() was called
+	 * - The user pressed Escape, or clicked a CloseButton.
+	 * 
+	 * General Note: signalId-s should be prefixed by a ":",
+	 * but when added to the signalTable we don't use the ":".
+	 * e.g.
+	 *  OverlaySetCloseCallback(":myHandler")
+	 *  signalTable.myHandler = ()=>{}
+	 * 
+	 * The callback signature is:
+	 * 
+	 *  (overlay: Popup, modalResult: Enums.ModalResult, modalValue: number, ctxNext: any) => void
+	 * 
+	 * IMPORTANT: When calling overlay.Close(), the Close returns immediatly, and the callback runs in another coroutine.
+	 */
+	OverlaySetCloseCallback(signalId: string, ctx?: any): any;
 	Parent(): ParentType;
 	PropertyCount(...args: any): any;
 	PropertyName(...args: any): any;
 	PropertyType(...args: any): any;
 	Ptr(...args: any): any;
-	Remove(...args: any): any;
+	/**
+	 * Remove child object
+	 * @param childIndex 1-based
+	 * @param undo 
+	 */
+	Remove(childIndex: number, undo?: UndoHandle): void;
 	RemoveListItem(...args: any): any;
 	Resize(...args: any): any;
 	Save(...args: any): any;

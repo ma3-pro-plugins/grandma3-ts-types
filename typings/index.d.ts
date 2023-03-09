@@ -1,5 +1,6 @@
 import './common.d.ts';
 import './grandMA3.Appearances';
+import './grandMA3.ColorTheme';
 import './grandMA3.DataPool';
 import './grandMA3.Display';
 import './grandMA3.Global';
