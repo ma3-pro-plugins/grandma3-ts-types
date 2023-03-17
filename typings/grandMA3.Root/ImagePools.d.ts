@@ -8,4 +8,4 @@ type ImagePools = Obj<ShowData, ImagePool> &
 
 type ImagePool = Obj<ImagePools, Image> & Image[] & { [index: string]: Image };
 
-type Image = Obj<ImagePool, null> & null[] & { [index: string]: null };
+type Image = Obj<ImagePool, undefined>;

@@ -1,7 +1,7 @@
-type Root = Obj<null, any> &
-	any[] & { [index: string]: any } & {
-		ShowData: ShowData;
-		ColorTheme: ColorTheme
-	};
+type Root = Obj<undefined, any> &
+{ [index: string]: any } & {
+	ShowData: ShowData;
+	ColorTheme: ColorTheme
+};
 
 

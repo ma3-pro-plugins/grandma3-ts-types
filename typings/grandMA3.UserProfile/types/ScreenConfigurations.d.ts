@@ -34,8 +34,8 @@ interface WindowBase extends Obj<ScreenContent, any, WindowBaseProps>, WindowBas
 	WindowScrollPositions: WindowScrollPositions;
 }
 
-type WindowAppearance = Obj<WindowBase, null>;
-type WindowScrollPositions = Obj<WindowBase, null> & {
+type WindowAppearance = Obj<WindowBase, undefined>;
+type WindowScrollPositions = Obj<WindowBase, undefined> & {
 	/**
 	 * A string with 2 integer numbers separated by a comma.
 	 * The first number is the vertical scroll position.
@@ -65,7 +65,7 @@ interface LayoutViewSettingsProps {
 	PaddingBottom: number;
 	PaddingTop: number;
 }
-type LayoutViewSettings = Obj<WindowBase, null> & LayoutViewSettingsProps;
+type LayoutViewSettings = Obj<WindowBase, undefined> & LayoutViewSettingsProps;
 
 type ViewButtonScreenKey = `ViewButtonScreen ${number}`;
 type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen> &
@@ -73,4 +73,4 @@ type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen> &
 
 type ViewButtonScreen = Obj<ViewButtonScreens, ViewButton>;
 
-type ViewButton = Obj<ViewButtonScreen, null>;
+type ViewButton = Obj<ViewButtonScreen, undefined>;

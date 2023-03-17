@@ -34,4 +34,6 @@ type ElementProps = {
 	textColor: string;
 	w: number;
 };
-type Element = Obj<Layout, null> & null[] & { [index: string]: null } & ElementProps;
+type Element = Obj<Layout, undefined> & ElementProps & {
+	object: Obj
+};

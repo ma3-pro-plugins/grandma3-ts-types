@@ -13,9 +13,9 @@ type MIDIRemotesProps = {
 }
 
 type MIDIRemotes = Obj<ShowData, MIDIRemote> &
-	null[] & { [index: string]: null } & {
-		Image: Image;
-	} & MIDIRemotesProps;
+{
+	Image: Image;
+} & MIDIRemotesProps;
 
 type MIDIFaderType = "" |
 	"Master" |
@@ -71,4 +71,4 @@ type MIDIRemoteProps = {
 	midiType: MIDIMidiType
 }
 
-type MIDIRemote = Obj<MIDIRemotes, null, MIDIRemoteProps> & MIDIRemoteProps;
+type MIDIRemote = Obj<MIDIRemotes, undefined, MIDIRemoteProps> & MIDIRemoteProps;

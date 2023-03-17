@@ -43,7 +43,7 @@ declare function DirList(...args: any): any;
 /**
  * Prints to System Monitor only
  */
-declare function Echo(...args: any): any;
+declare function Echo(msg: string): void;
 declare function ErrEcho(...args: any): any;
 declare function ErrPrintf(...args: any): any;
 declare function Export(...args: any): any;
@@ -95,7 +95,7 @@ declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
 declare function GetUIChannels(...args: any): any;
 declare function GetUIObjectAtPosition(...args: any): any;
-declare function GetVar(...args: any): string | null;
+declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
 declare function HandleToInt(...args: any): number;
 declare function HandleToStr(...args: any): any;
