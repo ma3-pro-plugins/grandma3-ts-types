@@ -3,4 +3,5 @@ type DataPool = Obj<DataPools, any> &
 		Sequences: Sequences;
 		Layouts: Layouts;
 		Plugins: Plugins;
+		Pages: Pages;
 	};

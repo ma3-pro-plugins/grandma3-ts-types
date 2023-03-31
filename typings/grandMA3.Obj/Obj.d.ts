@@ -2,7 +2,7 @@ type GenericObj = Obj<GenericObj, GenericObj> & { [key: string]: GenericObj }
 
 interface Obj<
 	ParentType = Obj<any, any>,
-	ChildType = Obj<any, any>,
+	ChildType = Obj<any, any> | undefined,
 	Props extends { [key: string]: any } = { [key: string]: any },
 > {
 	readonly lock: "" | "Yes" | "SS"
@@ -169,7 +169,7 @@ interface Obj<
 	SetChildren(...args: any): any;
 	SetEmptyListItem(...args: any): any;
 	SetEnabledListItem(...args: any): any;
-	SetFader(...args: any): any;
+	SetFader(options: { value?: number, faderDisabled?: boolean, token?: string }): void;
 	SetListItemAppearance(...args: any): any;
 	SetListItemName(...args: any): any;
 	SetPositionHint(...args: any): any;
