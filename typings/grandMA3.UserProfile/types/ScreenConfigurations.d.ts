@@ -29,7 +29,7 @@ type WindowBaseProps = {
 	presetPoolType: number;
 };
 
-interface WindowBase extends Obj<ScreenContent, any, WindowBaseProps>, WindowBaseProps {
+interface WindowBase extends Obj<ScreenContent | View, any, WindowBaseProps>, WindowBaseProps {
 	WindowAppearance: WindowAppearance;
 	WindowScrollPositions: WindowScrollPositions;
 }
