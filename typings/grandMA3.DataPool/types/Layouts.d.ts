@@ -10,7 +10,7 @@ type ElementProps = {
 	borderSize: number;
 	/** 8 character hex string RGBA */
 	borderColor: string;
-	customText: string;
+	customTextText: string;
 	fontSize: 'Default' | 10 | 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32;
 	h: number;
 	visibilityElement: boolean;
