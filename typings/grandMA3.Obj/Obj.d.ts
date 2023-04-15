@@ -47,7 +47,7 @@ interface Obj<
 	 */
 	Create(childIndex: number, clazz?: string, undo?: UndoHandle): ChildType;
 	CurrentChild(): ChildType | undefined;
-	Delete(...args: any): any;
+	Delete(childIndex: number, undo?: UndoHandle): void;
 	Dump(): string;
 	Export(...args: any): any;
 	Find(...args: any): any;
