@@ -24,6 +24,8 @@ type UIObjectProps = ObjProps & {
     font: Font
     hasHover: YesNo
     icon: string
+    iconAlignmentH: AlignmentH
+    iconAlignmentV: AlignmentV
     text: string
     textAlignmentH: AlignmentH
     textColor: Obj
