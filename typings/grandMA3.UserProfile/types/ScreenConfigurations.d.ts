@@ -16,7 +16,7 @@ type ScreenContents = Obj<ScreenConfiguration, ScreenContent> &
 
 type ScreenContent = Obj<ScreenContents, WindowBase>;
 
-type WindowBaseProps = {
+type WindowBaseProps = ObjProps & {
 	appearance: Obj<any, any>;
 	minH: number;
 	minW: number;

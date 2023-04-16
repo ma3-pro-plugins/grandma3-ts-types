@@ -7,7 +7,7 @@ type Remotes = Obj<ShowData, MIDIRemotes | DCRemotes | DmxRemotes> & {
 type DCRemotes = Obj<ShowData, any>;
 type DmxRemotes = Obj<ShowData, any>;
 
-type MIDIRemotesProps = {
+type MIDIRemotesProps = ObjProps & {
 	enabled: boolean
 	feedbackInput: boolean
 }
@@ -52,7 +52,7 @@ type MIDIKeyType = "" |
 	"Top"
 type MIDIMidiType = "Note" | "NoteAttack" | "NoteAttackDecay" | "Control"
 type MIDILockType = "" | "Yes"
-type MIDIRemoteProps = {
+type MIDIRemoteProps = ObjProps & {
 	lock: MIDILockType
 	target: Obj<any, any>
 	fader: MIDIFaderType
@@ -71,4 +71,4 @@ type MIDIRemoteProps = {
 	midiType: MIDIMidiType
 }
 
-type MIDIRemote = Obj<MIDIRemotes, undefined, MIDIRemoteProps> & MIDIRemoteProps;
+type MIDIRemote = Obj<MIDIRemotes, undefined, MIDIRemoteProps>;

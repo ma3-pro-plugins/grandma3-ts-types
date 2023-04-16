@@ -2,7 +2,7 @@ type Layouts = Obj<DataPool, Layout> & Layout[] & { [index: string]: Layout };
 
 type Layout = Obj<Layouts, Element> & Element[] & { [index: string]: Element };
 
-type ElementProps = {
+type ElementProps = ObjProps & {
 	id: number;
 	assignType: number;
 	action: number;
@@ -10,9 +10,14 @@ type ElementProps = {
 	borderSize: number;
 	/** 8 character hex string RGBA */
 	borderColor: string;
+	/** 8 character hex string RGBA */
+	customTextColor: string;
+	customTextAlignmentH: 'Center' | 'Left' | 'Right';
+	customTextAlignmentV: 'Center' | 'Top' | 'Bottom' | 'Above';
+	customTextSize: 'Default' | 10 | 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32;
 	customTextText: string;
-	fontSize: 'Default' | 10 | 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32;
-	h: number;
+	fullResolution: boolean;
+	height: number;
 	visibilityElement: boolean;
 	visibilityBar: boolean;
 	visibilityObjectName: boolean;
@@ -28,11 +33,7 @@ type ElementProps = {
 	paddingBottom: number;
 	posX: number;
 	posY: number;
-	textAlignmentH: 'Center' | 'Left' | 'Right';
-	textAlignmentV: 'Center' | 'Top' | 'Bottom' | 'Above';
-	/** 8 character hex string RGBA */
-	textColor: string;
-	w: number;
+	width: number;
 };
 type Element = Obj<Layout, undefined> & ElementProps & {
 	object: Obj

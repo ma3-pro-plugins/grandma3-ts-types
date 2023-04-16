@@ -1,4 +1,4 @@
-type PopupProps = {
+type PopupProps = ObjProps & {
 }
 
 type Popup = UILayoutGrid & PopupProps & {

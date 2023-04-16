@@ -1,4 +1,4 @@
-type PlaceHolderProps = {
+type PlaceHolderProps = ObjProps & {
 }
 
 type PlaceHolder = Obj & UIObject & PlaceHolderProps & {

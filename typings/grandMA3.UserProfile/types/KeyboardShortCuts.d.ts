@@ -1,4 +1,4 @@
-type KeyboardShortCutsProps = {
+type KeyboardShortCutsProps = ObjProps & {
 	keyboardShortcutsActive: boolean
 }
 

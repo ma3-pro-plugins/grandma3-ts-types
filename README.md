@@ -5,6 +5,11 @@
 TypeScript definitions for grandMA3 Lua API.
 This is a fork of https://www.npmjs.com/package/grandma3-types, by [Lukas Runge](https://www.npmjs.com/~lukas-runge). Since he is not responsive, I detached this fork and started maintaining it myself.
 
+## Versions
+
+- Versions 2.x.x corresponds to MA3 version 1.9
+- Versions 1.x.x correspond to MA3 version 1.8
+
 ## Install
 ```bash
 npm install -D grandma3-ts-types

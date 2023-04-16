@@ -1,9 +1,15 @@
 type GenericObj = Obj<GenericObj, GenericObj> & { [key: string]: GenericObj }
 
+type ObjProps = {
+	name: string
+	nameAndApp: string;
+	index: number;
+}
+
 interface Obj<
 	ParentType = Obj<any, any>,
 	ChildType = Obj<any, any> | undefined,
-	Props extends { [key: string]: any } = { [key: string]: any },
+	Props extends ObjProps & { [key: string]: any } = ObjProps & { [key: string]: any },
 > {
 	readonly lock: "" | "Yes" | "SS"
 	name: string;

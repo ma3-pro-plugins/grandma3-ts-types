@@ -1,6 +1,6 @@
 type Plugins = Obj<DataPool, Plugin> & { [index: string]: Plugin | undefined };
 
-type PluginProps = {
+type PluginProps = ObjProps & {
 	scribble: Obj<any, any>;
 	appearance: Obj<any, any>;
 	author: string;
@@ -8,10 +8,11 @@ type PluginProps = {
 	path: string;
 	userRights: string;
 };
+
 type Plugin = Obj<Plugins, LuaComponent, PluginProps> &
 { [index: string]: LuaComponent | undefined };
 
-type LuaComponentProps = {
+type LuaComponentProps = ObjProps & {
 	fileName: string;
 	filePath: string;
 	fileSize: number;

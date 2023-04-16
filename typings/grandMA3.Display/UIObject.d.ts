@@ -1,6 +1,4 @@
-type UIObjectProps = {
-    name: string
-
+type UIObjectProps = ObjProps & {
     // Layout Props
     anchors: Anchors
     padding: Padding
