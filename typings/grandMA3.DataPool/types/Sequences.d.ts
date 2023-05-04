@@ -1,7 +1,28 @@
 type Sequences = Obj<DataPool, Sequence> &
 	(Sequence | undefined)[] & { [index: string]: Sequence | undefined };
 
-type Sequence = Obj<Sequences, Cue> &
+type SequenceProps = ObjProps & {
+	autoStart: boolean
+	autoStop: boolean
+	autoFix: boolean
+	autoStomp: boolean
+	autoPrePos: boolean
+	commandEnable: boolean
+	includeLinkLastGo: boolean
+	killProtect: boolean
+	offWhenOverridden: boolean
+	preferCueAppearance: boolean
+	releaseFirstCue: boolean
+	softLTP: boolean
+	speedFromRate: boolean
+	swapProtect: boolean
+	useExecutorTime: boolean
+	wrapAround: boolean
+	xFadeMode: boolean
+	xFadeReload: boolean
+}
+
+type Sequence = Obj<Sequences, Cue> & SequenceProps &
 	(Cue | undefined)[] & { [index: string]: Cue | undefined } & {
 		CurrentChild: () => LuaMultiReturn<[Cue | undefined, string]>;
 		name: string;
@@ -18,7 +39,12 @@ type Cue = Obj<Sequence, Part> &
 		 */
 		no: number;
 	};
-
-type Part = Obj<Cue, undefined> & {
+type PartProps = ObjProps & {
 	appearance: Obj
+	command: string
+	note: string
+	part: number
+}
+
+type Part = Obj<Cue, undefined, PartProps> & {
 };
