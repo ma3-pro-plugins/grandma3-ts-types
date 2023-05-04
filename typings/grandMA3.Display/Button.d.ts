@@ -1,6 +1,6 @@
 type ButtonProps = UIObjectProps & {
     hasHover: YesNo;
-    pluginComponent: GenericObj
+    pluginComponent: LuaComponent
     toolTip: string
     enabled: YesNo
 }

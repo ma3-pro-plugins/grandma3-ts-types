@@ -4,7 +4,7 @@ type Layout = Obj<Layouts, Element> & Element[] & { [index: string]: Element };
 
 type ElementProps = ObjProps & {
 	assignType: number;
-	action: number;
+	action: Enums.AssignmentButtonFunctionsSequence;
 	appearance: Appearance;
 	borderSize: number;
 	/** 8 character hex string RGBA */

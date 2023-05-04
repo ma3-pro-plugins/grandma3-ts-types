@@ -1,4 +1,4 @@
-type ColorTheme = Obj & {
+type ColorTheme = Obj<Root, ColorDefCollect | ColorGroups> & {
     ColorDefCollect: ColorDefCollect
     ColorGroups: ColorGroups
 }

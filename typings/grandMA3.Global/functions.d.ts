@@ -25,7 +25,7 @@ declare function Cmd(cmd: string, undo?: UndoHandle): string;
  * Run a command in the MainTask thread
  * @param args
  */
-declare function CmdIndirect(cmd: string, undo?: UndoHandle): void;
+declare function CmdIndirect(cmd: string, undo?: UndoHandle): string;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(...args: any): any;
 declare function Confirm(...args: any): any;

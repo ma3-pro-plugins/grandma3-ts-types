@@ -39,7 +39,7 @@ type LineEditProps = UIObjectProps & {
     // textColor: string
     font: Font;
     textAlignmentH: AlignmentH
-    pluginComponent: GenericObj
+    pluginComponent: LuaComponent
     focus?: 'InitialFocus'
 
     toolTip: string
