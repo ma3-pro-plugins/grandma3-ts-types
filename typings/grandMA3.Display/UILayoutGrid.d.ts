@@ -6,7 +6,7 @@ type UILayoutGrid =
     }
     & Obj<any, any>
 
-type UILayoutGridProps = ObjProps & {
+type UILayoutGridProps = UIObjectProps & {
     columns: number
     rows: number
 }

@@ -46,5 +46,6 @@ type LineEditProps = UIObjectProps & {
     enabled: YesNo
 }
 type LineEdit = UIObject & LineEditSignals & LineEditProps & {
-
+    SelectAll(): void
+    DeSelect(): void
 }

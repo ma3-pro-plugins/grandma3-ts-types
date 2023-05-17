@@ -31,7 +31,7 @@ interface Obj<
 	Addr(...args: any): any;
 	AddrNative(...args: any): any;
 	/** Adds a child to the end of this object childrens list */
-	Append(clazz?: string, undo?: UndoHandle, count?: number): ChildType;
+	Append(clazz?: string, undo?: UndoHandle, count?: number): any;
 	Aquire(clazz?: string, undo?: UndoHandle): ChildType;
 	Changed(...args: any): any;
 	Children(): ChildType[];
@@ -120,8 +120,8 @@ interface Obj<
 	InputSetAdditionalParameter(...args: any): any;
 	InputSetEditTitle(...args: any): any;
 	InputSetTitle(...args: any): any;
-	/** Insert a child at a given index, pushing all other children forward */
-	Insert(...args: any): any;
+	/** Insert a child at a given 1-based index, pushing all other children forward */
+	Insert(childIndex: number, clazz?: string, undo?: UndoHandle, count?: number): any;
 	IsClass(...args: any): any;
 	IsEmpty(...args: any): any;
 	IsListItemEmpty(...args: any): any;

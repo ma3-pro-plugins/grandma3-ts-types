@@ -49,7 +49,7 @@ type UIObjectSignals = {
     focusGet: SignalId
     focusLost: SignalId
 }
-type UIObject = UIObjectProps & UIObjectSignals & {
+type UIObject = Obj & UIObjectProps & UIObjectSignals & {
     readonly absRect: Rect
     readonly absClientRect: Rect
     GetOverlay(): Popup
