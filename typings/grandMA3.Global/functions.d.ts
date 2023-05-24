@@ -255,4 +255,4 @@ declare function UserVars(...args: any): any;
  */
 declare function Version(): string;
 declare function WaitModal(...args: any): any;
-declare function WaitObjectDelete(...args: any): any;
+declare function WaitObjectDelete(obj: Obj, secondsToWait: number): true | undefined;
