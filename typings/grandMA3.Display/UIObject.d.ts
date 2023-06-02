@@ -1,6 +1,7 @@
 type UIObjectProps = ObjProps & {
     // Layout Props
     anchors: Anchors
+    backColor: Obj
     padding: Padding
     margin: Margin
     maxSize: `${number},${number}`
@@ -14,8 +15,12 @@ type UIObjectProps = ObjProps & {
 
     // Appearance Props
     focus: Focus
+    hasFocus: YesNo
+    hideFocusFrame: YesNo
+    interactive: YesNo,
     visible: YesNo
-    backColor: Obj
+    mixInBackColor: Obj
+
 
 
     // Text Props
@@ -35,7 +40,8 @@ type UIObjectProps = ObjProps & {
      * Scales down the text to fit the box
      */
     textAutoAdjust: YesNo
-    texture: `corner${number}`
+    texture: string
+    transparent: YesNo
 }
 
 type UIObjectSignals = {
