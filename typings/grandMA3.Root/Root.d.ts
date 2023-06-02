@@ -3,6 +3,7 @@ type Root = Obj<undefined, any> &
 	ShowData: ShowData;
 	ColorTheme: ColorTheme
 	DeviceConfigurations: DeviceConfigurations
+	GraphicsRoot: GraphicsRoot
 };
 
 
