@@ -179,7 +179,12 @@ interface Obj<
 	SetListItemAppearance(...args: any): any;
 	SetListItemName(...args: any): any;
 	SetPositionHint(...args: any): any;
-	ShowModal(...args: any): any;
+	/**
+	 * Darkens the screen.
+	 * Can be executed on a Popup object which is appended to a ScreenOverlay or ModalOverlay.
+	 * @param callback Unknown
+	 */
+	ShowModal(callback?: (...args: any)=>void): void;
 	ToAddr(...args: any): any;
 	UIChildren(...args: any): any;
 	UILGGetColumnAbsXLeft(...args: any): any;
