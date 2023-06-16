@@ -1,36 +1,41 @@
-type UILayoutGrid =
-    UIObject &
-    UILayoutGridProps & {
-        1: ItemCollectRows // Rows
-        2: ItemCollectColumns // Columns
-    }
-    & Obj<any, any>
+type UILayoutGrid = UIObject &
+	UILayoutGridProps & {
+		1: ItemCollectRows; // Rows
+		2: ItemCollectColumns; // Columns
+	} & Obj<any, any>;
 
 type UILayoutGridProps = UIObjectProps & {
-    columns: number
-    rows: number
-}
+	columns: number;
+	rows: number;
+};
 
 type ItemCollectColumns = GenericObj & {
-    [key: number]: Item
-}
-
+	[key: number]: Item;
+};
 
 type ItemCollectRows = GenericObj & {
-    [key: number]: Item
-}
+	[key: number]: Item;
+};
 
 type ItemPropsFixed = {
-    sizePolicy: "Fixed"
-    size: number
-}
+	sizePolicy: 'Fixed';
+	size?: number;
+	minSize?: MAUISize;
+};
 type ItemPropsStrech = {
-    sizePolicy: "Stretch"
-    size: number
-}
+	sizePolicy: 'Stretch';
+	size?: number;
+	minSize?: MAUISize;
+};
 type ItemPropsContent = {
-    sizePolicy: "Content"
-    size?: number
-}
-type ItemProps = ItemPropsFixed | ItemPropsStrech | ItemPropsContent
-type Item = GenericObj & ItemProps
+	sizePolicy: 'Content';
+	size?: number;
+	minSize?: MAUISize;
+};
+// type ItemProps = ItemPropsFixed | ItemPropsStrech | ItemPropsContent;
+type ItemProps = {
+	sizePolicy: 'Fixed' | 'Stretch' | 'Content';
+	size?: number;
+	minSize?: MAUISize;
+};
+type Item = GenericObj & ItemProps;

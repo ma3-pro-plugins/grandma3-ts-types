@@ -3,8 +3,9 @@ import './Button';
 import './CloseButton';
 import './DialogFrame';
 import './Display';
-import "./ItemCollect";
-import "./LineEdit";
+import './ItemCollect';
+import './LineEdit';
+import './MainDialog';
 import './PlaceHolder';
 import './Popup';
 import './ScrollBar';
@@ -14,4 +15,3 @@ import './TitleButton';
 import './types';
 import './UILayoutGrid';
 import './UIObject';
-
