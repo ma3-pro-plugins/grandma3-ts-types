@@ -114,7 +114,7 @@ interface Obj<
 	HasActivePlayback(...args: any): any;
 	HasParent(...args: any): any;
 	HookDelete(...args: any): any;
-	Import(...args: any): any;
+	Import(filePath: string, fileName: string): boolean;
 	Index: () => number;
 	InputRun(...args: any): any;
 	InputSetAdditionalParameter(...args: any): any;
@@ -143,7 +143,7 @@ interface Obj<
 	 * 
 	 * The callback signature is:
 	 * 
-	 *  (overlay: Popup, modalResult: Enums.ModalResult, modalValue: number, ctxNext: any) => void
+	 *  (modalResult: Enums.ModalResult, modalValue: number, ctx: any) => void
 	 * 
 	 * IMPORTANT: When calling overlay.Close(), the Close returns immediatly, and the callback runs in another coroutine.
 	 */
