@@ -18,7 +18,7 @@ type UIObjectProps = ObjProps & {
 	hasFocus: YesNo;
 	hideFocusFrame: YesNo;
 	interactive: YesNo;
-	visible: YesNo;
+	visible: BooleanString;
 	mixInBackColor: Obj;
 
 	// Text Props

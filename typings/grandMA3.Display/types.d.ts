@@ -1,4 +1,5 @@
 type YesNo = 'Yes' | 'No';
+type BooleanString = 'true' | 'false';
 /**
  * Either an object, or a string of comma delimited values.
  * The string can be:
