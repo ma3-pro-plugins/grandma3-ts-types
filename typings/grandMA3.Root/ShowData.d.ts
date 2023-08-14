@@ -5,4 +5,5 @@ type ShowData = Obj<Root, any> &
 		UserProfiles: UserProfiles;
 		Appearances: Appearances;
 		Remotes: Remotes;
+		ShowSettings: ShowSettings;
 	};

@@ -5,4 +5,5 @@ import './ImagePools';
 import './GraphicsRoot';
 import './Root';
 import './ShowData';
+import './ShowSettings';
 import './UserProfiles';
