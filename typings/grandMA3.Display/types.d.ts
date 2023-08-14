@@ -21,14 +21,14 @@ type Padding = {
 	right: number;
 	top: number;
 	bottom: number;
-};
+} | `${number}`| `${number},${number}` | `${number},${number},${number},${number}`;
 
 type Margin = {
 	left: number;
 	right: number;
 	top: number;
 	bottom: number;
-};
+} | `${number}`| `${number},${number}` | `${number},${number},${number},${number}`
 
 type MAUISize = `${number}` | `${number},${number}`;
 
