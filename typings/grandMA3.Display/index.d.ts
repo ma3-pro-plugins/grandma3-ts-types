@@ -4,6 +4,7 @@ import './CloseButton';
 import './DialogFrame';
 import './Display';
 import './ItemCollect';
+import './IndicatorButton';
 import './LineEdit';
 import './MainDialog';
 import './PlaceHolder';
