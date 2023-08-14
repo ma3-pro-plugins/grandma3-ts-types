@@ -7,6 +7,7 @@ type UILayoutGrid = UIObject &
 type UILayoutGridProps = UIObjectProps & {
 	columns: number;
 	rows: number;
+	defaultMargin: `${number}`
 };
 
 type ItemCollectColumns = GenericObj & {
