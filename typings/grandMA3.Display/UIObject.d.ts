@@ -12,6 +12,8 @@ type UIObjectProps = ObjProps & {
 	y: number;
 	contentDriven: YesNo;
 	contentWidth: YesNo;
+	contentHeight: YesNo;
+	forceContentMin: YesNo;
 
 	// Appearance Props
 	focus: Focus;
@@ -35,7 +37,7 @@ type UIObjectProps = ObjProps & {
 	textShadow: number;
 	textShadowColor: Obj;
 	/**
-	 * Scales down the text to fit the box
+	 * Scales down the text to fit the box. Also enabled text wrapping.
 	 */
 	textAutoAdjust: YesNo;
 	texture: string;
