@@ -1,4 +1,4 @@
-type Pages = Obj<DataPool, Page> &
+type Pages = Obj<DataPoolClass, Page> &
 	(Sequence | undefined)[] &
 { [index: string]: Sequence | undefined };
 

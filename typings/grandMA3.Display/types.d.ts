@@ -30,6 +30,9 @@ type Margin = {
 	bottom: number;
 } | `${number}`| `${number},${number}` | `${number},${number},${number},${number}`
 
+/**
+ * "minWminH" or "minW,minH"
+ */
 type MAUISize = `${number}` | `${number},${number}`;
 
 type Focus = 'InitialFocus' | 'Never' | 'CanHaveFocus' | 'WantsFocus' | 'TabOnly';

@@ -20,6 +20,7 @@ type WindowBaseProps = ObjProps & {
 	appearance: Obj<any, any>;
 	minH: number;
 	minW: number;
+	note: string;
 	x: number;
 	y: number;
 	w: number;

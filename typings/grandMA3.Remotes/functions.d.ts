@@ -19,7 +19,7 @@ type MIDIRemotesProps = ObjProps & {
 
 type MIDIRemotes = Obj<ShowData, MIDIRemote> &
 {
-	Image: Image;
+	Image: UserImage;
 } & MIDIRemotesProps;
 
 type RemoteFaderType = "" |

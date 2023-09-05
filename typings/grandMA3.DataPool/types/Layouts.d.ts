@@ -1,4 +1,4 @@
-type Layouts = Obj<DataPool, Layout> & Layout[] & { [index: string]: Layout };
+type Layouts = Obj<DataPoolClass, Layout> & Layout[] & { [index: string]: Layout };
 
 type Layout = Obj<Layouts, Element> & Element[] & { [index: string]: Element };
 

@@ -1,7 +1,7 @@
 type ShowData = Obj<Root, any> &
 	any[] & { [index: string]: any } & {
 		DataPools: DataPools;
-		ImagePools: ImagePools;
+		MediaPools: MediaPools;
 		UserProfiles: UserProfiles;
 		Appearances: Appearances;
 		Remotes: Remotes;

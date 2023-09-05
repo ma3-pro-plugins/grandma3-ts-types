@@ -2,5 +2,5 @@ type Appearances = Obj<ShowData, Appearance> & Appearance[] & { [index: string]:
 
 type Appearance = Obj<Appearances, undefined> &
 {
-	image: Image;
+	image: UserImage;
 };

@@ -14,6 +14,7 @@ type UIObjectProps = ObjProps & {
 	contentWidth: YesNo;
 	contentHeight: YesNo;
 	forceContentMin: YesNo;
+	separator: YesNo;
 
 	// Appearance Props
 	focus: Focus;

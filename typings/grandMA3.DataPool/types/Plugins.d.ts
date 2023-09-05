@@ -1,4 +1,4 @@
-type Plugins = Obj<DataPool, Plugin> & { [index: string]: Plugin | undefined };
+type Plugins = Obj<DataPoolClass, Plugin> & { [index: string]: Plugin | undefined };
 
 type PluginProps = ObjProps & {
 	scribble: Obj<any, any>;

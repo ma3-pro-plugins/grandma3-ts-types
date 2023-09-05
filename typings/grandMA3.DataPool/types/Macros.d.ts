@@ -1,4 +1,4 @@
-type Macros = Obj<DataPool, Macro> & Macro[] & { [index: string]: Macro };
+type Macros = Obj<DataPoolClass, Macro> & Macro[] & { [index: string]: Macro };
 
 type Macro = Obj<Layouts, MacroLine> &
 	MacroLine[] & { [index: string]: MacroLine } & {

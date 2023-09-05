@@ -25,7 +25,7 @@ declare function Cmd(cmd: string, undo?: UndoHandle): string;
  * Run a command in the MainTask thread
  * @param args
  */
-declare function CmdIndirect(cmd: string, undo?: UndoHandle): string;
+declare function CmdIndirect(cmd: string, undo?: UndoHandle): void;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(): {
 	ClearCmd(): void;
@@ -47,7 +47,7 @@ declare function CreateUndo(...args: any): UndoHandle;
 declare function CurrentExecPage(...args: any): any;
 declare function CurrentProfile(): UserProfile;
 declare function CurrentUser(...args: any): any;
-declare function DataPool(): DataPool;
+declare function DataPool(): DataPoolClass;
 declare function DefaultDisplayPositions(...args: any): any;
 declare function DeleteIPAddress(...args: any): any;
 declare function DelVar(...args: any): any;
@@ -118,7 +118,7 @@ declare function HookObjectChange<T extends Obj<any, any>>(
 	obj: T,
 	pluginHandle: any,
 ): HookIndex;
-declare function HostOS(...args: any): any;
+declare function HostOS(): Enums.HostOs;
 declare function HostSubType(...args: any): any;
 declare function HostType(...args: any): any;
 declare function Import(...args: any): any;
@@ -247,7 +247,7 @@ declare function ShowData(): ShowData;
 declare function ShowSettings(): any;
 declare function StartProgress(...args: any): any;
 declare function StopProgress(...args: any): any;
-declare function StrToHandle(...args: any): any;
+declare function StrToHandle(strHandle: string): Obj;
 declare function SyncFS(...args: any): any;
 declare function TextInput(...args: any): string;
 declare function Time(...args: any): any;
