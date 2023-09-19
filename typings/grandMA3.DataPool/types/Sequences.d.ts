@@ -20,31 +20,38 @@ type SequenceRateMaster =
 	| 'Speed15'
 	| 'BPM';
 
-type SequenceSpeedMaster = SequenceRateMaster 
+type SequenceSpeedMaster = SequenceRateMaster;
 
 /**
  * Mul - Multiple (Means multiply the bpm => faster)
  * Div - Divide (Means divide the bpm => slower)
  */
 type SequenceSpeedScale =
-    | 'Div256'
-    | 'Div128'
-    | 'Div64'
-    | 'Div32'
-    | 'Div16'
-    | 'Div8'
-    | 'Div4'
-    | 'Div2'
-    | 'One'
-    | 'Mul2'
-    | 'Mul4'
-    | 'Mul8'
-    | 'Mul16'
-    | 'Mul32'
-    | 'Mul64'
-    | 'Mul128'
-    | 'Mul256'
+	| 'Div256'
+	| 'Div128'
+	| 'Div64'
+	| 'Div32'
+	| 'Div16'
+	| 'Div8'
+	| 'Div4'
+	| 'Div2'
+	| 'One'
+	| 'Mul2'
+	| 'Mul4'
+	| 'Mul8'
+	| 'Mul16'
+	| 'Mul32'
+	| 'Mul64'
+	| 'Mul128'
+	| 'Mul256';
 
+type SequenceRestartMode = 'Current Cue' | 'First Cue' | 'Next Cue';
+type SequenceExecutorDisplayMode = 'Data only' | 'Appearance only' | 'Both'
+type SequenceMasterGoMode = 'None' | 'Go' | 'On' | 'Top'
+type SequencePlaybackMaster = 'None' | `Playback${number}`
+type SequencePriority = 'Lowest' | 'Low' | 'LTP' | 'High' | 'Highest' | 'HTP' | 'Swap' | 'Super'
+type SequenceMib = 'Enabled' | 'Never' | 'Force Early' | 'Force UnpoGo' | 'Force Late'
+type SequenceMibMode = 'None' | 'Early' | 'UponGo' | 'Late'
 type SequenceProps = ObjProps & {
 	autoStart: boolean;
 	autoStop: boolean;
@@ -52,14 +59,20 @@ type SequenceProps = ObjProps & {
 	autoStomp: boolean;
 	autoPrePos: boolean;
 	commandEnable: boolean;
+	executorDisplayMode: SequenceExecutorDisplayMode
 	includeLinkLastGo: boolean;
 	killProtect: boolean;
+	masterGoMode: SequenceMasterGoMode
 	offWhenOverridden: boolean;
+	playbackMaster: SequencePlaybackMaster
 	preferCueAppearance: boolean;
+	priority: SequencePriority
 	rateMaster: SequenceRateMaster;
 	rateScale: SequenceSpeedScale;
 	releaseFirstCue: boolean;
-	restartMode: 'Current Cue' | 'First Cue' | 'Next Cue';
+	restartMode: SequenceRestartMode;
+	sequMib?: SequenceMib
+	sequMibMode?: SequenceMibMode
 	softLTP: boolean;
 	speedFromRate: boolean;
 	speedMaster: SequenceSpeedMaster;
@@ -97,12 +110,11 @@ type PartProps = ObjProps & {
 	/**
 	 * Raw Seconds. 1 sec = 16777216
 	 */
-	cueInFade: number; 
+	cueInFade: number;
 	/**
 	 * Raw Seconds. 1 sec = 16777216
 	 */
-	cueInDelay: number; 
-
+	cueInDelay: number;
 };
 
 type Part = Obj<Cue, undefined, PartProps> & {};
