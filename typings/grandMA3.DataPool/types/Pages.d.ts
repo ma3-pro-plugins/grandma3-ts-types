@@ -5,5 +5,8 @@ type Pages = Obj<DataPoolClass, Page> &
 
 type Page = Obj<Pages, Executor>
 
-type Executor = Obj<Page, undefined>
+type ExecutorProps = {
+	fader: 'Master' | 'Temp' //...
+}
+type Executor = Obj<Page, undefined> & ExecutorProps
 
