@@ -118,7 +118,8 @@ declare function HookObjectChange<T extends Obj<any, any>>(
 	obj: T,
 	pluginHandle: any,
 ): HookIndex;
-declare function HostOS(): Enums.HostOs;
+type HostOSString = 'Linux' | 'Windows' | 'Mac' | 'Rtos';
+declare function HostOS(): HostOSString ;
 declare function HostSubType(...args: any): any;
 declare function HostType(...args: any): any;
 declare function Import(...args: any): any;
