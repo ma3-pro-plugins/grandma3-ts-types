@@ -9,8 +9,9 @@ type PluginProps = ObjProps & {
 	userRights: string;
 };
 
-type Plugin = Obj<Plugins, LuaComponent, PluginProps> &
-{ [index: string]: LuaComponent | undefined };
+type Plugin = Obj<Plugins, LuaComponent, PluginProps> & PluginProps &
+	{note: string} &
+	{ [index: string]: LuaComponent | undefined };
 
 type LuaComponentProps = ObjProps & {
 	fileName: string;

@@ -46,12 +46,12 @@ type SequenceSpeedScale =
 	| 'Mul256';
 
 type SequenceRestartMode = 'Current Cue' | 'First Cue' | 'Next Cue';
-type SequenceExecutorDisplayMode = 'Data only' | 'Appearance only' | 'Both'
-type SequenceMasterGoMode = 'None' | 'Go' | 'On' | 'Top'
-type SequencePlaybackMaster = 'None' | `Playback${number}`
-type SequencePriority = 'Lowest' | 'Low' | 'LTP' | 'High' | 'Highest' | 'HTP' | 'Swap' | 'Super'
-type SequenceMib = 'Enabled' | 'Never' | 'Force Early' | 'Force UnpoGo' | 'Force Late'
-type SequenceMibMode = 'None' | 'Early' | 'UponGo' | 'Late'
+type SequenceExecutorDisplayMode = 'Data only' | 'Appearance only' | 'Both';
+type SequenceMasterGoMode = 'None' | 'Go' | 'On' | 'Top';
+type SequencePlaybackMaster = 'None' | `Playback${number}`;
+type SequencePriority = 'Lowest' | 'Low' | 'LTP' | 'High' | 'Highest' | 'HTP' | 'Swap' | 'Super';
+type SequenceMib = 'Enabled' | 'Never' | 'Force Early' | 'Force UnpoGo' | 'Force Late';
+type SequenceMibMode = 'None' | 'Early' | 'UponGo' | 'Late';
 type SequenceProps = ObjProps & {
 	autoStart: boolean;
 	autoStop: boolean;
@@ -59,20 +59,20 @@ type SequenceProps = ObjProps & {
 	autoStomp: boolean;
 	autoPrePos: boolean;
 	commandEnable: boolean;
-	executorDisplayMode: SequenceExecutorDisplayMode
+	executorDisplayMode: SequenceExecutorDisplayMode;
 	includeLinkLastGo: boolean;
 	killProtect: boolean;
-	masterGoMode: SequenceMasterGoMode
+	masterGoMode: SequenceMasterGoMode;
 	offWhenOverridden: boolean;
-	playbackMaster: SequencePlaybackMaster
+	playbackMaster: SequencePlaybackMaster;
 	preferCueAppearance: boolean;
-	priority: SequencePriority
+	priority: SequencePriority;
 	rateMaster: SequenceRateMaster;
 	rateScale: SequenceSpeedScale;
 	releaseFirstCue: boolean;
 	restartMode: SequenceRestartMode;
-	sequMib?: SequenceMib
-	sequMibMode?: SequenceMibMode
+	sequMib?: SequenceMib;
+	sequMibMode?: SequenceMibMode;
 	softLTP: boolean;
 	speedFromRate: boolean;
 	speedMaster: SequenceSpeedMaster;
@@ -117,4 +117,13 @@ type PartProps = ObjProps & {
 	cueInDelay: number;
 };
 
-type Part = Obj<Cue, undefined, PartProps> & {};
+type Part = Obj<Cue, Recipe, PartProps> & {};
+
+type RecipeProps = ObjProps & {};
+
+type Recipe = Obj<Part, undefined, RecipeProps> & {
+	selection: Group;
+	values: Preset;
+	matricks: Obj;
+	filter: Obj;
+};
