@@ -29,7 +29,7 @@ interface Obj<
 	AddListStringItem(...args: any): any;
 	AddListStringItems(...args: any): any;
 	Addr(...args: any): any;
-	AddrNative(...args: any): any;
+	AddrNative(): string;
 	/** Adds a child to the end of this object childrens list */
 	Append(clazz?: string, undo?: UndoHandle, count?: number): any;
 	Aquire(clazz?: string, undo?: UndoHandle): ChildType;

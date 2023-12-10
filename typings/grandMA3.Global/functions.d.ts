@@ -25,7 +25,7 @@ declare function Cmd(cmd: string, undo?: UndoHandle): string;
  * Run a command in the MainTask thread
  * @param args
  */
-declare function CmdIndirect(cmd: string, undo?: UndoHandle): void;
+declare function CmdIndirect(cmd: string, undo?: UndoHandle): undefined;
 declare function CmdIndirectWait(...args: any): any;
 declare function CmdObj(): {
 	ClearCmd(): void;
@@ -90,7 +90,7 @@ declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
 declare function GetPathSeparator(): string;
 declare function GetPathType(...args: any): any;
-declare function GetPresetData(...args: any): any;
+declare function GetPresetData(preset: Preset): PresetData;
 declare function GetProgPhaser(...args: any): any;
 declare function GetProgPhaserValue(...args: any): any;
 declare function GetPropertyColumnId(...args: any): any;
@@ -119,7 +119,7 @@ declare function HookObjectChange<T extends Obj<any, any>>(
 	pluginHandle: any,
 ): HookIndex;
 type HostOSString = 'Linux' | 'Windows' | 'Mac' | 'Rtos';
-declare function HostOS(): HostOSString ;
+declare function HostOS(): HostOSString;
 declare function HostSubType(...args: any): any;
 declare function HostType(...args: any): any;
 declare function Import(...args: any): any;
@@ -277,3 +277,13 @@ declare function UserVars(...args: any): any;
 declare function Version(): string;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
+
+type AttributeName = string;
+type AttributeValues = {
+	absolute_value: number;
+};
+
+/**
+ * Record<fixtureId, data>
+ */
+type PresetData = { by_fixtures: Record<string, Record<AttributeName, AttributeValues[]>> };

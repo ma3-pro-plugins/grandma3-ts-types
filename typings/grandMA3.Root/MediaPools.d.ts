@@ -1,11 +1,13 @@
-type MediaPools = Obj<ShowData, GoboImages | Symbols | Images | MeshImagePool | Videos | Sounds> & {
+type MediaPoolsChildren = {
 	Gobos: GoboImages;
 	Symbols: Symbols;
 	Images: Images;
 	MeshImagePool: MeshImagePool;
 	Videos: Videos;
 	Sounds: Sounds;
-};
+}
+
+type MediaPools = Obj<ShowData, GoboImages | Symbols | Images | MeshImagePool | Videos | Sounds> & MediaPoolsChildren;
 
 type GoboImages = Obj<MediaPools, GoboImage>;
 type GoboImage = Obj;

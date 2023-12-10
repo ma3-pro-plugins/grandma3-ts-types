@@ -118,12 +118,3 @@ type PartProps = ObjProps & {
 };
 
 type Part = Obj<Cue, Recipe, PartProps> & {};
-
-type RecipeProps = ObjProps & {};
-
-type Recipe = Obj<Part, undefined, RecipeProps> & {
-	selection: Group;
-	values: Preset;
-	matricks: Obj;
-	filter: Obj;
-};

@@ -2,33 +2,26 @@ type DataPoolClass = Obj<DataPools, any> &
 	any[] & { [index: string]: any } & {
 		Sequences: Sequences;
 		Layouts: Layouts;
+		Filters: Filters;
 		Plugins: Plugins;
 		Pages: Pages;
 		PresetPools: PresetPools;
 		Groups: Groups;
 		Macros: Macros;
+		MATricks: MAtricks;
 	};
 
 type Groups = Obj<DataPoolClass, Group>;
 type Group = Obj<Groups, any>;
 
-type PresetFamilyType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 21 | 22 | 23 | 24 | 25;
+type Filters = Obj<DataPoolClass, Filter>;
+type Filter = Obj<Filters, any>;
 
-type PresetPools = Obj<DataPoolClass, Presets> & {
-	[1]: Presets;
-	[2]: Presets;
-	[3]: Presets;
-	[4]: Presets;
-	[5]: Presets;
-	[6]: Presets;
-	[7]: Presets;
-	[8]: Presets;
-	[9]: Presets;
-	[21]: Presets;
-	[22]: Presets;
-	[23]: Presets;
-	[24]: Presets;
-	[25]: Presets;
+type RecipeProps = ObjProps & {};
+
+type Recipe = Obj<Part, undefined, RecipeProps> & {
+	selection: Group;
+	values: Preset;
+	matricks: Obj;
+	filter: Obj;
 };
-type Presets = Obj<PresetPools, Preset>;
-type Preset = Obj;

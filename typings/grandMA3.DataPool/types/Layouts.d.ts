@@ -2,6 +2,7 @@ type Layouts = Obj<DataPoolClass, Layout> & Layout[] & { [index: string]: Layout
 
 type Layout = Obj<Layouts, Element> & Element[] & { [index: string]: Element };
 
+type LayoutElementCustomTextSize = 'Default' | 10 | 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32;
 type ElementProps = ObjProps & {
 	assignType: number;
 	action: Enums.AssignmentButtonFunctionsSequence;
@@ -13,7 +14,7 @@ type ElementProps = ObjProps & {
 	customTextColor: string;
 	customTextAlignmentH: 'Center' | 'Left' | 'Right';
 	customTextAlignmentV: 'Center' | 'Top' | 'Bottom' | 'Above';
-	customTextSize: 'Default' | 10 | 12 | 14 | 16 | 18 | 20 | 24 | 28 | 32;
+	customTextSize: LayoutElementCustomTextSize
 	customTextText: string;
 	fullResolution: boolean;
 	height: number;

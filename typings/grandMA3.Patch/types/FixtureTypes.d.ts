@@ -3,6 +3,8 @@ type FixtureTypes = Obj<Patch, FixtureType> & FixtureType[] & { [index: string]:
 type FixtureType = Obj<FixtureTypes, any> &
 	any[] & { [index: string]: any } & {
 		DMXModes: DMXModes;
+		Wheels: Wheels;
+		AttributeDefinitions: AttributeDefinitions;
 	};
 
 type DMXModes = Obj<FixtureType, DMXMode> &
@@ -17,9 +19,43 @@ type DMXMode = Obj<DMXModes, any> &
 
 type DMXChannels = Obj<DMXMode, DMXChannel> & DMXChannel[] & { [index: string]: DMXChannel };
 
-type DMXChannel = Obj<DMXChannels, LogicalChannel> &
-	LogicalChannel[] & { [index: string]: LogicalChannel } & {
-		Highlight: number;
+type DMXChannelProps = ObjProps & {
+	Highlight: number;
+};
+
+type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> & {
+	[index: string]: LogicalChannel;
+};
+
+type LogicalChannelProps = ObjProps & {
+	attribute: string;
+};
+type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
+	LogicalChannelProps & {
+		ChannelFunction: ChannelFunction;
 	};
 
-type LogicalChannel = Obj<DMXChannel, any> & any[] & { [index: string]: any };
+type ChannelFunctionProps = ObjProps & {
+	attribute: string;
+};
+type ChannelFunction = Obj<LogicalChannel, ChannelSet, ChannelFunctionProps> &
+	ChannelFunctionProps & {
+		wheel: Wheel;
+	};
+
+type ChannelSetProps = ObjProps & {
+	DMXfrom: number;
+	DMXto: number;
+	wheelSlotIndex: number;
+};
+type ChannelSet = Obj<ChannelFunction, any, ChannelSetProps> & ChannelSetProps;
+
+type Wheels = Obj<FixtureType, Wheel> & Wheel[] & { [index: string]: Wheel };
+
+type Wheel = Obj<Wheels, Slot>;
+
+type Slot = Obj<Wheel, any> & {
+	image: GoboImage;
+};
+
+type AttributeDefinitions = Obj;
