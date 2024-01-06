@@ -1,13 +1,14 @@
-type FixtureTypes = Obj<Patch, FixtureType> & FixtureType[] & { [index: string]: FixtureType };
+type FixtureTypes = Obj<Patch, FixtureTypeObj> &
+	FixtureTypeObj[] & { [index: string]: FixtureTypeObj };
 
-type FixtureType = Obj<FixtureTypes, any> &
+type FixtureTypeObj = Obj<FixtureTypes, any> &
 	any[] & { [index: string]: any } & {
 		DMXModes: DMXModes;
 		Wheels: Wheels;
 		AttributeDefinitions: AttributeDefinitions;
 	};
 
-type DMXModes = Obj<FixtureType, DMXMode> &
+type DMXModes = Obj<FixtureTypeObj, DMXMode> &
 	DMXMode[] & { [index: string]: DMXMode } & {
 		Default: DMXMode;
 	};
@@ -50,7 +51,7 @@ type ChannelSetProps = ObjProps & {
 };
 type ChannelSet = Obj<ChannelFunction, any, ChannelSetProps> & ChannelSetProps;
 
-type Wheels = Obj<FixtureType, Wheel> & Wheel[] & { [index: string]: Wheel };
+type Wheels = Obj<FixtureTypeObj, Wheel> & Wheel[] & { [index: string]: Wheel };
 
 type Wheel = Obj<Wheels, Slot>;
 
@@ -58,4 +59,19 @@ type Slot = Obj<Wheel, any> & {
 	image: GoboImage;
 };
 
-type AttributeDefinitions = Obj;
+type AttributeDefinitions = Obj<FixtureTypeObj, any> & {
+	FeatureGroups: FeatureGroups;
+	Attributes: Attributes;
+};
+
+type FeatureGroups = Obj<AttributeDefinitions, FeatureGroup>;
+type FeatureGroup = Obj<FeatureGroups, Feature> & { [key: string]: Feature };
+
+type Feature = Obj<FeatureGroup, any> & {
+};
+
+type Attributes = Obj<AttributeDefinitions, any> & { [key: string]: Attribute };
+
+type Attribute = Obj<Attributes, any> & {
+	Feature: Feature;
+};

@@ -190,6 +190,7 @@ declare function Mouse(...args: any): any;
 declare function MouseObj(...args: any): any;
 declare const MultiLanguage: Array<[string, string]>;
 declare const Obj: Obj<any, any>;
+declare function ObjectList<T extends Obj>(address: string): T[];
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
 declare function PluginVars(...args: any): any;
