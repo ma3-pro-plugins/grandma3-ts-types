@@ -1,6 +1,7 @@
 type MAtricks = Obj<DataPoolClass, MAtrick> & MAtrick[] & { [index: string]: MAtrick };
 
-type MAtrickProps = ObjProps & {
+type MAtrickProps = ObjProps & MAtrickOnlyProps;
+type MAtrickOnlyProps = {
 	x: number;
 	y: number;
 	z: number;
@@ -16,12 +17,28 @@ type MAtrickProps = ObjProps & {
 	xWidth: number;
 	yWidth: number;
 	zWidth: number;
-	xShuffle: number;
-	yShuffle: number;
-	zShuffle: number;
+	xShuffle: number | 'None';
+	yShuffle: number | 'None';
+	zShuffle: number | 'None';
 	xShift: number;
 	yShift: number;
 	zShift: number;
+	fadeFromX: number;
+	fadeToX: number;
+	delayFromX: number;
+	delayToX: number;
+	fadeFromY: number;
+	fadeToY: number;
+	delayFromY: number;
+	delayToY: number;
+	fadeFromZ: number;
+	fadeToZ: number;
+	delayFromZ: number;
+	delayToZ: number;
+
 	// TODO: more...
 };
-type MAtrick = Obj<MAtricks, undefined> & MAtrickProps;
+type MAtrick = Obj<MAtricks, undefined> &
+	MAtrickProps & {
+		appearance: Appearance;
+	};
