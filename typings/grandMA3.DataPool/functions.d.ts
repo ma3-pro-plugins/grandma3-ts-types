@@ -15,7 +15,10 @@ type Groups = Obj<DataPoolClass, Group>;
 type Group = Obj<Groups, any>;
 
 type Filters = Obj<DataPoolClass, Filter>;
-type Filter = Obj<Filters, any>;
+type FilterProps = ObjProps &{
+	active: boolean;
+};
+type Filter = Obj<Filters, any, FilterProps>;
 
 type RecipeProps = ObjProps & {};
 
