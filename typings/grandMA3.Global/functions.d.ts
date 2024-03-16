@@ -26,7 +26,7 @@ declare function Cmd(cmd: string, undo?: UndoHandle): string;
  * @param args
  */
 declare function CmdIndirect(cmd: string, undo?: UndoHandle): undefined;
-declare function CmdIndirectWait(...args: any): any;
+declare function CmdIndirectWait(cmd: string, undo?: UndoHandle): undefined;
 declare function CmdObj(): {
 	ClearCmd(): void;
 	CmdText: string;
@@ -90,7 +90,7 @@ declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
 declare function GetPathSeparator(): string;
 declare function GetPathType(...args: any): any;
-declare function GetPresetData(preset: Preset): PresetData;
+declare function GetPresetData(preset: Preset | Part): PresetData;
 declare function GetProgPhaser(...args: any): any;
 declare function GetProgPhaserValue(...args: any): any;
 declare function GetPropertyColumnId(...args: any): any;
@@ -279,9 +279,10 @@ declare function Version(): string;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
-type AttributeName = string;
+type AttributeName = "Dimmer" | string;
 type AttributeValues = {
 	absolute_value: number;
+	absolute: number;
 };
 
 /**
