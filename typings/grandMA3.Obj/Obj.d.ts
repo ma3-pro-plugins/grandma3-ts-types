@@ -66,7 +66,7 @@ interface Obj<
 	 * @param clazz partial name of the class
 	 */
 	FindRecursive(name: string | undefined, clazz?: string): Obj<any, any>;
-	Get(propName: keyof Props): any;
+	Get(propName: keyof Props, role?: Enums.Roles): any;
 	GetAssignedObj(...args: any): any;
 	/** Get the child class name */
 	GetChildClass(): string;
