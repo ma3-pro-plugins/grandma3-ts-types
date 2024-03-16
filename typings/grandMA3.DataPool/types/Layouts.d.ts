@@ -78,4 +78,5 @@ declare namespace MA3_V1_8 {
 
 type Element = Obj<Layout, undefined> & ElementProps & {
 	object: Obj
+	note: string
 };
