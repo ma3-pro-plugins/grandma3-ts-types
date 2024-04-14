@@ -113,6 +113,15 @@ declare function GlobalVars(...args: any): any;
 declare function HandleToInt(...args: any): number;
 declare function HandleToStr(...args: any): any;
 declare type HookIndex = number;
+/**
+ * Register a listener for object changes.
+ * 
+ * If this function is called twice with the same callback function (and same object), then the callback will be called only once.
+ * If it is called with different callback functions then each of them will be called.
+ * @param callback 
+ * @param obj 
+ * @param pluginHandle 
+ */
 declare function HookObjectChange<T extends Obj<any, any>>(
 	callback: (obj: T, changeType: number) => void,
 	obj: T,
@@ -252,7 +261,7 @@ declare function StopProgress(...args: any): any;
 declare function StrToHandle(strHandle: string): Obj;
 declare function SyncFS(...args: any): any;
 declare function TextInput(...args: any): string;
-declare function Time(...args: any): any;
+declare function Time(): number;
 declare function Timer(callback: () => void, delaySec: number, repeatTimes: number): void;
 declare function ToAddr(...args: any): any;
 declare function Touch(
@@ -279,7 +288,7 @@ declare function Version(): string;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
-type AttributeName = "Dimmer" | string;
+type AttributeName = 'Dimmer' | string;
 type AttributeValues = {
 	absolute_value: number;
 	absolute: number;
