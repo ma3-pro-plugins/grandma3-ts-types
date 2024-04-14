@@ -1,17 +1,17 @@
-type GenericObj = Obj<GenericObj, GenericObj> & { [key: string]: GenericObj }
+type GenericObj = Obj<GenericObj, GenericObj> & { [key: string]: GenericObj };
 
 type ObjProps = {
-	name: string
+	name: string;
 	nameAndApp: string;
 	index: number;
-}
+};
 
 interface Obj<
 	ParentType = Obj<any, any>,
 	ChildType = Obj<any, any> | undefined,
 	Props extends ObjProps & { [key: string]: any } = ObjProps & { [key: string]: any },
 > {
-	readonly lock: "" | "Yes" | "SS"
+	readonly lock: '' | 'Yes' | 'SS';
 	name: string;
 	nameAndApp: string;
 	index: number;
@@ -66,6 +66,7 @@ interface Obj<
 	 * @param clazz partial name of the class
 	 */
 	FindRecursive(name: string | undefined, clazz?: string): Obj<any, any>;
+	FindWild(search: string): any;
 	Get(propName: keyof Props, role?: Enums.Roles): any;
 	GetAssignedObj(...args: any): any;
 	/** Get the child class name */
@@ -134,17 +135,17 @@ interface Obj<
 	 * - overlay.Close() was called
 	 * - CloseAllOverlays() was called
 	 * - The user pressed Escape, or clicked a CloseButton.
-	 * 
+	 *
 	 * General Note: signalId-s should be prefixed by a ":",
 	 * but when added to the signalTable we don't use the ":".
 	 * e.g.
 	 *  OverlaySetCloseCallback(":myHandler")
 	 *  signalTable.myHandler = ()=>{}
-	 * 
+	 *
 	 * The callback signature is:
-	 * 
+	 *
 	 *  (modalResult: Enums.ModalResult, modalValue: number, ctx: any) => void
-	 * 
+	 *
 	 * IMPORTANT: When calling overlay.Close(), the Close returns immediatly, and the callback runs in another coroutine.
 	 */
 	OverlaySetCloseCallback(signalId: string, ctx?: any): any;
@@ -156,7 +157,7 @@ interface Obj<
 	/**
 	 * Remove child object
 	 * @param childIndex 1-based
-	 * @param undo 
+	 * @param undo
 	 */
 	Remove(childIndex: number, undo?: UndoHandle): void;
 	RemoveListItem(...args: any): any;
@@ -175,7 +176,7 @@ interface Obj<
 	SetChildren(...args: any): any;
 	SetEmptyListItem(...args: any): any;
 	SetEnabledListItem(...args: any): any;
-	SetFader(options: { value?: number, faderDisabled?: boolean, token?: string }): void;
+	SetFader(options: { value?: number; faderDisabled?: boolean; token?: string }): void;
 	SetListItemAppearance(...args: any): any;
 	SetListItemName(...args: any): any;
 	SetPositionHint(...args: any): any;
@@ -184,7 +185,7 @@ interface Obj<
 	 * Can be executed on a Popup object which is appended to a ScreenOverlay or ModalOverlay.
 	 * @param callback Unknown
 	 */
-	ShowModal(callback?: (...args: any)=>void): void;
+	ShowModal(callback?: (...args: any) => void): void;
 	ToAddr(...args: any): any;
 	UIChildren(...args: any): any;
 	UILGGetColumnAbsXLeft(...args: any): any;
@@ -195,7 +196,6 @@ interface Obj<
 	UILGGetRowHeight(...args: any): any;
 	WaitChildren(...args: any): any;
 	WaitInit(...args: any): any;
-
 }
 
 type GetFaderOptions = {
