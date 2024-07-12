@@ -8,6 +8,7 @@ type LivePatch = Obj<ShowData, any> &
 		AttributeDefinitions: AttributeDefinitions;
 		FixtureTypes: FixtureTypes;
 		Stages: Stages;
+		UIChannels: UIChannels;
 	};
 
 type Stages = Obj<LivePatch | Patch, Stage>;
@@ -24,3 +25,10 @@ type Fixture = Obj<Fixtures, any> & {
 	mode: DMXMode;
 	modeDirect: DMXMode;
 };
+
+type UIChannels = Obj<LivePatch | Patch, UIChannel> & UIChannel[];
+
+type UIChannel = {
+	logical_channel: LogicalChannel
+	attr_index: number
+}

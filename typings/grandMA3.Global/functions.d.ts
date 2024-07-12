@@ -6,6 +6,7 @@
 
 declare type UndoHandle = any; // TODO: find a way to represent this handle
 declare type ObjectUserData = any; // TODO: find a way to represent this handle
+declare type MAObjectHandleStr = `#${string}`;
 
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
@@ -73,9 +74,9 @@ declare function FixtureType(...args: any): any;
  * I acccepts the result of AddrNative() function.
  */
 declare function FromAddr(nativeAddr: string): Obj<any, any>;
-declare function GetAttributeByUIChannel(...args: any): any;
-declare function GetAttributeCount(...args: any): any;
-declare function GetAttributeIndex(...args: any): any;
+declare function GetAttributeByUIChannel(uiChannel: number): Attribute;
+declare function GetAttributeCount(): number;
+declare function GetAttributeIndex(attrName: string): number;
 declare function GetButton(...args: any): any;
 declare function GetChannelFunction(...args: any): any;
 declare function GetChannelFunctionIndex(...args: any): any;
@@ -103,7 +104,7 @@ declare function GetTokenName(...args: any): any;
 declare function GetTokenNameByIndex(...args: any): any;
 declare function GetTopModal(...args: any): any;
 declare function GetTopOverlay(...args: any): any;
-declare function GetUIChannel(...args: any): any;
+declare function GetUIChannel(...args: any): UIChannel;
 declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
 declare function GetUIChannels(...args: any): any;
@@ -111,16 +112,16 @@ declare function GetUIObjectAtPosition(...args: any): any;
 declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
 declare function HandleToInt(...args: any): number;
-declare function HandleToStr(...args: any): any;
+declare function HandleToStr(...args: any): MAObjectHandleStr;
 declare type HookIndex = number;
 /**
  * Register a listener for object changes.
- * 
+ *
  * If this function is called twice with the same callback function (and same object), then the callback will be called only once.
  * If it is called with different callback functions then each of them will be called.
- * @param callback 
- * @param obj 
- * @param pluginHandle 
+ * @param callback
+ * @param obj
+ * @param pluginHandle
  */
 declare function HookObjectChange<T extends Obj<any, any>>(
 	callback: (obj: T, changeType: number) => void,
@@ -129,8 +130,8 @@ declare function HookObjectChange<T extends Obj<any, any>>(
 ): HookIndex;
 type HostOSString = 'Linux' | 'Windows' | 'Mac' | 'Rtos';
 declare function HostOS(): HostOSString;
-declare function HostSubType(...args: any): any;
-declare function HostType(...args: any): any;
+declare function HostSubType(): 'FullSize' | 'Light' | 'RPU' | 'onPCRackUnit' | 'Undefined';
+declare function HostType(): 'Console' | 'onPC' | 'PU';
 declare function Import(...args: any): any;
 declare function IncProgress(...args: any): any;
 declare function IntToHandle(...args: any): any;
@@ -258,7 +259,7 @@ declare function ShowData(): ShowData;
 declare function ShowSettings(): any;
 declare function StartProgress(...args: any): any;
 declare function StopProgress(...args: any): any;
-declare function StrToHandle(strHandle: string): Obj;
+declare function StrToHandle(strHandle: MAObjectHandleStr): Obj;
 declare function SyncFS(...args: any): any;
 declare function TextInput(...args: any): string;
 declare function Time(): number;
@@ -288,13 +289,21 @@ declare function Version(): string;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
-type AttributeName = 'Dimmer' | string;
-type AttributeValues = {
+type AttributeName = 'Dimmer' | 'Gobo1' | string;
+
+type PD_AttributeData = PD_AttributeValue[] & PD_AttributeValuesMeta;
+type PD_AttributeValue = {
 	absolute_value: number;
 	absolute: number;
+};
+type PD_AttributeValuesMeta = {
+	selective: boolean;
+	ui_channel_index: number;
 };
 
 /**
  * Record<fixtureId, data>
  */
-type PresetData = { by_fixtures: Record<string, Record<AttributeName, AttributeValues[]>> };
+type PresetData = { by_fixtures: Record<string, Record<AttributeName, PD_AttributeData>> } & {
+	[key: number]: PD_AttributeData;
+};

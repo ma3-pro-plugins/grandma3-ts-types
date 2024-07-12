@@ -37,6 +37,10 @@ interface Obj<
 	Children(): ChildType[];
 	ClearList(...args: any): any;
 	ClearUIChildren(...args: any): any;
+	/**
+	 * Sometimes when Children() returns no result, then CmdlineChildren will.
+	 */
+	CmdlineChildren(): ChildType[];
 	CommandAt(...args: any): any;
 	CommandCall(...args: any): any;
 	CommandCreateDefaults(...args: any): any;

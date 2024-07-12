@@ -70,8 +70,17 @@ type FeatureGroup = Obj<FeatureGroups, Feature> & { [key: string]: Feature };
 type Feature = Obj<FeatureGroup, any> & {
 };
 
+/**
+ * NOTE: Using attributes.Children() doesn't give all attributes. 
+ * Also we access the attributes by name attribute['ColorRGB_R'], 
+ * since not ALL attributes appear this way.
+ * We need to get attributes with GetAttributeByUIChannel().
+ * 
+ * GetAttributeCount() is not the same as GetUIChannelCount().
+ */
 type Attributes = Obj<AttributeDefinitions, any> & { [key: string]: Attribute };
 
 type Attribute = Obj<Attributes, any> & {
 	Feature: Feature;
+	Color: any;
 };

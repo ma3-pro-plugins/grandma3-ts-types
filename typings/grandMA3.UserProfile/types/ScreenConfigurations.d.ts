@@ -12,7 +12,7 @@ type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents | ViewButton
 type ScreenNumber = number;
 type ScreenContentKey = `ScreenContent ${ScreenNumber}`;
 type ScreenContents = Obj<ScreenConfiguration, ScreenContent> &
-	Record<ScreenContentKey, ScreenContent>;
+	Record<number, ScreenContent>;
 
 type ScreenContent = Obj<ScreenContents, WindowBase>;
 
