@@ -19,16 +19,21 @@ type Stage = Obj<Stages, any> & {
 };
 type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
-type Fixture = Obj<Fixtures, any> & {
+type Fixture = Obj<Fixtures, SubFixture> & {
 	fid: number;
 	fixtureType: FixtureTypeObj;
 	mode: DMXMode;
 	modeDirect: DMXMode;
 };
 
+type SubFixture = Obj<Fixtures, SubFixture> & {
+	fixture: Fixture;
+	stage: Stage;
+};
+
 type UIChannels = Obj<LivePatch | Patch, UIChannel> & UIChannel[];
 
 type UIChannel = {
-	logical_channel: LogicalChannel
-	attr_index: number
-}
+	logical_channel: LogicalChannel;
+	attr_index: number;
+};

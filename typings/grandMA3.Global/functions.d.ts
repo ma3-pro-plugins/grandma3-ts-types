@@ -111,8 +111,8 @@ declare function GetUIChannels(...args: any): any;
 declare function GetUIObjectAtPosition(...args: any): any;
 declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
-declare function HandleToInt(...args: any): number;
-declare function HandleToStr(...args: any): MAObjectHandleStr;
+declare function HandleToInt(obj: Obj): number;
+declare function HandleToStr(obj: Obj): MAObjectHandleStr;
 declare type HookIndex = number;
 /**
  * Register a listener for object changes.
@@ -302,8 +302,44 @@ type PD_AttributeValuesMeta = {
 };
 
 /**
+ * This fixture address is a unique identifier for a fixture.
+ * Is can be directly used with ObjectList() to get the fixture object.
+ */
+type FixtureAddress = `${FixtureIDTypeKeyword} ${FixtureCIDType}`;
+type FixtureIDType = 0 | 2 | 1 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type FixtureIDTypeKeyword =
+	| 'Fixture'
+	| 'Channel'
+	| 'Universal'
+	| 'HouseLights'
+	| 'NonDim'
+	| 'Media'
+	| 'Fog'
+	| 'Effect'
+	| 'Pyro'
+	| 'MArker';
+type FixtureCIDType = `${number}` | `${number}.${number}` | `${number}.${number}.${number}`;
+
+type FixtureIDTypeKeywordNoFixture =
+	| 'Channel'
+	| 'Universal'
+	| 'HouseLights'
+	| 'NonDim'
+	| 'Media'
+	| 'Fog'
+	| 'Effect'
+	| 'Pyro'
+	| 'MArker';
+
+type FixtureAddressAsPresetDataKey =
+	| `${FixtureCIDType}`
+	| `${FixtureIDTypeKeywordNoFixture} ${FixtureCIDType}`;
+
+/**
  * Record<fixtureId, data>
  */
-type PresetData = { by_fixtures: Record<string, Record<AttributeName, PD_AttributeData>> } & {
+type PresetData = {
+	by_fixtures: Record<FixtureAddress, Record<AttributeName, PD_AttributeData>>;
+} & {
 	[key: number]: PD_AttributeData;
 };
