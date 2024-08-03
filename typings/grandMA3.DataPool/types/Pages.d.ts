@@ -3,10 +3,18 @@ type Pages = Obj<DataPoolClass, Page> &
 { [index: string]: Sequence | undefined };
 
 
-type Page = Obj<Pages, Executor>
+type Page = Obj<Pages, Executor | ExecutorProxy>
 
-type ExecutorProps = {
+type ExecutorBaseProps = {
 	fader: 'Master' | 'Temp' //...
 }
-type Executor = Obj<Page, undefined> & ExecutorProps
+type ExecutorProps = ObjProps & ExecutorBaseProps & {
+	object: Obj
+	width: number
+	height: number
+}
+type Executor = Obj<Page, undefined, ExecutorProps, 'Exec'>
+
+type ExecutorProxyProps = ObjProps & ExecutorBaseProps
+type ExecutorProxy = Obj<Page, undefined, ExecutorProxyProps, 'Proxy'> & ExecutorProxyProps
 

@@ -10,6 +10,7 @@ interface Obj<
 	ParentType = Obj<any, any>,
 	ChildType = Obj<any, any> | undefined,
 	Props extends ObjProps & { [key: string]: any } = ObjProps & { [key: string]: any },
+	Clazz extends string = string
 > {
 	readonly lock: '' | 'Yes' | 'SS';
 	name: string;
@@ -75,7 +76,7 @@ interface Obj<
 	GetAssignedObj(...args: any): any;
 	/** Get the child class name */
 	GetChildClass(): string;
-	GetClass: () => string;
+	GetClass: () => Clazz;
 	GetDisplay(...args: any): any;
 	GetDisplayIndex(...args: any): any;
 	GetExportFileName(...args: any): any;

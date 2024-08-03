@@ -45,8 +45,10 @@ declare function CmdObj(): {
 declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;
+declare function CurrentEnvironment(): Obj;
 declare function CurrentExecPage(...args: any): any;
 declare function CurrentProfile(): UserProfile;
+declare function CurrentScreenConfig(): ScreenConfiguration;
 declare function CurrentUser(...args: any): any;
 declare function DataPool(): DataPoolClass;
 declare function DefaultDisplayPositions(...args: any): any;
@@ -98,6 +100,7 @@ declare function GetPropertyColumnId(...args: any): any;
 declare function GetRTChannel(...args: any): any;
 declare function GetRTChannelCount(...args: any): any;
 declare function GetSelectedAttribute(...args: any): any;
+declare function GetShowFileStatus(): string;
 declare function GetSubfixture(...args: any): any;
 declare function GetSubfixtureCount(...args: any): any;
 declare function GetTokenName(...args: any): any;
@@ -339,7 +342,7 @@ type FixtureAddressAsPresetDataKey =
  * Record<fixtureId, data>
  */
 type PresetData = {
-	by_fixtures: Record<FixtureAddress, Record<AttributeName, PD_AttributeData>>;
+	by_fixtures: Record<FixtureAddressAsPresetDataKey, Record<AttributeName, PD_AttributeData>>;
 } & {
 	[key: number]: PD_AttributeData;
 };
