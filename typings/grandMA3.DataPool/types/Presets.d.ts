@@ -19,5 +19,6 @@ type PresetPools = Obj<DataPoolClass, Presets> & {
 type Presets = Obj<PresetPools, Preset>;
 type PresetProps = ObjProps & {
 	appearance: Appearance
+	scribble: Scribble
 };
 type Preset = Obj<PresetPools, Recipe, PresetProps> & {};

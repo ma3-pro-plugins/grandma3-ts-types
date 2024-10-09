@@ -46,6 +46,7 @@ type SequenceSpeedScale =
 	| 'Mul256';
 
 type SequenceRestartMode = 'Current Cue' | 'First Cue' | 'Next Cue';
+type SequenceCueCommand = 'Enabled' | 'Force No' | 'Force Yes';
 type SequenceExecutorDisplayMode = 'Data only' | 'Appearance only' | 'Both';
 type SequenceMasterGoMode = 'None' | 'Go' | 'On' | 'Top';
 type SequencePlaybackMaster = 'None' | `Playback${number}`;
@@ -58,7 +59,7 @@ type SequenceProps = ObjProps & {
 	autoFix: boolean;
 	autoStomp: boolean;
 	autoPrePos: boolean;
-	commandEnable: boolean;
+	cueCommand: SequenceCueCommand;
 	executorDisplayMode: SequenceExecutorDisplayMode;
 	includeLinkLastGo: boolean;
 	killProtect: boolean;
@@ -118,3 +119,37 @@ type PartProps = ObjProps & {
 };
 
 type Part = Obj<Cue, Recipe, PartProps> & {};
+
+declare namespace MA3_v2_0_2 {
+	type SequenceProps = ObjProps & {
+		autoStart: boolean;
+		autoStop: boolean;
+		autoFix: boolean;
+		autoStomp: boolean;
+		autoPrePos: boolean;
+		commandEnable: boolean;
+		executorDisplayMode: SequenceExecutorDisplayMode;
+		includeLinkLastGo: boolean;
+		killProtect: boolean;
+		masterGoMode: SequenceMasterGoMode;
+		offWhenOverridden: boolean;
+		playbackMaster: SequencePlaybackMaster;
+		preferCueAppearance: boolean;
+		priority: SequencePriority;
+		rateMaster: SequenceRateMaster;
+		rateScale: SequenceSpeedScale;
+		releaseFirstCue: boolean;
+		restartMode: SequenceRestartMode;
+		sequMib?: SequenceMib;
+		sequMibMode?: SequenceMibMode;
+		softLTP: boolean;
+		speedFromRate: boolean;
+		speedMaster: SequenceSpeedMaster;
+		speedScale: SequenceSpeedScale;
+		swapProtect: boolean;
+		useExecutorTime: boolean;
+		wrapAround: boolean;
+		xFadeMode: boolean;
+		xFadeReload: boolean;
+	};
+}

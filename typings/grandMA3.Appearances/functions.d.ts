@@ -17,3 +17,10 @@ type AppearanceProps = ObjProps & {
 	IMAGEALPHA: number;
 
 }
+
+type ScribbleProps = ObjProps & {
+	scribble: string // comma separated list of points and colors
+}
+
+type Scribbles = Obj<ShowData, Scribble> & Scribble[] & { [index: string]: Scribble };
+type Scribble = Obj<Appearances, undefined, ScribbleProps> & ScribbleProps

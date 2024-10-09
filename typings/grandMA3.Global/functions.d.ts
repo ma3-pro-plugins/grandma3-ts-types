@@ -41,6 +41,7 @@ declare function CmdObj(): {
 	TempStoreSettings: any;
 	User: any;
 	Undos: any;
+	isFixed(exec: Executor): 1 | 0;
 };
 declare function Confirm(...args: any): any;
 
@@ -138,7 +139,8 @@ declare function HostType(): 'Console' | 'onPC' | 'PU';
 declare function Import(...args: any): any;
 declare function IncProgress(...args: any): any;
 declare function IntToHandle(...args: any): any;
-declare function IsObjectValid(...args: any): any;
+declare function IsObjectValid(handle: any): boolean;
+declare function IsValid(handle: any): boolean;
 declare function Keyboard(...args: any): any;
 declare function KeyboardObj(...args: any): any;
 declare function LoadExecConfig(...args: any): any;
@@ -309,6 +311,10 @@ type PD_AttributeValuesMeta = {
  * Is can be directly used with ObjectList() to get the fixture object.
  */
 type FixtureAddress = `${FixtureIDTypeKeyword} ${FixtureCIDType}`;
+/**
+ * This corresponds to the IDType in an exported Group XML.
+ * NOTE: The IDType of keyword "Stage" is 0  (same as Fixture), this might be an MA BUG. (MA3 v2.0.2.0)
+ */
 type FixtureIDType = 0 | 2 | 1 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 type FixtureIDTypeKeyword =
 	| 'Fixture'
@@ -320,7 +326,12 @@ type FixtureIDTypeKeyword =
 	| 'Fog'
 	| 'Effect'
 	| 'Pyro'
-	| 'MArker';
+	| 'MArker'
+	/**
+	 * Stage: The CID in this case is a relative address from ShowData/Patch/Stages.
+	 * Also, this is not a valid Command syntax keyword. It is only used with ObjectList() function.
+	 */
+	| 'Stage';
 type FixtureCIDType = `${number}` | `${number}.${number}` | `${number}.${number}.${number}`;
 
 type FixtureIDTypeKeywordNoFixture =

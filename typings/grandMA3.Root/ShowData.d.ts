@@ -7,4 +7,5 @@ type ShowData = Obj<Root, any> &
 		Appearances: Appearances;
 		Remotes: Remotes;
 		ShowSettings: ShowSettings;
+		Scribbles: Scribbles;
 	};

@@ -21,7 +21,12 @@ type DMXMode = Obj<DMXModes, any> &
 type DMXChannels = Obj<DMXMode, DMXChannel> & DMXChannel[] & { [index: string]: DMXChannel };
 
 type DMXChannelProps = ObjProps & {
+	dmxBreak: number;
+	coarse: number | "None";
+	fine: number| "None";
+	ultra: number| "None";
 	Highlight: number;
+	lowLight: number;
 };
 
 type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> & {
@@ -30,6 +35,8 @@ type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> & {
 
 type LogicalChannelProps = ObjProps & {
 	attribute: string;
+	snap: any
+	master: any
 };
 type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
 	LogicalChannelProps & {
@@ -38,6 +45,12 @@ type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
 
 type ChannelFunctionProps = ObjProps & {
 	attribute: string;
+	dmxFrom: number
+	dmxTo: number // READ ONLY
+	physicalFrom: number
+	physicalTo: number 
+	wheel: Wheel
+	dmxInvert: boolean
 };
 type ChannelFunction = Obj<LogicalChannel, ChannelSet, ChannelFunctionProps> &
 	ChannelFunctionProps & {
@@ -53,9 +66,10 @@ type ChannelSet = Obj<ChannelFunction, any, ChannelSetProps> & ChannelSetProps;
 
 type Wheels = Obj<FixtureTypeObj, Wheel> & Wheel[] & { [index: string]: Wheel };
 
-type Wheel = Obj<Wheels, Slot>;
+type Wheel = Obj<Wheels, Slot> & Slot[];
 
 type Slot = Obj<Wheel, any> & {
+	color: string; // R,G,B,A : normalized 0-1
 	image: GoboImage;
 };
 
