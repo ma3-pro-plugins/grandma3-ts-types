@@ -11,8 +11,7 @@ type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents | ViewButton
 
 type ScreenNumber = number;
 type ScreenContentKey = `ScreenContent ${ScreenNumber}`;
-type ScreenContents = Obj<ScreenConfiguration, ScreenContent> &
-	Record<number, ScreenContent>;
+type ScreenContents = Obj<ScreenConfiguration, ScreenContent> & Record<number, ScreenContent>;
 
 type ScreenContent = Obj<ScreenContents, WindowBase>;
 
@@ -53,7 +52,8 @@ type WindowScrollPositions = Obj<WindowBase, undefined> & {
 
 interface WindowLayoutView extends WindowBase {
 	name: 'WindowLayoutView';
-	LayoutViewSettings: LayoutViewSettings;
+	// LayoutViewSettings: LayoutViewSettings; // Sometimes the name could be "LayoutViewSettings 1", but it should be always first
+	[1]: LayoutViewSettings;
 }
 
 interface LayoutViewSettingsProps {
@@ -75,3 +75,12 @@ type ViewButtonScreens = Obj<ScreenConfiguration, ViewButtonScreen> &
 type ViewButtonScreen = Obj<ViewButtonScreens, ViewButton>;
 
 type ViewButton = Obj<ViewButtonScreen, undefined>;
+
+interface WindowEncoderBar extends WindowBase {
+	name: 'WindowEncoderBar';
+	EncoderBarWindowSettings: EncoderBarWindowSettings;
+}
+interface EncoderBarWindowSettingsProps {
+	fadeEncoder: boolean;
+}
+type EncoderBarWindowSettings = Obj<WindowBase, undefined> & EncoderBarWindowSettingsProps;

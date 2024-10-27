@@ -90,6 +90,7 @@ declare function GetDMXValue(...args: any): any;
 declare function GetExecutor(...args: any): any;
 declare function GetFocus(...args: any): any;
 declare function GetFocusDisplay(...args: any): any;
+declare function GetObject(address: string): Obj | undefined;
 declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
 declare function GetPathSeparator(): string;
@@ -296,14 +297,27 @@ declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | unde
 
 type AttributeName = 'Dimmer' | 'Gobo1' | string;
 
-type PD_AttributeData = PD_AttributeValue[] & PD_AttributeValuesMeta;
-type PD_AttributeValue = {
-	absolute_value: number;
-	absolute: number;
+type PD_AttributeData = PD_AttributeStepValue[] & PD_AttributeValuesMeta;
+type PD_AttributeStepValue = {
+	/**
+	 * Range 0-100 float
+	 */
+	absolute: number; //0-100
+	/**
+	 * 16777216 = 1 unit
+	 */
+	absolute_value: number; // 16777216 = 1 unit
+	abs_release: boolean;
+	integrated: Preset;
+	mask_individual: number;
+	mask_integrated: number;
+	channel_function: number;
 };
 type PD_AttributeValuesMeta = {
 	selective: boolean;
 	ui_channel_index: number;
+	gridposmatr: any;
+	mask_active_phaser: any;
 };
 
 /**
