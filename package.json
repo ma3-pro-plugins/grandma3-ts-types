@@ -1,42 +1,42 @@
 {
-  "name": "grandma3-ts-types",
-  "version": "2.0.0",
-  "description": "TypeScript definitions for grandMA3 Lua library.",
-  "types": "index.d.ts",
-  "scripts": {
-    "lint:check": "prettier --check **/*.{ts}",
-    "lint:fix": "prettier --write '**/*.ts'",
-    "tsc": "tsc --watch"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "proseWrap": "never",
-    "singleQuote": true,
-    "trailingComma": "all",
-    "useTabs": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ma3-pro-plugins/grandma3-ts-types.git"
-  },
-  "author": "Lukas Runge",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ma3-pro-plugins/grandma3-ts-types/issues"
-  },
-  "homepage": "https://github.com/ma3-pro-plugins/grandma3-ts-types#readme",
-  "devDependencies": {
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4",
-    "typescript-to-lua": "^1.10.1"
-  },
-  "dependencies": {},
-  "keywords": [
-    "grandma3",
-    "ma",
-    "lighting",
-    "typescript",
-    "types",
-    "typings"
-  ]
+	"name": "grandma3-ts-types",
+	"version": "1.1.1",
+	"description": "TypeScript definitions for grandMA3 Lua library.",
+	"types": "index.d.ts",
+	"scripts": {
+		"lint:check": "prettier --check **/*.{ts}",
+		"lint:fix": "prettier --write '**/*.ts'",
+		"tsc": "tsc --watch"
+	},
+	"prettier": {
+		"printWidth": 100,
+		"proseWrap": "never",
+		"singleQuote": true,
+		"trailingComma": "all",
+		"useTabs": true
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ma3-pro-plugins/grandma3-ts-types.git"
+	},
+	"author": "Lukas Runge",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ma3-pro-plugins/grandma3-ts-types/issues"
+	},
+	"homepage": "https://github.com/ma3-pro-plugins/grandma3-ts-types#readme",
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.4",
+		"typescript-to-lua": "^1.10.1"
+	},
+	"dependencies": {},
+	"keywords": [
+		"grandma3",
+		"ma",
+		"lighting",
+		"typescript",
+		"types",
+		"typings"
+	]
 }
