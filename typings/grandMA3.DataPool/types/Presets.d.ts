@@ -18,14 +18,14 @@ type PresetPools = Obj<DataPoolClass, Presets> & {
 };
 type Presets = Obj<PresetPools, Preset>;
 type PresetProps = ObjProps & {
-	appearance: Appearance
-	phaseFromX: number
-	phaseToX: number
-	speedFromX: number
-	speedToX: number
-	scribble: Scribble
-	xBlock:	number
-	xGroup: number
-	xWings: number
+	appearance: Appearance;
+	phaseFromX: number;
+	phaseToX: number;
+	speedFromX: number;
+	speedToX: number;
+	scribble: Scribble;
+	xBlock: number;
+	xGroup: number;
+	xWings: number;
 };
 type Preset = Obj<PresetPools, Recipe, PresetProps> & {};

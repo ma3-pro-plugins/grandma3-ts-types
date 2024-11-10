@@ -1,3 +1,2 @@
-import "./ColorDefCollect"
-import "./ColorTheme"
-
+import './ColorDefCollect';
+import './ColorTheme';

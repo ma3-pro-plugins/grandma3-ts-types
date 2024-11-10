@@ -1,9 +1,6 @@
 type Appearances = Obj<ShowData, Appearance> & Appearance[] & { [index: string]: Appearance };
 
-
-type Appearance = Obj<Appearances, undefined, AppearanceProps> & AppearanceProps
-
-
+type Appearance = Obj<Appearances, undefined, AppearanceProps> & AppearanceProps;
 
 type AppearanceProps = ObjProps & {
 	BACKR: number;
@@ -15,12 +12,11 @@ type AppearanceProps = ObjProps & {
 	IMAGEG: number;
 	IMAGEB: number;
 	IMAGEALPHA: number;
-
-}
+};
 
 type ScribbleProps = ObjProps & {
-	scribble: string // comma separated list of points and colors
-}
+	scribble: string; // comma separated list of points and colors
+};
 
 type Scribbles = Obj<ShowData, Scribble> & Scribble[] & { [index: string]: Scribble };
-type Scribble = Obj<Appearances, undefined, ScribbleProps> & ScribbleProps
+type Scribble = Obj<Appearances, undefined, ScribbleProps> & ScribbleProps;

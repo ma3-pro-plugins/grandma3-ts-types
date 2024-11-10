@@ -14,7 +14,7 @@ type ElementProps = ObjProps & {
 	customTextColor: string;
 	customTextAlignmentH: 'Center' | 'Left' | 'Right';
 	customTextAlignmentV: 'Center' | 'Top' | 'Bottom' | 'Above';
-	customTextSize: LayoutElementCustomTextSize
+	customTextSize: LayoutElementCustomTextSize;
 	customTextText: string;
 	fullResolution: boolean;
 	height: number;
@@ -71,12 +71,14 @@ declare namespace MA3_V1_8 {
 		textColor: string;
 	};
 
-	type Element = Obj<Layout, undefined> & ElementProps & {
-		object: Obj
-	};
+	type Element = Obj<Layout, undefined> &
+		ElementProps & {
+			object: Obj;
+		};
 }
 
-type Element = Obj<Layout, undefined> & ElementProps & {
-	object: Obj
-	note: string
-};
+type Element = Obj<Layout, undefined> &
+	ElementProps & {
+		object: Obj;
+		note: string;
+	};

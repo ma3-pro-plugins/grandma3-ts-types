@@ -1,2 +1,2 @@
-type ScrollBarH = UIObject
-type ScrollBarV = UIObject
+type ScrollBarH = UIObject;
+type ScrollBarV = UIObject;

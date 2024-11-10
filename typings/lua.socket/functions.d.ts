@@ -2,9 +2,9 @@
 
 /** @noSelfInFile */
 type Socket = {
-	close(): void
-}
+	close(): void;
+};
 declare module 'socket' {
-	export function bind(host: string, port: number, backlog?: any): Socket
-	export function gettime(): number
+	export function bind(host: string, port: number, backlog?: any): Socket;
+	export function gettime(): number;
 }

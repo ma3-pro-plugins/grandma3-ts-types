@@ -2,15 +2,15 @@
 
 /** @noSelfInFile */
 
-declare type JsonSerializableObj = { [key: string]: JsonSerializable }
+declare type JsonSerializableObj = { [key: string]: JsonSerializable };
 
-declare type JsonSerializable = 
-	| string 
-	| number 
-	| boolean 
+declare type JsonSerializable =
+	| string
+	| number
+	| boolean
 	| null
-	| JsonSerializable[] 
-	| JsonSerializableObj; 
+	| JsonSerializable[]
+	| JsonSerializableObj;
 
 declare module 'json' {
 	export function decode(str: string): object;

@@ -1,1 +1,1 @@
-type CloseButton = UIObject
+type CloseButton = UIObject;

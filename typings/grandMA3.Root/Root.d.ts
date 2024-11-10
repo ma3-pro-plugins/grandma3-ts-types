@@ -1,9 +1,6 @@
-type Root = Obj<undefined, any> &
-{ [index: string]: any } & {
+type Root = Obj<undefined, any> & { [index: string]: any } & {
 	ShowData: ShowData;
-	ColorTheme: ColorTheme
-	DeviceConfigurations: DeviceConfigurations
-	GraphicsRoot: GraphicsRoot
+	ColorTheme: ColorTheme;
+	DeviceConfigurations: DeviceConfigurations;
+	GraphicsRoot: GraphicsRoot;
 };
-
-

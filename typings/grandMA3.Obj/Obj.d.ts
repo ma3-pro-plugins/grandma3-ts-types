@@ -10,7 +10,7 @@ interface Obj<
 	ParentType = Obj<any, any>,
 	ChildType = Obj<any, any> | undefined,
 	Props extends ObjProps & { [key: string]: any } = ObjProps & { [key: string]: any },
-	Clazz extends string = string
+	Clazz extends string = string,
 > {
 	readonly lock: '' | 'Yes' | 'SS';
 	name: string;

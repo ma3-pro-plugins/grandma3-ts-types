@@ -308,19 +308,19 @@ type PD_AttributeStepValue = {
 	 */
 	absolute_value: number; // 16777216 = 1 unit
 	abs_release: boolean;
-	accel: number // Phaser
-	accel_type: number // Phaser
+	accel: number; // Phaser
+	accel_type: number; // Phaser
 	channel_function: number;
-	decel: number // Phaser
-	decel_type: number // Phaser
+	decel: number; // Phaser
+	decel_type: number; // Phaser
 	integrated: Preset;
 	mask_individual: number;
 	mask_integrated: number;
 	trans: number; // Phaser
-	width: number // Phaser
+	width: number; // Phaser
 };
-type PD_AttributeStepParamName =  keyof PD_AttributeStepValue
-type PD_AttributeStepParamValue = number | boolean | Preset | undefined
+type PD_AttributeStepParamName = keyof PD_AttributeStepValue;
+type PD_AttributeStepParamValue = number | boolean | Preset | undefined;
 type PD_AttributeValuesMeta = {
 	gridposmatr: any;
 	mask_active_phaser: any;
@@ -328,13 +328,13 @@ type PD_AttributeValuesMeta = {
 	 * Value is x100 from the real value.
 	 * So 2 measures is 200.
 	 * NOTE: This is a single value for all steps
-	*/
-	measure: number // Phaser
+	 */
+	measure: number; // Phaser
 	selective: boolean;
 	/**
 	 * Speed 1.0 is 60 bpm
 	 * NOTE: This is a single value for all steps
-	*/
+	 */
 	speed: number; // Phaser
 	ui_channel_index: number;
 };

@@ -16,19 +16,27 @@ type Anchors =
 	| `${number},${number}`
 	| `${number},${number},${number},${number}`;
 
-type Padding = {
-	left: number;
-	right: number;
-	top: number;
-	bottom: number;
-} | `${number}`| `${number},${number}` | `${number},${number},${number},${number}`;
+type Padding =
+	| {
+			left: number;
+			right: number;
+			top: number;
+			bottom: number;
+	  }
+	| `${number}`
+	| `${number},${number}`
+	| `${number},${number},${number},${number}`;
 
-type Margin = {
-	left: number;
-	right: number;
-	top: number;
-	bottom: number;
-} | `${number}`| `${number},${number}` | `${number},${number},${number},${number}`
+type Margin =
+	| {
+			left: number;
+			right: number;
+			top: number;
+			bottom: number;
+	  }
+	| `${number}`
+	| `${number},${number}`
+	| `${number},${number},${number},${number}`;
 
 /**
  * "minWminH" or "minW,minH"

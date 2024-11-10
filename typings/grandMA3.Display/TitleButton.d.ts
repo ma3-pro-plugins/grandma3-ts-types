@@ -1,1 +1,1 @@
-type TitleButton = UIObject
+type TitleButton = UIObject;

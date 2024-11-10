@@ -1,5 +1,5 @@
 type KeyboardShortCutsProps = ObjProps & {
-	keyboardShortcutsActive: boolean
-}
+	keyboardShortcutsActive: boolean;
+};
 
 type KeyboardShortCuts = Obj<UserProfile, any> & KeyboardShortCutsProps;

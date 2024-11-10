@@ -1,1 +1,1 @@
-type DialogFrame = UILayoutGrid
+type DialogFrame = UILayoutGrid;

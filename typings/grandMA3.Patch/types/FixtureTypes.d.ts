@@ -22,9 +22,9 @@ type DMXChannels = Obj<DMXMode, DMXChannel> & DMXChannel[] & { [index: string]: 
 
 type DMXChannelProps = ObjProps & {
 	dmxBreak: number;
-	coarse: number | "None";
-	fine: number| "None";
-	ultra: number| "None";
+	coarse: number | 'None';
+	fine: number | 'None';
+	ultra: number | 'None';
 	Highlight: number;
 	lowLight: number;
 };
@@ -35,8 +35,8 @@ type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> & {
 
 type LogicalChannelProps = ObjProps & {
 	attribute: string;
-	snap: any
-	master: any
+	snap: any;
+	master: any;
 };
 type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
 	LogicalChannelProps & {
@@ -45,12 +45,12 @@ type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
 
 type ChannelFunctionProps = ObjProps & {
 	attribute: string;
-	dmxFrom: number
-	dmxTo: number // READ ONLY
-	physicalFrom: number
-	physicalTo: number 
-	wheel: Wheel
-	dmxInvert: boolean
+	dmxFrom: number;
+	dmxTo: number; // READ ONLY
+	physicalFrom: number;
+	physicalTo: number;
+	wheel: Wheel;
+	dmxInvert: boolean;
 };
 type ChannelFunction = Obj<LogicalChannel, ChannelSet, ChannelFunctionProps> &
 	ChannelFunctionProps & {
@@ -81,15 +81,14 @@ type AttributeDefinitions = Obj<FixtureTypeObj, any> & {
 type FeatureGroups = Obj<AttributeDefinitions, FeatureGroup>;
 type FeatureGroup = Obj<FeatureGroups, Feature> & { [key: string]: Feature };
 
-type Feature = Obj<FeatureGroup, any> & {
-};
+type Feature = Obj<FeatureGroup, any> & {};
 
 /**
- * NOTE: Using attributes.Children() doesn't give all attributes. 
- * Also we access the attributes by name attribute['ColorRGB_R'], 
+ * NOTE: Using attributes.Children() doesn't give all attributes.
+ * Also we access the attributes by name attribute['ColorRGB_R'],
  * since not ALL attributes appear this way.
  * We need to get attributes with GetAttributeByUIChannel().
- * 
+ *
  * GetAttributeCount() is not the same as GetUIChannelCount().
  */
 type Attributes = Obj<AttributeDefinitions, any> & { [key: string]: Attribute };

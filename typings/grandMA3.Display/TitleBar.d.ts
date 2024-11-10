@@ -1,1 +1,1 @@
-type TitleBar = UIObject & UILayoutGrid
+type TitleBar = UIObject & UILayoutGrid;
