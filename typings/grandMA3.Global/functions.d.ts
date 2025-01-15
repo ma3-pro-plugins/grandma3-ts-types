@@ -57,6 +57,7 @@ declare function DeleteIPAddress(...args: any): any;
 declare function DelVar(...args: any): any;
 declare function DeskLocked(...args: any): any;
 declare function DirList(...args: any): any;
+declare function DumpAllHooks(): any;
 /**
  * Prints to System Monitor only
  */
@@ -298,6 +299,7 @@ declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | unde
 type AttributeName = 'Dimmer' | 'Gobo1' | string;
 
 type PD_AttributeData = PD_AttributeStepValue[] & PD_AttributeValuesMeta;
+type PD_AccelDecelType = 1 | 2;
 type PD_AttributeStepValue = {
 	/**
 	 * Range 0-100 float
@@ -309,10 +311,20 @@ type PD_AttributeStepValue = {
 	absolute_value: number; // 16777216 = 1 unit
 	abs_release: boolean;
 	accel: number; // Phaser
-	accel_type: number; // Phaser
+	/**
+	 * Phaser
+	 * Value of 1, labeled as "F" when 2-dimensional Circle is applied
+	 * Value of 2, labeled as "P" when 1-dimensional Sinus is applied
+	 **/
+	accel_type: PD_AccelDecelType; 
 	channel_function: number;
 	decel: number; // Phaser
-	decel_type: number; // Phaser
+	/**
+	 * Phaser
+	 * Value of 1, labeled as "F" when 2-dimensional Circle is applied
+	 * Value of 2, labeled as "P" when 1-dimensional Sinus is applied
+	 **/
+	decel_type: PD_AccelDecelType; 
 	integrated: Preset;
 	mask_individual: number;
 	mask_integrated: number;
@@ -321,15 +333,23 @@ type PD_AttributeStepValue = {
 };
 type PD_AttributeStepParamName = keyof PD_AttributeStepValue;
 type PD_AttributeStepParamValue = number | boolean | Preset | undefined;
+/**
+* Value is an integer x100 from the real value.
+* So 2 measures is value of 200.
+* The range is: 0 - 32 * 100 (32 measures is the max)
+* NOTE: This is a single value for all steps
+*/
+type PD_MeasurePercent = number;
 type PD_AttributeValuesMeta = {
 	gridposmatr: any;
 	mask_active_phaser: any;
 	/**
-	 * Value is x100 from the real value.
-	 * So 2 measures is 200.
+	 * Value is an integer x100 from the real value.
+	 * So 2 measures is value of 200.
+	 * The range is: 0 - 32 * 100 (32 measures is the max)
 	 * NOTE: This is a single value for all steps
 	 */
-	measure: number; // Phaser
+	measure: PD_MeasurePercent; // Phaser
 	selective: boolean;
 	/**
 	 * Speed 1.0 is 60 bpm

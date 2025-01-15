@@ -23,8 +23,8 @@ type Padding =
 			top: number;
 			bottom: number;
 	  }
-	| `${number}`
-	| `${number},${number}`
+	| `${number}` // All sides
+	| `${number},${number}` // Left/Right, Top/Bottom
 	| `${number},${number},${number},${number}`;
 
 type Margin =

@@ -1,7 +1,7 @@
 type UIObjectProps = ObjProps & {
 	// Layout Props
 	anchors: Anchors;
-	backColor: Obj;
+	backColor: MAColor;
 	padding: Padding;
 	margin: Margin;
 	maxSize: MAUISize;
@@ -30,6 +30,7 @@ type UIObjectProps = ObjProps & {
 	font: Font;
 	hasHover: YesNo;
 	icon: string;
+	iconColor: MAColor;
 	iconAlignmentH: AlignmentH;
 	iconAlignmentV: AlignmentV;
 	text: string;

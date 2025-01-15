@@ -34,8 +34,9 @@ type ItemPropsContent = {
 	minSize?: MAUISize;
 };
 // type ItemProps = ItemPropsFixed | ItemPropsStrech | ItemPropsContent;
+
 type ItemProps = {
-	sizePolicy: 'Fixed' | 'Stretch' | 'Content';
+	sizePolicy: SizePolicy;
 	size?: number;
 	minSize?: MAUISize;
 };

@@ -1,13 +1,4 @@
-/**
- * Generated with MA3 2.2.1.1
- */
-declare namespace Enums {
-	// enum 100_1000 {
-	//@ts-ignore
-	// '1000' = 0,
-	//@ts-ignore
-	// '100' = 1,
-	// }
+declare namespace Enums_2_1 {
 	enum ALSideSizeSpecial {
 		'Hybrid' = -1,
 		'Auto' = 0,
@@ -93,8 +84,6 @@ declare namespace Enums {
 		'Timer' = 17,
 		'EncoderBar' = 18,
 		'Filter' = 19,
-		'Executor' = 20,
-		'Station' = 21,
 	}
 	enum AssignmentBlindButtonFunctions {
 		'Empty' = 0,
@@ -131,20 +120,20 @@ declare namespace Enums {
 		'HalfSpeed' = 26,
 		'DoubleSpeed' = 27,
 		'Kill' = 29,
-		'Call' = 109,
-		'SelectFixtures' = 120,
+		'Call' = 106,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentButtonFunctionsGroup {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Temp' = 13,
-		'SelectFixtures' = 120,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentButtonFunctionsMacro {
-		'Empty' = 0,
 		'' = 0,
+		'Empty' = 0,
 		'Go+' = 3,
 		'Go-' = 4,
 		'>>>' = 5,
@@ -153,8 +142,8 @@ declare namespace Enums {
 		'Pause' = 18,
 	}
 	enum AssignmentButtonFunctionsPlugin {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Go+' = 3,
@@ -175,11 +164,11 @@ declare namespace Enums {
 		'Swap' = 25,
 		'HalfSpeed' = 26,
 		'DoubleSpeed' = 27,
-		'Call' = 109,
+		'Call' = 106,
 	}
 	enum AssignmentButtonFunctionsPreset {
-		'Empty' = 0,
 		'' = 0,
+		'Empty' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Go+' = 3,
@@ -196,13 +185,13 @@ declare namespace Enums {
 		'HalfSpeed' = 26,
 		'DoubleSpeed' = 27,
 		'Kill' = 29,
-		'At' = 46,
-		'SelectFixtures' = 120,
+		'At' = 45,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentButtonFunctionsScreenConfig {
-		'' = 0,
 		'Empty' = 0,
-		'Call' = 109,
+		'' = 0,
+		'Call' = 106,
 	}
 	enum AssignmentButtonFunctionsSequence {
 		'Empty' = 0,
@@ -229,11 +218,11 @@ declare namespace Enums {
 		'HalfSpeed' = 26,
 		'DoubleSpeed' = 27,
 		'Kill' = 29,
-		'SelectFixtures' = 120,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentButtonFunctionsSoundFile {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Go+' = 3,
 		'On' = 7,
 		'Off' = 8,
@@ -241,40 +230,39 @@ declare namespace Enums {
 		'Pause' = 18,
 	}
 	enum AssignmentButtonFunctionsUser {
-		'' = 0,
 		'Empty' = 0,
-		'LogIn' = 72,
+		'' = 0,
+		'LogIn' = 70,
 	}
 	enum AssignmentButtonFunctionsView {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Go+' = 3,
 	}
 	enum AssignmentButtonFunctionsWorld {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Temp' = 13,
-		'Select' = 24,
-		'SelectFixtures' = 120,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentFaderFunctions {
 		'Empty' = 0,
 		'' = 0,
-		'Master' = 33,
-		'X' = 34,
-		'XA' = 35,
-		'XB' = 36,
-		'Temp' = 37,
-		'Rate' = 38,
-		'Speed' = 39,
-		'Time' = 43,
+		'Master' = 32,
+		'X' = 33,
+		'XA' = 34,
+		'XB' = 35,
+		'Temp' = 36,
+		'Rate' = 37,
+		'Speed' = 38,
+		'Time' = 42,
 	}
 	enum AssignmentFaderFunctionsMasterOnly {
 		'Empty' = 0,
 		'' = 0,
-		'Master' = 33,
+		'Master' = 32,
 	}
 	enum AssignmentFaderFunctionsNone {
 		'Empty' = 0,
@@ -291,8 +279,8 @@ declare namespace Enums {
 		'Time' = 11,
 	}
 	enum AssignmentGrandMasterButtonFunctions {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Temp' = 13,
@@ -320,20 +308,20 @@ declare namespace Enums {
 		'Kill' = 29,
 	}
 	enum AssignmentProgExecButtonFunctions {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'On' = 7,
 		'Off' = 8,
 		'Toggle' = 14,
 	}
 	enum AssignmentQuickeyFunctions {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'Go+' = 3,
 	}
 	enum AssignmentRateButtonFunctions {
-		'Empty' = 0,
 		'' = 0,
+		'Empty' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'On' = 7,
@@ -348,8 +336,8 @@ declare namespace Enums {
 		'GoStep' = 23,
 	}
 	enum AssignmentSoundMasterButtonFunctions {
-		'' = 0,
 		'Empty' = 0,
+		'' = 0,
 		'On' = 7,
 		'Off' = 8,
 		'Toggle' = 14,
@@ -394,12 +382,12 @@ declare namespace Enums {
 		'HalfSpeed' = 26,
 		'DoubleSpeed' = 27,
 		'Kill' = 29,
-		'Call' = 109,
-		'SelectFixtures' = 120,
+		'Call' = 106,
+		'SelectFixtures' = 116,
 	}
 	enum AssignmentTimerFunctions {
-		'Empty' = 0,
 		'' = 0,
+		'Empty' = 0,
 		'Flash' = 1,
 		'Black' = 2,
 		'Go+' = 3,
@@ -435,8 +423,8 @@ declare namespace Enums {
 	}
 	enum AudioOutDeviceList {
 		'None' = -1,
-		'DELL U2720Q (Manufacturer unknown)' = 0,
-		'Default <MacBook Pro Speakers (Apple Inc.)>' = 1,
+		'Default <MacBook Pro Speakers (Apple Inc.)>' = 0,
+		'Device 2 (Bitgapp Ltd)' = 1,
 		'Microsoft Teams Audio (Microsoft Corp.)' = 2,
 		'Pro Tools Audio Bridge 16 (Manufacturer unknown)' = 3,
 		'Pro Tools Audio Bridge 2-A (Manufacturer unknown)' = 4,
@@ -445,7 +433,10 @@ declare namespace Enums {
 		'Pro Tools Audio Bridge 64 (Manufacturer unknown)' = 7,
 		'Pro Tools Audio Bridge 6 (Manufacturer unknown)' = 8,
 		'Pro Tools Aggregate I/O (Apple Inc.)' = 9,
-		'Loopback Audio (Rogue Amoeba Software, Inc.)' = 10,
+		'To ProTools (Rogue Amoeba Software, Inc.)' = 10,
+		'Device 12 (Rogue Amoeba Software, Inc.)' = 11,
+		'Speakers & LTC (Apple Inc.)' = 12,
+		'UAD + ToProTools (Apple Inc.)' = 13,
 	}
 	enum AutoCreateSource {
 		'FixtureType Presets' = 0,
@@ -654,11 +645,6 @@ declare namespace Enums {
 		'RowFirst' = 1,
 		'ColumnFirst' = 2,
 	}
-	enum CleanupOperation {
-		'None' = 0,
-		'NoReference' = 1,
-		'Recipe' = 4,
-	}
 	enum ClipMode {
 		'None' = 0,
 		'Clip' = 1,
@@ -667,7 +653,7 @@ declare namespace Enums {
 	enum ClockSources {
 		'Session Time' = 0,
 		'Timecode' = 1,
-		'Time Zone' = 2,
+		'Time Zone Clock' = 2,
 		'Timer' = 3,
 	}
 	enum CloningWindowMode {
@@ -835,20 +821,9 @@ declare namespace Enums {
 		'Labels' = 0,
 		'Hardware Buttons' = 1,
 	}
-	enum ComponentType {
-		'Input' = 0,
-		'Output' = 1,
-		'PowerSource' = 2,
-		'Consumer' = 3,
-		'Fuse' = 4,
-		'NetworkProvider' = 5,
-		'NetworkInput' = 6,
-		'NetworkOutput' = 7,
-		'NetworkInOut' = 8,
-	}
 	enum Config {
 		'MaxMultiPatchPerFixture' = 1024,
-		'MaxElementsPerLayout' = 16384,
+		'MaxElementsPerLayout' = 10000,
 	}
 	enum ConnectionLimitConsole {
 		//@ts-ignore
@@ -998,20 +973,11 @@ declare namespace Enums {
 		'User Conversion' = 1,
 		'System Conversion' = 2,
 	}
-	enum CrossSectionType {
-		'TrussFramework' = 0,
-		'Tube' = 1,
-	}
 	enum CueAssert {
-		'' = 0,
 		'None' = 0,
+		'' = 0,
 		'Assert' = 1,
 		'X-Assert' = 2,
-	}
-	enum CueCommandMode {
-		'Enabled' = 0,
-		'Force No' = 1,
-		'Force Yes' = 2,
 	}
 	enum CueCopyDst {
 		'Retain' = 0,
@@ -1054,19 +1020,11 @@ declare namespace Enums {
 		'Num+Name' = 2,
 		'All' = 3,
 	}
-	enum CuePartAppearanceContent {
-		'Off' = 0,
-		'Number' = 1,
-		'Num+Name' = 2,
-	}
 	enum CuePartMode {
 		'Default' = 4294967295,
 	}
 	enum CuePartTextures {
 		'IconCooking' = 0,
-	}
-	enum CueTimeNone {
-		'None' = -1,
 	}
 	enum CueTrigger {
 		'Go' = 0,
@@ -1108,67 +1066,13 @@ declare namespace Enums {
 		'16 bits' = 2,
 		'24 bits' = 3,
 	}
-	enum DSCPCodes {
-		'CS0 (Default)' = 0,
-		'CS1' = 8,
-		'AF11' = 10,
-		'AF12' = 12,
-		'AF13' = 14,
-		'CS2' = 16,
-		'AF21' = 18,
-		'AF22' = 20,
-		'AF23' = 22,
-		'CS3' = 24,
-		'AF31' = 26,
-		'AF32' = 28,
-		'AF33' = 30,
-		'CS4' = 32,
-		'AF41' = 34,
-		'AF42' = 36,
-		'AF43' = 38,
-		'CS5' = 40,
-		'Voice-Admit' = 44,
-		'EF' = 46,
-		'CS6' = 48,
-		'CS7' = 56,
-	}
-	enum DSCPCodesDMX {
-		'CS0' = 0,
-		'CS1' = 8,
-		'AF11' = 10,
-		'AF12' = 12,
-		'AF13' = 14,
-		'CS2' = 16,
-		'AF21' = 18,
-		'AF22' = 20,
-		'AF23' = 22,
-		'CS3' = 24,
-		'AF31' = 26,
-		'AF32' = 28,
-		'AF33' = 30,
-		'CS4 (Default)' = 32,
-		'AF41' = 34,
-		'AF42' = 36,
-		'AF43' = 38,
-		'CS5' = 40,
-		'Voice-Admit' = 44,
-		'EF' = 46,
-		'CS6' = 48,
-		'CS7' = 56,
-	}
-	enum DataMergeTimeout {
-		'Unlimited' = 9223372036854775807,
-	}
-	enum DataNegotiationMode {
-		'Cancel' = 0,
-		'Use Master' = 1,
-		'Merge' = 2,
-		'Use Mine' = 3,
-	}
-	enum DataNegotiationModeDefault {
-		'Cancel' = 0,
-		'Keep Only Master Data' = 1,
-		'Merge All Data' = 2,
+	enum DSCPLevel {
+		'' = 0,
+		'Priority' = 56,
+		'Immediate' = 88,
+		'Flash' = 120,
+		'FlashOverride' = 152,
+		'Critical' = 184,
 	}
 	enum DatumMode {
 		'Full' = 0,
@@ -1178,31 +1082,26 @@ declare namespace Enums {
 	enum DebugUsbDataSection {
 		'All' = 0,
 		'DmxIn' = 1,
-		'DmxInCheck' = 2,
-		'DmxOut' = 3,
-		'Midi' = 4,
-		'Smpte' = 5,
-		'Ups' = 6,
-		'Analog' = 7,
-		'Digital' = 8,
-		'Button' = 9,
-		'Encoder' = 10,
-		'Fader' = 11,
-		'Led' = 12,
-		'Sync' = 13,
-		'Protocol' = 14,
-		'HeartBeat' = 15,
-		'Software' = 16,
-		'NotifierLayer' = 17,
-		'Text' = 18,
-		'RTC' = 19,
-		'Capabilities' = 20,
-	}
-	enum Default {
-		'Default' = 4294967295,
+		'DmxOut' = 2,
+		'Midi' = 3,
+		'Smpte' = 4,
+		'Ups' = 5,
+		'Analog' = 6,
+		'Digital' = 7,
+		'Button' = 8,
+		'Encoder' = 9,
+		'Fader' = 10,
+		'Led' = 11,
+		'Sync' = 12,
+		'Protocol' = 13,
+		'HeartBeat' = 14,
+		'Software' = 15,
+		'NotifierLayer' = 16,
+		'Text' = 17,
+		'RTC' = 18,
+		'Capabilities' = 19,
 	}
 	enum DefinedPoolColumns {
-		'Take Current Width' = 4294967294,
 		'Not Defined' = 4294967295,
 	}
 	enum DeskLightChannel {
@@ -1372,38 +1271,38 @@ declare namespace Enums {
 		'Dynamic' = 4294967295,
 	}
 	enum ECPlay {
-		'false' = 0,
 		//@ts-ignore
 		'0' = 0,
+		'false' = 0,
 		'off' = 0,
 		'No' = 0,
-		'Yes' = 1,
 		'true' = 1,
-		'' = 1,
+		'Yes' = 1,
 		'on' = 1,
 		//@ts-ignore
 		'1' = 1,
+		'' = 1,
 	}
 	enum ECRec {
-		'false' = 0,
 		//@ts-ignore
 		'0' = 0,
+		'false' = 0,
 		'off' = 0,
 		'No' = 0,
-		'Yes' = 1,
 		'true' = 1,
-		'' = 1,
+		'Yes' = 1,
 		'on' = 1,
 		//@ts-ignore
 		'1' = 1,
+		'' = 1,
 	}
 	enum EC_AutoGrid {
 		'Manual' = 0,
 		'Auto' = 1,
 	}
 	enum EC_NoGrid {
-		'None' = 2147483647,
-		'' = 2147483647,
+		'None' = 134217727,
+		'' = 134217727,
 	}
 	enum EmptyAsZero {
 		'' = 0,
@@ -1448,9 +1347,9 @@ declare namespace Enums {
 		'Arrangement' = 1,
 	}
 	enum EncoderGroupType {
+		'Speed' = 0,
 		'Timing' = 0,
 		'Value' = 0,
-		'Speed' = 0,
 	}
 	enum EncoderLink {
 		'Single' = 0,
@@ -1469,11 +1368,6 @@ declare namespace Enums {
 	enum EncoderLinkValues {
 		'Single' = 0,
 		'Feature' = 1,
-	}
-	enum EncoderResolution3d {
-		'Coarse' = 0,
-		'Fine' = 1,
-		'Increment' = 2,
 	}
 	enum EncoderResolutionType {
 		'Slow' = 0,
@@ -1548,14 +1442,13 @@ declare namespace Enums {
 		'PowerDown' = 4,
 		'GeneralError' = 5,
 	}
-	enum ExternTimeSyncMode {
-		'None' = 0,
-		'NTP' = 1,
-	}
 	enum ExtraStatusInfo {
 		'' = 0,
 		'Join' = 1,
 		'Create' = 2,
+	}
+	enum Fade {
+		'None' = -1,
 	}
 	enum FaderEnable {
 		'Toggle' = 0,
@@ -1563,35 +1456,17 @@ declare namespace Enums {
 		'Disabled' = 2,
 	}
 	enum FaderFunctions {
-		'Master' = 33,
-		'XFade' = 34,
-		'XFadeA' = 35,
-		'XFadeB' = 36,
-		'Temp' = 37,
-		'Rate' = 38,
-		'Speed' = 39,
-		'Highlight' = 40,
-		'Lowlight' = 41,
-		'Solo' = 42,
-		'Time' = 43,
-	}
-	enum FailedCookedPart {
-		'None' = 0,
-		'Group' = 1,
-		'Matricks' = 2,
-		'Preset' = 3,
-		'Filter' = 4,
-		'GroupPartlyCooked' = 5,
-	}
-	enum FailureMode {
-		'Timeout 10s' = 10,
-		'Timeout 20s' = 20,
-		'Timeout 30s' = 30,
-		'Timeout 1m' = 60,
-		'Timeout 10m' = 600,
-		'Timeout 30m' = 1800,
-		'Timeout 1h' = 3600,
-		'Hold' = 65535,
+		'Master' = 32,
+		'XFade' = 33,
+		'XFadeA' = 34,
+		'XFadeB' = 35,
+		'Temp' = 36,
+		'Rate' = 37,
+		'Speed' = 38,
+		'Highlight' = 39,
+		'Lowlight' = 40,
+		'Solo' = 41,
+		'Time' = 42,
 	}
 	enum FalloffType {
 		'None' = 0,
@@ -1599,9 +1474,8 @@ declare namespace Enums {
 		'Correct' = 2,
 	}
 	enum FilterAction {
-		'Select' = 1,
-		'Call' = 9,
-		'None' = 255,
+		'Select' = 0,
+		'Call' = 1,
 	}
 	enum FixedColumns {
 		'Auto' = -1,
@@ -1627,19 +1501,19 @@ declare namespace Enums {
 		'None' = 0,
 	}
 	enum FixtureInvert {
-		'false' = 0,
-		'<Blank>' = 0,
 		//@ts-ignore
 		'0' = 0,
+		'<Blank>' = 0,
 		'' = 0,
+		'false' = 0,
 		'off' = 0,
-		'No' = 1,
 		'on' = 1,
 		'Yes' = 1,
 		'Inverted' = 1,
 		'true' = 1,
 		//@ts-ignore
 		'1' = 1,
+		'No' = 1,
 	}
 	enum FixtureSheetFixedColumnType {
 		'' = 0,
@@ -1711,11 +1585,10 @@ declare namespace Enums {
 		'Pixel' = 1,
 	}
 	enum FontSizes {
-		'Default' = 0,
 		//@ts-ignore
-		'10' = 10,
+		'9' = 9,
 		//@ts-ignore
-		'12' = 12,
+		'11' = 11,
 		//@ts-ignore
 		'14' = 14,
 		//@ts-ignore
@@ -1761,13 +1634,6 @@ declare namespace Enums {
 		'WM_Phase' = 3,
 		'WM_Width' = 4,
 	}
-	enum FuseRating {
-		'B' = 0,
-		'C' = 1,
-		'D' = 2,
-		'K' = 3,
-		'Z' = 4,
-	}
 	enum GelGridType {
 		'List' = 0,
 		'Small Icons' = 1,
@@ -1804,12 +1670,6 @@ declare namespace Enums {
 		'MediaServerCamera' = 8,
 		'MediaServerMaster' = 9,
 		'Display' = 10,
-		'Laser' = 11,
-		'WiringObject' = 12,
-		'Inventory' = 13,
-		'Structure' = 14,
-		'Support' = 15,
-		'Magnet' = 16,
 	}
 	enum GestureId {
 		'Pan' = 0,
@@ -1852,7 +1712,7 @@ declare namespace Enums {
 		'None' = 4294967295,
 	}
 	enum GridColumnFilterCollect {
-		'PresetSheetFilter 1' = 0,
+		'GridColumnFilter 1' = 0,
 	}
 	enum GridContentFilterMode {
 		'And' = 0,
@@ -1868,14 +1728,6 @@ declare namespace Enums {
 		'Append X' = 1,
 		'Newline' = 2,
 		'<Linked>' = 3,
-	}
-	enum GridDirection {
-		'X before Z' = 0,
-		'X before Y' = 0,
-		'Y before Z' = 0,
-		'Y before X' = 1,
-		'Z before X' = 1,
-		'Z before Y' = 1,
 	}
 	enum GridMatrixRotation {
 		//@ts-ignore
@@ -2061,27 +1913,21 @@ declare namespace Enums {
 	enum Index {
 		'Illegal' = -1,
 	}
-	enum IndividualTiming {
-		'Default' = 0,
-		'Normalized' = 1,
-	}
-	enum InfoAppearanceMode {
-		'Off' = 0,
-		'Note' = 1,
-		'Label + Note' = 2,
-	}
-	enum InfoLinkMode {
+	enum InfoAutoListRef {
 		'None' = 0,
 		'SelectedSequence' = 1,
 		'SelectedMacro' = 2,
 		'LastSelectedObject' = 3,
 	}
-	enum InfoWindowMode {
+	enum InfoLinkMode {
 		'Object' = 0,
 		'CurrentChild' = 1,
 		'NextChild' = 2,
-		'AllChildren' = 3,
-		'ObjectAndChildren' = 4,
+	}
+	enum InfoWindowTab {
+		'Referenced By' = 0,
+		'Depends On' = 1,
+		'Note' = 2,
 	}
 	enum InputControl3d {
 		'Select' = 0,
@@ -2099,14 +1945,6 @@ declare namespace Enums {
 		'Keyboard' = 2,
 		'Scroller' = 3,
 	}
-	enum InternalQueues {
-		'Cmd' = 0,
-		'Root' = 1,
-		'App' = 2,
-		'Pult' = 3,
-		'RT' = 4,
-		'Manet' = 5,
-	}
 	enum InvalidFootprint {
 		'?' = -1,
 	}
@@ -2115,7 +1953,6 @@ declare namespace Enums {
 		'Begin' = 1,
 		'Center' = 2,
 		'End' = 3,
-		'Single' = 4,
 	}
 	enum KeyAction {
 		'Release' = 0,
@@ -2268,15 +2105,15 @@ declare namespace Enums {
 		'Ctrl' = 341,
 		'Alt' = 342,
 	}
+	enum KnobUIStyle {
+		'Rotate' = 0,
+		'Drag' = 1,
+	}
 	enum LampType {
 		'Discharge' = 0,
 		'Tungsten' = 1,
 		'Halogen' = 2,
 		'LED' = 3,
-	}
-	enum LaserColorType {
-		'RGB' = 0,
-		'SingleWaveLength' = 1,
 	}
 	enum LastSelectedTab {
 		'Import' = 0,
@@ -2348,6 +2185,7 @@ declare namespace Enums {
 		'Line' = 0,
 		'Grid' = 1,
 		'Circle' = 2,
+		'Camera' = 3,
 	}
 	enum LayoutVisibility {
 		'Hidden' = 0,
@@ -2383,25 +2221,6 @@ declare namespace Enums {
 		'LeftToRight' = 2,
 		'TopToBottom' = 3,
 	}
-	enum LockTypes {
-		'' = 0,
-		'UL' = 1,
-		'PL' = 2,
-		'SL' = 3,
-	}
-	enum LockedYesNo {
-		'false' = 0,
-		//@ts-ignore
-		'0' = 0,
-		'off' = 0,
-		'No' = 0,
-		'UL' = 1,
-		'Yes' = 1,
-		'true' = 1,
-		'on' = 1,
-		//@ts-ignore
-		'1' = 1,
-	}
 	enum LoopMode {
 		'Loop' = 0,
 		'Pause' = 1,
@@ -2410,22 +2229,11 @@ declare namespace Enums {
 	enum MIDIMode {
 		'In' = 0,
 		'Out' = 1,
-		'In & Out & Thru' = 2,
-		'In & Out' = 3,
-	}
-	enum MIDITCMode {
-		'In' = 0,
-		'Out' = 1,
-		'In & Out & Thru' = 2,
+		'Through' = 2,
 	}
 	enum MacroLineWait {
 		'Go' = -1,
 		'Follow' = 0,
-	}
-	enum MacroPoolAction {
-		'Toggle' = 2,
-		'Call' = 9,
-		'None' = 255,
 	}
 	enum Master {
 		'DefaultMaster' = 0,
@@ -2519,56 +2327,6 @@ declare namespace Enums {
 		'Playback48' = 89,
 		'Playback49' = 90,
 		'Playback50' = 91,
-		'Timing1' = 93,
-		'Timing2' = 94,
-		'Timing3' = 95,
-		'Timing4' = 96,
-		'Timing5' = 97,
-		'Timing6' = 98,
-		'Timing7' = 99,
-		'Timing8' = 100,
-		'Timing9' = 101,
-		'Timing10' = 102,
-		'Timing11' = 103,
-		'Timing12' = 104,
-		'Timing13' = 105,
-		'Timing14' = 106,
-		'Timing15' = 107,
-		'Timing16' = 108,
-		'Timing17' = 109,
-		'Timing18' = 110,
-		'Timing19' = 111,
-		'Timing20' = 112,
-		'Timing21' = 113,
-		'Timing22' = 114,
-		'Timing23' = 115,
-		'Timing24' = 116,
-		'Timing25' = 117,
-		'Timing26' = 118,
-		'Timing27' = 119,
-		'Timing28' = 120,
-		'Timing29' = 121,
-		'Timing30' = 122,
-		'Timing31' = 123,
-		'Timing32' = 124,
-		'Timing33' = 125,
-		'Timing34' = 126,
-		'Timing35' = 127,
-		'Timing36' = 128,
-		'Timing37' = 129,
-		'Timing38' = 130,
-		'Timing39' = 131,
-		'Timing40' = 132,
-		'Timing41' = 133,
-		'Timing42' = 134,
-		'Timing43' = 135,
-		'Timing44' = 136,
-		'Timing45' = 137,
-		'Timing46' = 138,
-		'Timing47' = 139,
-		'Timing48' = 140,
-		'Timing49' = 141,
-		'Timing50' = 142,
 		'None' = 255,
 	}
 	enum MasterPriority {
@@ -2645,7 +2403,7 @@ declare namespace Enums {
 		'System' = 1,
 		'Cmdline' = 2,
 		'Power' = 3,
-		'MA-Net' = 4,
+		'Manet' = 4,
 		'USB' = 5,
 		'Chat' = 6,
 	}
@@ -2682,14 +2440,14 @@ declare namespace Enums {
 		'Paused' = 1,
 	}
 	enum MibPreferenceLevel {
-		'Never' = 0,
 		'Never(0)' = 0,
+		'Never' = 0,
 		'Worst(1)' = 1,
 		'Worst' = 1,
 		'Bad' = 25,
 		'Bad(25)' = 25,
-		'Normal' = 50,
 		'Normal(50)' = 50,
+		'Normal' = 50,
 		'Good' = 75,
 		'Good(75)' = 75,
 		'Best' = 100,
@@ -2746,24 +2504,10 @@ declare namespace Enums {
 	enum MoveValueToPart {
 		'Default' = 4294967295,
 	}
-	enum MultiCastBase {
-		'Default' = 66796,
-		'Alternative' = 66799,
-	}
 	enum MultiLedBeamMode {
 		'Separated Beams' = 0,
-		// 'Separated Beams' = 0,
 		'Single Beam Mean Color' = 1,
-		// 'Single Beam Mean Color' = 1,
 		'Single Beam Dynamic Gobo' = 2,
-		// 'Single Beam Dynamic Gobo' = 2,
-	}
-	enum NDIBandwidth {
-		'Lowest' = 0,
-		'Highest' = 100,
-	}
-	enum NackStat {
-		'Reset' = 0,
 	}
 	enum NetworkFilter {
 		'All' = 0,
@@ -2777,17 +2521,6 @@ declare namespace Enums {
 		'None' = 4294967295,
 		'' = 4294967295,
 	}
-	enum NoneAndDefault {
-		'None' = 0,
-		'Default' = 1000001,
-	}
-	enum None_only {
-		'None' = 4294967295,
-	}
-	enum NotificationType {
-		'Timed' = 0,
-		'Permanent' = 1,
-	}
 	enum OSCMode {
 		'UDP' = 0,
 		'TCP' = 1,
@@ -2798,8 +2531,8 @@ declare namespace Enums {
 		'Follow' = 2,
 		'Sound' = 3,
 		'BPM' = 4,
-		'No Trigger' = 5,
 		'' = 5,
+		'No Trigger' = 5,
 	}
 	enum OnOff {
 		'Off' = 0,
@@ -2823,12 +2556,6 @@ declare namespace Enums {
 	enum OutputDelay {
 		'None' = 0,
 		'Max' = 30,
-	}
-	enum PSRPatchFilterType {
-		'None' = 0,
-		'Matched' = 1,
-		'Unmatched' = 2,
-		'Conflicted' = 3,
 	}
 	enum PUPriority {
 		'Never' = 0,
@@ -2855,122 +2582,120 @@ declare namespace Enums {
 		'Mixed' = 2,
 	}
 	enum PathType {
-		'BinaryDir' = 0, // /Applications/grandMA3.app/Contents/MacOS/gma3_2.2.1/app_system/..
+		'BinaryDir' = 0, // /Applications/grandMA3.app/Contents/MacOS/gma3_2.0.0/app_system/..
 		'ExternalRoot' = 1, //
 		'ExternalPackages' = 2, //
 		'MADir' = 3, // /Users/[YOUR USER]/MALightingTechnology
-		'VersionDir' = 4, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1
+		'VersionDir' = 4, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0
 		'InstallationPackages' = 5, // /Users/[YOUR USER]/MALightingTechnology/installation_packages
 		'UpdateDir' = 6, // /Users/[YOUR USER]/MALightingTechnology/gma3_software_update
-		'WebDaemon' = 7, // //Applications/grandMA3.app/Contents/MacOS/gma3_2.2.1/web_daemon.app
-		'Data' = 8, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc
-		'Shared' = 9, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared
-		'Config' = 10, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/config
-		'Usb' = 11, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/config/usb
-		'Temp' = 12, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/temp
-		'Undo' = 13, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/temp/undo
-		'CrashLog' = 14, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/temp/crashlogs
-		'UploadedCrashLogs' = 15, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/temp/crashlogs/processed
-		'InvalidCrashLogs' = 16, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/onpc/temp/crashlogs/invalid
-		'Showfiles' = 17, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/shows
-		'Backupfiles' = 18, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/backups
-		'DemoShowfiles' = 19, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/demoshows
-		'PSRFiles' = 20, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/psr
-		'Resource' = 21, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource
-		'WebResource' = 22, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/web
-		'Language' = 23, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/language
-		'ColorTheme' = 24, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_color_themes
-		'Shaders' = 25, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/shaders
-		'ShadersDG' = 26, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/shaders_dg
-		'Textures' = 27, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/textures
-		'Fonts' = 28, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/fonts
-		'GoboImageLibrary' = 29, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/gobos
-		'GoboImageCache' = 30, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/gobos/.cache
-		'Mesh' = 31, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/meshes
-		'MaterialLibrary' = 32, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/meshes
-		'RenderQuality' = 33, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_render_qualities
-		'SymbolImageLibrary' = 34, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_symbols
-		'ImageLibrary' = 35, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_images
-		'VideoLibrary' = 36, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_videos
-		'GelLibrary' = 37, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_gels
-		'AgendaLibrary' = 38, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_agendas
-		'AddonLibrary' = 39, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_addons
-		'MenuLibrary' = 40, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_menus
-		'PluginLibrary' = 41, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_plugins
-		'MacroLibrary' = 42, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_macros
-		'QuickeyLibrary' = 43, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_quickeys
-		'MatricksLibrary' = 44, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_matricks
-		'PresetLibrary' = 45, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_presets
-		'GeneratorsLibrary' = 46, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_generators
-		'BitmapsLibrary' = 47, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_bitmaps
-		'FixtureLibrary' = 48, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types
-		'GrandMA2Library' = 49, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/grandma2
-		'GrandMA3Library' = 50, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/lib_fixture_types/grandma3
-		'Keyboards' = 51, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/keyboards
-		'KeyboardShortcuts' = 52, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_keyboard_shortcuts
-		'Software' = 53, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/software
-		'VizLibrary' = 54, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_viz
-		'MvrLibrary' = 55, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_mvr
-		'DmxCurvesLibrary' = 56, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.2.1/shared/resource/lib_dmxcurves
-		'Library' = 57, // /Users/[YOUR USER]/MALightingTechnology/gma3_library
-		'TemplateShowfiles' = 58, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/templateshows
-		'UserMedia' = 59, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media
-		'UserSoundLibrary' = 60, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/sounds
-		'UserVideoLibrary' = 61, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/videos
-		'UserImageLibrary' = 62, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/images
-		'UserSymbols' = 63, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/symbols
-		'ScribbleLibrary' = 64, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/scribbles
-		'AppearanceLibrary' = 65, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/appearances
-		'NetworkKeys' = 66, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/netkeys
-		'UserInOut' = 67, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout
-		'OSC' = 68, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/osc
-		'SACN' = 69, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/sacn
-		'ArtNet' = 70, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/artnet
-		'UserRemotesDC' = 71, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/dcremotes
-		'UserRemotesDMX' = 72, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/dmxremotes
-		'UserRemotesMIDI' = 73, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/midiremotes
-		'UserOutputConfig' = 74, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/outputconfigurations
-		'UserDeviceConfig' = 75, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/deviceconfigurations
-		'UserFixtures' = 76, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetypes
-		'UserFixtureTypeResources' = 77, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources
-		'UserGobos' = 78, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/gobos
-		'UserMeshes' = 79, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/meshes
-		'UserMeshImages' = 80, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/3dmeshpoolthumbnails
-		'UserMaterials' = 81, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/meshes
-		'UserMvr' = 82, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/mvr
-		'UserUsers' = 83, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/users
-		'UserProfiles' = 84, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles
-		'UserViews' = 85, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/views
-		'ViewButtonLibrary' = 86, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/viewbuttons
-		'UserCameras' = 87, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/cameras
-		'UserScreenConfigurations' = 88, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/screenconfigurations
-		'UserRenderQuality' = 89, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/renderqualities
-		'UserKeyboardShortcuts' = 90, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/keyboardshortcuts
-		'UserGels' = 91, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/gels
-		'UserEncoderBars' = 92, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/encoderbar
-		'UserAgendas' = 93, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/agendas
-		'UserCertificates' = 94, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/certificates
-		'UserColorThemes' = 95, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/colorthemes
-		'UserDataPools' = 96, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools
-		'CustomPluginLibrary' = 97, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/plugins
-		'UserLayouts' = 98, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/layouts
-		'UserExecConfigs' = 99, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/executorconfigurations
-		'UserMacros' = 100, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/macros
-		'UserMatricks' = 101, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/matricks
-		'UserPresets' = 102, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/presets
-		'UserGroups' = 103, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/groups
-		'UserSequences' = 104, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/sequences
-		'UserWorlds' = 105, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/worlds
-		'UserFilters' = 106, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/filters
-		'UserExecutors' = 107, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/executorpages
-		'UserTimecodes' = 108, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/timecodes
-		'UserTimers' = 109, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/timers
-		'UserBitmaps' = 110, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/bitmaps
-		'UserGenerators' = 111, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/generators
-		'UserQuickeys' = 112, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/quickeys
-		'UserPatch' = 113, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch
-		'UserStages' = 114, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch/stages
-		'UserDmxCurves' = 115, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch/dmxcurves
+		'WebDaemon' = 7, // //Applications/grandMA3.app/Contents/MacOS/gma3_2.0.0/web_daemon.app
+		'Data' = 8, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc
+		'Shared' = 9, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared
+		'Config' = 10, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/config
+		'Usb' = 11, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/config/usb
+		'Temp' = 12, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/temp
+		'Undo' = 13, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/temp/undo
+		'CrashLog' = 14, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/temp/crashlogs
+		'UploadedCrashLogs' = 15, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/temp/crashlogs/processed
+		'InvalidCrashLogs' = 16, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/onpc/temp/crashlogs/invalid
+		'Showfiles' = 17, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/shows
+		'Backupfiles' = 18, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/backups
+		'DemoShowfiles' = 19, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/demoshows
+		'Resource' = 20, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource
+		'WebResource' = 21, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/web
+		'Language' = 22, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/language
+		'ColorTheme' = 23, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_color_themes
+		'Shaders' = 24, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/shaders
+		'ShadersDG' = 25, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/shaders_dg
+		'Textures' = 26, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/textures
+		'Fonts' = 27, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/fonts
+		'GoboImageLibrary' = 28, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/gobos
+		'GoboImageCache' = 29, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/gobos/.cache
+		'Mesh' = 30, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/meshes
+		'MaterialLibrary' = 31, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/meshes
+		'RenderQuality' = 32, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_render_qualities
+		'SymbolImageLibrary' = 33, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_symbols
+		'ImageLibrary' = 34, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_images
+		'VideoLibrary' = 35, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_videos
+		'GelLibrary' = 36, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_gels
+		'AgendaLibrary' = 37, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_agendas
+		'AddonLibrary' = 38, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_addons
+		'MenuLibrary' = 39, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_menus
+		'PluginLibrary' = 40, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_plugins
+		'MacroLibrary' = 41, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_macros
+		'QuickeyLibrary' = 42, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_quickeys
+		'MatricksLibrary' = 43, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_matricks
+		'PresetLibrary' = 44, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_presets
+		'GeneratorsLibrary' = 45, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_generators
+		'BitmapsLibrary' = 46, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_bitmaps
+		'FixtureLibrary' = 47, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types
+		'GrandMA2Library' = 48, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/grandma2
+		'GrandMA3Library' = 49, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/lib_fixture_types/grandma3
+		'Keyboards' = 50, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/keyboards
+		'KeyboardShortcuts' = 51, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_keyboard_shortcuts
+		'Software' = 52, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/software
+		'VizLibrary' = 53, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_viz
+		'MvrLibrary' = 54, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_mvr
+		'DmxCurvesLibrary' = 55, // /Users/[YOUR USER]/MALightingTechnology/gma3_2.0.0/shared/resource/lib_dmxcurves
+		'Library' = 56, // /Users/[YOUR USER]/MALightingTechnology/gma3_library
+		'TemplateShowfiles' = 57, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/templateshows
+		'UserMedia' = 58, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media
+		'UserSoundLibrary' = 59, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/sounds
+		'UserVideoLibrary' = 60, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/videos
+		'UserImageLibrary' = 61, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/images
+		'UserSymbols' = 62, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/media/symbols
+		'ScribbleLibrary' = 63, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/scribbles
+		'AppearanceLibrary' = 64, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/appearances
+		'NetworkKeys' = 65, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/netkeys
+		'UserInOut' = 66, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout
+		'OSC' = 67, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/osc
+		'SACN' = 68, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/sacn
+		'ArtNet' = 69, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/artnet
+		'UserRemotesDC' = 70, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/dcremotes
+		'UserRemotesDMX' = 71, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/dmxremotes
+		'UserRemotesMIDI' = 72, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/midiremotes
+		'UserOutputConfig' = 73, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/outputconfigurations
+		'UserDeviceConfig' = 74, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/inout/deviceconfigurations
+		'UserFixtures' = 75, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetypes
+		'UserFixtureTypeResources' = 76, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources
+		'UserGobos' = 77, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/gobos
+		'UserMeshes' = 78, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/meshes
+		'UserMeshImages' = 79, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/3dmeshpoolthumbnails
+		'UserMaterials' = 80, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/fixturetyperesources/meshes
+		'UserMvr' = 81, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/mvr
+		'UserUsers' = 82, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/users
+		'UserProfiles' = 83, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles
+		'UserViews' = 84, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/views
+		'ViewButtonLibrary' = 85, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/viewbuttons
+		'UserCameras' = 86, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/cameras
+		'UserScreenConfigurations' = 87, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/screenconfigurations
+		'UserRenderQuality' = 88, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/renderqualities
+		'UserKeyboardShortcuts' = 89, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/keyboardshortcuts
+		'UserGels' = 90, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/gels
+		'UserEncoderBars' = 91, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/userprofiles/encoderbar
+		'UserAgendas' = 92, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/agendas
+		'UserCertificates' = 93, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/certificates
+		'UserColorThemes' = 94, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/colorthemes
+		'UserDataPools' = 95, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools
+		'CustomPluginLibrary' = 96, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/plugins
+		'UserLayouts' = 97, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/layouts
+		'UserExecConfigs' = 98, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/executorconfigurations
+		'UserMacros' = 99, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/macros
+		'UserMatricks' = 100, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/matricks
+		'UserPresets' = 101, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/presets
+		'UserGroups' = 102, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/groups
+		'UserSequences' = 103, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/sequences
+		'UserWorlds' = 104, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/worlds
+		'UserFilters' = 105, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/filters
+		'UserExecutors' = 106, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/executorpages
+		'UserTimecodes' = 107, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/timecodes
+		'UserTimers' = 108, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/timers
+		'UserBitmaps' = 109, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/bitmaps
+		'UserGenerators' = 110, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/datapools/generators
+		'UserPatch' = 111, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch
+		'UserStages' = 112, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch/stages
+		'UserDmxCurves' = 113, // /Users/[YOUR USER]/MALightingTechnology/gma3_library/patch/dmxcurves
 	}
 	enum PhaseValueNone {
 		'90°' = 4194304,
@@ -3166,8 +2891,8 @@ declare namespace Enums {
 		'56-60' = 12,
 		'61-65' = 13,
 		'66-70' = 14,
-		'71-75' = 15,
 		'81-85' = 15,
+		'71-75' = 15,
 		'76-80' = 16,
 		'86-90' = 16,
 	}
@@ -3189,75 +2914,19 @@ declare namespace Enums {
 		'Multi' = 1,
 		'ForceMulti' = 2,
 	}
-	enum PluginPoolAction {
-		'Call' = 9,
-		'None' = 255,
-	}
-	enum PolicyOnEnter {
-		'Nothing' = 0,
-		'Clear' = 1,
-		'SelectAll' = 2,
-	}
 	enum PoolSizeFactor {
 		'Half' = 0,
 		'Normal' = 1,
 		'Double' = 2,
 	}
-	enum Pooltype {
-		'None' = 0,
-		'Appearance' = 1,
-		'ImageGobo' = 2,
-		'Mesh' = 3,
-		'SymbolImage' = 4,
-		'UserImage' = 5,
-		'VideoFile' = 6,
-		'Plugin' = 7,
-		'SoundFile' = 8,
-		'Camera' = 9,
-		'DataPool' = 10,
-		'EncoderBar' = 11,
-		'ExecConfig' = 12,
-		'ExecPage' = 13,
-		'Filter' = 14,
-		'Gel' = 15,
-		'Group' = 16,
-		'Layout' = 17,
-		'Macro' = 18,
-		'Material' = 19,
-		'Matricks' = 20,
-		'ObjectTag' = 21,
-		'Preset' = 22,
-		'Quickey' = 23,
-		'GeneratorRandom' = 24,
-		'GeneratorBitmap' = 25,
-		'RenderQuality' = 26,
-		'Scribble' = 27,
-		'Sequence' = 28,
-		'Timecode' = 29,
-		'Timer' = 30,
-		'View' = 31,
-		'World' = 32,
-	}
 	enum PresetAction {
-		'Toggle' = 2,
-		'Go+' = 3,
+		'SelFix/At' = 0,
+		'At' = 1,
+		'Go+' = 2,
+		'Toggle' = 3,
 		'Flash' = 4,
 		'Temp' = 5,
-		'At' = 6,
-		'SelFix/At' = 7,
-		'SelFix/Extract' = 8,
-		'None' = 255,
-	}
-	enum PresetActionToken {
-		'None' = 0,
-		'Flash' = 1,
-		'Go+' = 3,
-		'Temp' = 13,
-		'Toggle' = 14,
-		'At' = 46,
-		'SelFix/Extract' = 53,
-		'SelFix/At' = 120,
-		'Pool Default' = 406,
+		'SelFix/Extract' = 6,
 	}
 	enum PresetDisplayMode {
 		'Text and Symbol' = 0,
@@ -3464,24 +3133,6 @@ declare namespace Enums {
 		'Set' = 0,
 		'Direct' = 1,
 		'Property' = 2,
-	}
-	enum PsrDataPool {
-		'Original' = 4294967295,
-	}
-	enum PsrOperation {
-		'Closed' = 0,
-		'Preparation' = 1,
-		'OpenPatch' = 2,
-		'Conversion' = 3,
-		'OpenImport' = 4,
-		'Importing' = 5,
-		'Dependencies' = 6,
-		'HandleMatch' = 7,
-	}
-	enum PsrTab {
-		'Show' = 0,
-		'Patch' = 1,
-		'Import' = 2,
 	}
 	enum PultType {
 		'Any' = 0,
@@ -4573,11 +4224,6 @@ declare namespace Enums {
 		'ChannelCompress' = 16,
 		'LED' = 17,
 	}
-	enum RecipeCleanupOperation {
-		'NoOutput' = 0,
-		'NotCooked' = 1,
-		'CookedButOverwritten' = 2,
-	}
 	enum RecordGo {
 		'as Go' = 0,
 		'as Goto (Status)' = 1,
@@ -4649,8 +4295,8 @@ declare namespace Enums {
 		'Down Up' = 1,
 	}
 	enum SCVirtualKeyCode {
-		'UNKNOWN' = 0,
 		'' = 0,
+		'UNKNOWN' = 0,
 		'MA1' = 1,
 		'MA2' = 2,
 		'PREV' = 3,
@@ -4796,7 +4442,6 @@ declare namespace Enums {
 		'MACRO' = 142,
 		'PAGE' = 143,
 		'EXECUTOR' = 144,
-		'FLIP' = 145,
 	}
 	enum SMPTEMode {
 		'In' = 0,
@@ -4894,25 +4539,11 @@ declare namespace Enums {
 		'Next Cue' = 2,
 	}
 	enum SequenceAction {
-		'Select' = 1,
-		'Toggle' = 2,
-		'Go+' = 3,
-		'Flash' = 4,
-		'Temp' = 5,
-		'Goto' = 14,
-		'Load' = 15,
-		'None' = 255,
-	}
-	enum SequenceActionToken {
-		'None' = 0,
-		'Flash' = 1,
-		'Go+' = 3,
-		'Temp' = 13,
-		'Toggle' = 14,
-		'Goto' = 16,
-		'Load' = 17,
-		'Select' = 24,
-		'Pool Default' = 406,
+		'Select' = 0,
+		'Toggle' = 1,
+		'Go+' = 2,
+		'Flash' = 3,
+		'Temp' = 4,
 	}
 	enum SequenceCountdown {
 		'Off' = 0,
@@ -4923,20 +4554,6 @@ declare namespace Enums {
 		'Fixed' = 0,
 		'Selected' = 1,
 		'LastGo' = 2,
-	}
-	enum SessionTimeStyle {
-		'Digital' = 0,
-		'Date DD-MM-YYYY' = 1,
-		'Date MM-DD-YYYY' = 2,
-		'Digital AM/PM' = 3,
-		'Dawn' = 4,
-		'Sunrise' = 5,
-		'Sunset' = 6,
-		'Dusk' = 7,
-	}
-	enum SessionTimeStyleTZ {
-		'Digital' = 0,
-		'Digital AM/PM' = 3,
 	}
 	enum SetupType {
 		'Undefined' = 0,
@@ -5011,11 +4628,10 @@ declare namespace Enums {
 		'Pages' = 24,
 		'Plugins' = 25,
 		'Presets' = 26,
-		'Quickeys' = 27,
-		'Sequences' = 28,
-		'Timecodes' = 29,
-		'Timers' = 30,
-		'Worlds' = 31,
+		'Sequences' = 27,
+		'Timecodes' = 28,
+		'Timers' = 29,
+		'Worlds' = 30,
 	}
 	enum ShowCreatorType {
 		'AutoStore' = 0,
@@ -5040,35 +4656,24 @@ declare namespace Enums {
 		'ShowDownloaded' = 3,
 		'DataNegotiationActive' = 4,
 		'ShowSaving' = 5,
-		'DataNegotiationWaitingForNewMaster' = 6,
-		'DataNegotiationMaster' = 7,
-		'DataNegotiationSlave' = 8,
-		'ShowUploading' = 9,
-		'ShowMediaUploading' = 10,
-		'ShowDownloading' = 11,
-		'ShowMediaDownloading' = 12,
-		'ShowDownloadIgnore' = 13,
-		'ShowPSRConversion' = 14,
+		'DataNegotiationMaster' = 6,
+		'DataNegotiationSlave' = 7,
+		'ShowUploading' = 8,
+		'ShowMediaUploading' = 9,
+		'ShowDownloading' = 10,
+		'ShowMediaDownloading' = 11,
+		'ShowDownloadIgnore' = 12,
 	}
 	enum ShowPathType {
 		'Show' = 17,
 		'Backup' = 18,
 		'Demo' = 19,
-		'Template' = 58,
+		'Template' = 57,
 	}
 	enum ShowUserEncoder {
 		'Default' = 0,
 		'Exec' = 1,
 		'Xkeys' = 2,
-	}
-	enum ShowfileSelectorMode {
-		'Premenu' = 0,
-		'Load' = 1,
-		'Saveas' = 2,
-		'Delete' = 3,
-		'Newshow' = 4,
-		'Startupshow' = 5,
-		'Psr' = 6,
 	}
 	enum ShuffleMode {
 		'Auto' = 0,
@@ -5092,13 +4697,6 @@ declare namespace Enums {
 	enum SortColorBy {
 		'Hue' = 0,
 		'Saturation' = 1,
-	}
-	enum SoundPoolAction {
-		'Toggle' = 2,
-		'Go+' = 3,
-		'Pause' = 10,
-		'Off' = 11,
-		'None' = 255,
 	}
 	enum SoundValues {
 		'All' = 0,
@@ -5299,11 +4897,6 @@ declare namespace Enums {
 		'Bottom' = 0,
 		'Top' = 1,
 	}
-	enum StartupBrowserFilter {
-		'Shows' = 0,
-		'Demo Shows' = 1,
-		'Template Shows' = 2,
-	}
 	enum StoreDisplayNumber {
 		//@ts-ignore
 		'1' = 0,
@@ -5344,14 +4937,6 @@ declare namespace Enums {
 	enum StrictNormalMode {
 		'Normal' = 0,
 		'Strict' = 1,
-	}
-	enum StructureType {
-		'CenterLineBased' = 0,
-		'Detail' = 1,
-	}
-	enum SupportType {
-		'Rope' = 0,
-		'GroundSupport' = 1,
 	}
 	enum SyntaxResult {
 		'SyntaxError' = -1,
@@ -5425,26 +5010,11 @@ declare namespace Enums {
 		'Timeline' = 1,
 		'Both' = 2,
 	}
-	enum TTL {
-		'Default(8)' = 8,
-	}
-	enum TagType {
-		'None' = 0,
-		'Kill Instant' = 4,
-		'Kill Delayed' = 5,
-	}
 	enum TestBlockType {
 		'ui' = 0,
 		'root' = 1,
 		'rt' = 2,
 		'lua' = 3,
-	}
-	enum TextInputEditor {
-		'Scribble' = 0,
-		'Appearance' = 1,
-		'Tags' = 2,
-		'NameNote' = 3,
-		'None' = 4,
 	}
 	enum TimeCodeSource {
 		'Midi' = 0,
@@ -5489,15 +5059,6 @@ declare namespace Enums {
 	enum TimecodeEncoderFunction {
 		'Edit' = 0,
 	}
-	enum TimecodePoolAction {
-		'Select' = 1,
-		'Toggle' = 2,
-		'Go+' = 3,
-		'Pause' = 10,
-		'Off' = 11,
-		'Top' = 12,
-		'None' = 255,
-	}
 	enum TimecodeSelectLastEventMode {
 		'Off' = 0,
 		'Track' = 1,
@@ -5525,15 +5086,6 @@ declare namespace Enums {
 	enum TimecodeSlotOff {
 		'Off' = 255,
 	}
-	enum TimecodeSlotPoolAction {
-		'Select' = 1,
-		'Toggle Pause' = 2,
-		'Go+' = 3,
-		'Pause' = 10,
-		'Off' = 11,
-		'Toggle Off' = 13,
-		'None' = 255,
-	}
 	enum TimecodeSlotShort {
 		'TCSlot 1' = 0,
 		'TCSlot 2' = 1,
@@ -5553,9 +5105,8 @@ declare namespace Enums {
 		'Resize' = 5,
 	}
 	enum TimerAction {
+		'Toggle' = 0,
 		'Select' = 1,
-		'Toggle' = 2,
-		'None' = 255,
 	}
 	enum TimerMode {
 		'Countdown' = 0,
@@ -5566,164 +5117,6 @@ declare namespace Enums {
 		'Toggle' = 1,
 		'Flash' = 2,
 		'Temp' = 3,
-	}
-	enum TimingMaster {
-		'Timing50' = -51,
-		'Timing49' = -50,
-		'Timing48' = -49,
-		'Timing47' = -48,
-		'Timing46' = -47,
-		'Timing45' = -46,
-		'Timing44' = -45,
-		'Timing43' = -44,
-		'Timing42' = -43,
-		'Timing41' = -42,
-		'Timing40' = -41,
-		'Timing39' = -40,
-		'Timing38' = -39,
-		'Timing37' = -38,
-		'Timing36' = -37,
-		'Timing35' = -36,
-		'Timing34' = -35,
-		'Timing33' = -34,
-		'Timing32' = -33,
-		'Timing31' = -32,
-		'Timing30' = -31,
-		'Timing29' = -30,
-		'Timing28' = -29,
-		'Timing27' = -28,
-		'Timing26' = -27,
-		'Timing25' = -26,
-		'Timing24' = -25,
-		'Timing23' = -24,
-		'Timing22' = -23,
-		'Timing21' = -22,
-		'Timing20' = -21,
-		'Timing19' = -20,
-		'Timing18' = -19,
-		'Timing17' = -18,
-		'Timing16' = -17,
-		'Timing15' = -16,
-		'Timing14' = -15,
-		'Timing13' = -14,
-		'Timing12' = -13,
-		'Timing11' = -12,
-		'Timing10' = -11,
-		'Timing9' = -10,
-		'Timing8' = -9,
-		'Timing7' = -8,
-		'Timing6' = -7,
-		'Timing5' = -6,
-		'Timing4' = -5,
-		'Timing3' = -4,
-		'Timing2' = -3,
-		'Timing1' = -2,
-	}
-	enum TimingMasterWithDefault {
-		'Timing50' = -51,
-		'Timing49' = -50,
-		'Timing48' = -49,
-		'Timing47' = -48,
-		'Timing46' = -47,
-		'Timing45' = -46,
-		'Timing44' = -45,
-		'Timing43' = -44,
-		'Timing42' = -43,
-		'Timing41' = -42,
-		'Timing40' = -41,
-		'Timing39' = -40,
-		'Timing38' = -39,
-		'Timing37' = -38,
-		'Timing36' = -37,
-		'Timing35' = -36,
-		'Timing34' = -35,
-		'Timing33' = -34,
-		'Timing32' = -33,
-		'Timing31' = -32,
-		'Timing30' = -31,
-		'Timing29' = -30,
-		'Timing28' = -29,
-		'Timing27' = -28,
-		'Timing26' = -27,
-		'Timing25' = -26,
-		'Timing24' = -25,
-		'Timing23' = -24,
-		'Timing22' = -23,
-		'Timing21' = -22,
-		'Timing20' = -21,
-		'Timing19' = -20,
-		'Timing18' = -19,
-		'Timing17' = -18,
-		'Timing16' = -17,
-		'Timing15' = -16,
-		'Timing14' = -15,
-		'Timing13' = -14,
-		'Timing12' = -13,
-		'Timing11' = -12,
-		'Timing10' = -11,
-		'Timing9' = -10,
-		'Timing8' = -9,
-		'Timing7' = -8,
-		'Timing6' = -7,
-		'Timing5' = -6,
-		'Timing4' = -5,
-		'Timing3' = -4,
-		'Timing2' = -3,
-		'Timing1' = -2,
-		'CueTiming' = -1,
-	}
-	enum TimingMasterWithXAssert {
-		'CueTiming' = -52,
-		'Timing50' = -51,
-		'Timing49' = -50,
-		'Timing48' = -49,
-		'Timing47' = -48,
-		'Timing46' = -47,
-		'Timing45' = -46,
-		'Timing44' = -45,
-		'Timing43' = -44,
-		'Timing42' = -43,
-		'Timing41' = -42,
-		'Timing40' = -41,
-		'Timing39' = -40,
-		'Timing38' = -39,
-		'Timing37' = -38,
-		'Timing36' = -37,
-		'Timing35' = -36,
-		'Timing34' = -35,
-		'Timing33' = -34,
-		'Timing32' = -33,
-		'Timing31' = -32,
-		'Timing30' = -31,
-		'Timing29' = -30,
-		'Timing28' = -29,
-		'Timing27' = -28,
-		'Timing26' = -27,
-		'Timing25' = -26,
-		'Timing24' = -25,
-		'Timing23' = -24,
-		'Timing22' = -23,
-		'Timing21' = -22,
-		'Timing20' = -21,
-		'Timing19' = -20,
-		'Timing18' = -19,
-		'Timing17' = -18,
-		'Timing16' = -17,
-		'Timing15' = -16,
-		'Timing14' = -15,
-		'Timing13' = -14,
-		'Timing12' = -13,
-		'Timing11' = -12,
-		'Timing10' = -11,
-		'Timing9' = -10,
-		'Timing8' = -9,
-		'Timing7' = -8,
-		'Timing6' = -7,
-		'Timing5' = -6,
-		'Timing4' = -5,
-		'Timing3' = -4,
-		'Timing2' = -3,
-		'Timing1' = -2,
 	}
 	enum ToolbarScrollType {
 		'Vertical' = 0,
@@ -5738,14 +5131,12 @@ declare namespace Enums {
 		'TrackingConversion' = 5,
 		'GeneratorCleanup' = 6,
 		'RecursionTest' = 7,
-		'TagCleanup' = 8,
 	}
 	enum TotalUpdateType {
 		'None' = 0,
-		'TagCleanup' = 1,
-		'OnlyNames' = 2,
-		'References' = 3,
-		'Content' = 4,
+		'OnlyNames' = 1,
+		'References' = 2,
+		'Content' = 3,
 	}
 	enum TrackEditApplyFor {
 		'Selected Part(s)' = 0,
@@ -5776,12 +5167,12 @@ declare namespace Enums {
 	}
 	enum TrackingShield {
 		'Off' = 0,
+		'^0' = 1,
 		'DRZ' = 1,
 		'DimmerRisingFromZero' = 1,
-		'^0' = 1,
 		'DAZ' = 2,
-		'>0' = 2,
 		'DimmerAboveZero' = 2,
+		'>0' = 2,
 	}
 	enum TrackingShieldPopup {
 		'Off' = 0,
@@ -5854,7 +5245,6 @@ declare namespace Enums {
 		'grandMA3 IO Node' = 46539,
 		'grandMA3 IO Node DIN Rail' = 46540,
 		'grandMA3 Fader Wing' = 46541,
-		'grandMA3 VR wing' = 46543,
 	}
 	enum UseLeftOrRight {
 		'Use My' = 0,
@@ -5946,16 +5336,9 @@ declare namespace Enums {
 		'File' = 0,
 		'NDI' = 1,
 	}
-	enum VideoPoolAction {
-		'Toggle' = 2,
-		'Go+' = 3,
-		'Pause' = 10,
-		'Off' = 11,
-		'None' = 255,
-	}
 	enum VirtualKeyCode {
-		'UNKNOWN' = 0,
 		'' = 0,
+		'UNKNOWN' = 0,
 		'MA1' = 1,
 		'MA2' = 2,
 		'PREV' = 3,
@@ -6101,7 +5484,6 @@ declare namespace Enums {
 		'MACRO' = 142,
 		'PAGE' = 143,
 		'EXECUTOR' = 144,
-		'FLIP' = 145,
 	}
 	enum VirtualKeyExecutionType {
 		'Normal' = 0,
@@ -6144,114 +5526,113 @@ declare namespace Enums {
 	}
 	enum WhiteListPacketIDs {
 		'updater_mac' = 1158,
-		'updater_windows' = 1158,
-		'web_daemon' = 1158,
-		'onpc_mac' = 1158,
-		'gdtf_mvr_addon' = 1158,
-		'grandMA2_compat' = 1158,
-		'onpc_windows' = 1158,
-		'grandMA2_manuals' = 1158,
-		'worldserver' = 1158,
+		'grandMA3_console' = 1158,
 		'demoshows' = 1158,
 		'grandMA3_fixtures' = 1158,
+		'onpc_windows' = 1158,
+		'worldserver' = 1158,
+		'gdtf_mvr_addon' = 1158,
 		'grandMA3_manuals' = 1158,
-		'grandMA3_console' = 1158,
-		'utils' = 1166,
-		'grandMA2_resource' = 1166,
-		'updater_x64' = 1166,
-		'grandMA3_pu' = 1166,
-		'force_x64' = 1166,
-		'grandMA2_ffmpeg' = 1166,
-		'grandMA3_unittest' = 1166,
-		'third_party' = 1166,
-		'grandMA2_npu_compat' = 1166,
-		'luatest' = 1166,
-		'system_x64' = 1166,
+		'onpc_mac' = 1158,
+		'grandMA2_manuals' = 1158,
+		'updater_windows' = 1158,
+		'web_daemon' = 1158,
+		'grandMA2_compat' = 1158,
 		'ndi_addon' = 1166,
+		'force_x64' = 1166,
+		'utils' = 1166,
+		'grandMA2_ffmpeg' = 1166,
+		'grandMA2_npu_compat' = 1166,
+		'grandMA3_unittest' = 1166,
 		'bootloader_x64' = 1166,
-		'grandMA3_net_duct_mac' = 1174,
-		'grandMA3_net_duct_windows' = 1174,
+		'grandMA3_pu' = 1166,
+		'system_x64' = 1166,
+		'updater_x64' = 1166,
+		'luatest' = 1166,
+		'grandMA2_resource' = 1166,
+		'third_party' = 1166,
 		'grandMA3_viz_key_windows' = 1174,
-		'grandMA3_viz_key_mac' = 1174,
+		'grandMA3_net_duct_mac' = 1174,
 		'grandMA3_res_usb' = 1174,
-		'grandMA3_net_duct_linux' = 1174,
-		'force_arm' = 1974,
-		'updater_arm' = 1974,
+		'grandMA3_net_duct_windows' = 1174,
+		'grandMA3_viz_key_mac' = 1174,
 		'system_arm' = 1974,
-		'grandMA2_xport_compat' = 1974,
-		'grandMA3_xport' = 1974,
+		'updater_arm' = 1974,
 		'grandMA3_wing' = 1974,
-		'force_all' = 1982,
+		'grandMA3_xport' = 1974,
+		'force_arm' = 1974,
+		'grandMA2_xport_compat' = 1974,
 		'grandMA3_resource' = 1982,
+		'force_all' = 1982,
 	}
 	enum WhiteListPacketNames {
+		'fixtures' = 1158,
 		'demoshows' = 1158,
 		'onpc_windows' = 1158,
-		'fixtures' = 1158,
-		'web_daemon' = 1158,
-		'console' = 1158,
-		'gdtf_mvr_addon' = 1158,
-		'worldserver' = 1158,
-		'gma2_compat' = 1158,
-		'onpc_mac' = 1158,
-		'gma2_manuals' = 1158,
 		'manuals' = 1158,
-		'force_x64' = 1166,
+		'console' = 1158,
+		'worldserver' = 1158,
+		'gdtf_mvr_addon' = 1158,
+		'gma2_compat' = 1158,
+		'web_daemon' = 1158,
+		'gma2_manuals' = 1158,
+		'onpc_mac' = 1158,
 		'third_party' = 1166,
-		'gma2_resource' = 1166,
+		'luatest' = 1166,
 		'bootloader_x64' = 1166,
 		'gma2_ffmpeg' = 1166,
+		'force_x64' = 1166,
+		'npu_compat' = 1166,
+		'ndi_addon' = 1166,
+		'unittest' = 1166,
 		'utils' = 1166,
 		'updater_x64' = 1166,
-		'unittest' = 1166,
-		'npu_compat' = 1166,
+		'gma2_resource' = 1166,
 		'system_x64' = 1166,
-		'ndi_addon' = 1166,
 		'pu' = 1166,
-		'luatest' = 1166,
 		'resource_usb' = 1174,
 		'viz_key' = 1174,
-		'force_arm' = 1974,
-		'xport' = 1974,
-		'xport_compat' = 1974,
-		'system_arm' = 1974,
-		'updater_arm' = 1974,
 		'wing' = 1974,
+		'force_arm' = 1974,
+		'xport_compat' = 1974,
+		'updater_arm' = 1974,
+		'system_arm' = 1974,
+		'xport' = 1974,
 		'force_all' = 1982,
 		'resource' = 1982,
 	}
 	enum WhiteListPacketNamesBefore_1_7 {
-		'npu_compat' = 1166,
-		'onpc_windows' = 1166,
-		'gdtf_mvr_addon' = 1166,
-		'updater_x64' = 1166,
-		'fixtures' = 1166,
-		'utils' = 1166,
-		'third_party' = 1166,
+		'gma2_ffmpeg' = 1166,
 		'pu' = 1166,
 		'gma2_manuals' = 1166,
-		'unittest' = 1166,
 		'manuals' = 1166,
-		'gma2_resource' = 1166,
-		'system_x64' = 1166,
-		'console' = 1166,
-		'gma2_ffmpeg' = 1166,
-		'luatest' = 1166,
-		'demoshows' = 1166,
-		'ndi_addon' = 1166,
+		'gdtf_mvr_addon' = 1166,
 		'worldserver' = 1166,
-		'bootloader_x64' = 1166,
-		'onpc_mac' = 1166,
-		'web_daemon' = 1166,
+		'onpc_windows' = 1166,
+		'updater_x64' = 1166,
+		'console' = 1166,
+		'utils' = 1166,
+		'system_x64' = 1166,
+		'gma2_resource' = 1166,
+		'fixtures' = 1166,
+		'demoshows' = 1166,
+		'npu_compat' = 1166,
+		'unittest' = 1166,
 		'gma2_compat' = 1166,
-		'resource_usb' = 1182,
+		'bootloader_x64' = 1166,
+		'web_daemon' = 1166,
+		'ndi_addon' = 1166,
+		'third_party' = 1166,
+		'onpc_mac' = 1166,
+		'luatest' = 1166,
 		'viz_key' = 1182,
-		'wing' = 1982,
-		'resource' = 1982,
-		'xport' = 1982,
+		'resource_usb' = 1182,
 		'updater_arm' = 1982,
 		'xport_compat' = 1982,
 		'system_arm' = 1982,
+		'xport' = 1982,
+		'wing' = 1982,
+		'resource' = 1982,
 	}
 	enum WindowCategories {
 		'Show Data' = 0,
@@ -6267,11 +5648,6 @@ declare namespace Enums {
 		'Bars' = 10,
 		'Playback' = 11,
 		'Info and System' = 12,
-	}
-	enum WindowInfoTab {
-		'Referenced by' = 0,
-		'Depends on' = 1,
-		'Note' = 2,
 	}
 	enum WindowTypes {
 		'Sheets' = 0,
@@ -6309,15 +5685,18 @@ declare namespace Enums {
 		'Yes' = 1,
 	}
 	enum YesNo {
+		'false' = 0,
 		'No' = 0,
+		'off' = 0,
+		//@ts-ignore
+		'0' = 0,
+		//@ts-ignore
+		'1' = 1,
+		'true' = 1,
 		'Yes' = 1,
+		'on' = 1,
 	}
 	enum ZoomFactor {
-		'10%' = -5,
-		'20%' = -4,
-		'30%' = -3,
-		'40%' = -2,
-		'50%' = -1,
 		'60%' = 0,
 		'70%' = 1,
 		'80%' = 2,

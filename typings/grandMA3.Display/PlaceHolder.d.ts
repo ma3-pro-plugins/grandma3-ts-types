@@ -1,8 +1,9 @@
 type PlaceHolderProps = ObjProps & {};
 
-type PlaceHolder = Obj &
+type PlaceHolder = Obj<Display> &
 	UIObject &
 	PlaceHolderProps & {
+		ClearUIChildren(): void;
 		Close(this: void): void;
 		ScrollBarH: ScrollBarH;
 		ScrollBarV: ScrollBarV;
