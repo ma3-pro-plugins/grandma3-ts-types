@@ -17,10 +17,17 @@ type PresetPools = Obj<DataPoolClass, Presets> & {
 	[25]: Presets;
 };
 type Presets = Obj<PresetPools, Preset>;
+type PhaserTransform = 'None' | 'Mirror';
+type PhaserInvertStyle = 'Pan' | 'Tilt' | 'P+T' | 'All';
 type PresetProps = ObjProps & {
 	appearance: Appearance;
+	invertStyle: PhaserInvertStyle;
+	invertX: boolean;
+	invertY: boolean;
+	invertZ: boolean;
 	phaseFromX: number;
 	phaseToX: number;
+	phaserTransform: PhaserTransform;
 	speedFromX: number;
 	speedToX: number;
 	scribble: Scribble;
