@@ -8,4 +8,5 @@ type ShowData = Obj<Root, any> &
 		Remotes: Remotes;
 		ShowSettings: ShowSettings;
 		Scribbles: Scribbles;
+		Tags: Tags;
 	};
