@@ -6,6 +6,10 @@
 
 declare type UndoHandle = any; // TODO: find a way to represent this handle
 declare type ObjectUserData = any; // TODO: find a way to represent this handle
+/**
+ * Until MA3 version 2.1.x (Including) the MAObjectHandleStr was lowercase and allowed leading 0-s.
+ * Starting from MA3 version 2.2.x the MAObjectHandleStr is uppercase and does not allow leading 0-s.
+ */
 declare type MAObjectHandleStr = `#${string}`;
 
 declare function AddIPAddress(...args: any): any;
@@ -289,10 +293,11 @@ declare function Unhook(hookIndex: HookIndex): any;
  */
 declare function UnhookMultiple(callbackFn?: () => any, obj?: Obj<any, any>): number;
 declare function UserVars(...args: any): any;
+type MAVersionString = `${number}.${number}.${number}.${number}`;
 /**
  * Returns software version of grandMA3.
  */
-declare function Version(): string;
+declare function Version(): MAVersionString;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
