@@ -1,7 +1,15 @@
 type MAtricks = Obj<DataPoolClass, MAtrick> & MAtrick[] & { [index: string]: MAtrick };
 
 type MAtrickProps = ObjProps & MAtrickOnlyProps;
+type MAtrickTransform = 'None' | 'Mirror';
+type MAtrickInvertStyle = 'Pan' | 'Tilt' | 'P+T' | 'All';
+
 type MAtrickOnlyProps = {
+	invertStyle: MAtrickInvertStyle;
+	invertX: boolean;
+	invertY: boolean;
+	invertZ: boolean;
+	phaserTransform: MAtrickTransform;
 	x: number;
 	y: number;
 	z: number;
@@ -23,21 +31,35 @@ type MAtrickOnlyProps = {
 	xShift: number;
 	yShift: number;
 	zShift: number;
-	fadeFromX: number;
-	fadeToX: number;
-	delayFromX: number;
-	delayToX: number;
-	fadeFromY: number;
-	fadeToY: number;
-	delayFromY: number;
-	delayToY: number;
-	fadeFromZ: number;
-	fadeToZ: number;
-	delayFromZ: number;
-	delayToZ: number;
-
-	// TODO: more...
+	// X
+	fadeFromX: number | 'None';
+	fadeToX: number | 'None';
+	delayFromX: number | 'None';
+	delayToX: number | 'None';
+	speedFromX: number | 'None';
+	speedToX: number | 'None';
+	phaseFromX: number | 'None';
+	phaseToX: number | 'None';
+	// Y
+	fadeFromY: number | 'None';
+	fadeToY: number | 'None';
+	delayFromY: number | 'None';
+	delayToY: number | 'None';
+	speedFromY: number | 'None';
+	speedToY: number | 'None';
+	phaseFromY: number | 'None';
+	phaseToY: number | 'None';
+	// Z
+	fadeFromZ: number | 'None';
+	fadeToZ: number | 'None';
+	delayFromZ: number | 'None';
+	delayToZ: number | 'None';
+	speedFromZ: number | 'None';
+	speedToZ: number | 'None';
+	phaseFromZ: number | 'None';
+	phaseToZ: number | 'None';
 };
+
 type MAtrick = Obj<MAtricks, undefined> &
 	MAtrickProps & {
 		appearance: Appearance;
