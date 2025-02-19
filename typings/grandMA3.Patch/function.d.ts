@@ -20,7 +20,7 @@ type Stage = Obj<Stages, any> & {
 type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
 type Fixture = Obj<Fixtures, SubFixture> & {
-	fid: number;
+	fid: number | 'None';
 	fixtureType: FixtureTypeObj;
 	mode: DMXMode;
 	modeDirect: DMXMode;
@@ -36,4 +36,5 @@ type UIChannels = Obj<LivePatch | Patch, UIChannel> & UIChannel[];
 type UIChannel = {
 	logical_channel: LogicalChannel;
 	attr_index: number;
+	rt_index: number;
 };
