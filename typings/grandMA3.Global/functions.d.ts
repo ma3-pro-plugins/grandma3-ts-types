@@ -60,6 +60,7 @@ declare function DefaultDisplayPositions(...args: any): any;
 declare function DeleteIPAddress(...args: any): any;
 declare function DelVar(...args: any): any;
 declare function DeskLocked(...args: any): any;
+declare function DeviceConfiguration(): any;
 declare function DirList(...args: any): any;
 declare function DumpAllHooks(): any;
 /**
@@ -95,7 +96,7 @@ declare function GetDMXValue(...args: any): any;
 declare function GetExecutor(...args: any): any;
 declare function GetFocus(...args: any): any;
 declare function GetFocusDisplay(...args: any): any;
-declare function GetObject(address: string): Obj | undefined;
+declare function GetObject<T extends Obj = Obj>(address: string): T | undefined;
 declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
 declare function GetPathSeparator(): string;
@@ -104,7 +105,25 @@ declare function GetPresetData(preset: Preset | Part): PresetData;
 declare function GetProgPhaser(...args: any): any;
 declare function GetProgPhaserValue(...args: any): any;
 declare function GetPropertyColumnId(...args: any): any;
-declare function GetRTChannel(...args: any): any;
+type RTChannel = {
+	freq: number,
+	dmx_channel: `FixtureType ${string}`, // e.g. FixtureType 14.6.2.1.2
+	rt_index: number,
+	info: object,
+	dmx_lowlight: number,
+	dmx_highlight: number,
+	dmx_default: number,
+	subfixture: SubFixture 
+	fixture: Fixture ,
+	ui_index_first: number,
+	patch: {
+		break: number,
+       	ultra: number,
+       	fine: number,
+       	coarse: number
+	}
+}
+declare function GetRTChannel(...args: any): RTChannel;
 declare function GetRTChannelCount(...args: any): any;
 declare function GetSelectedAttribute(...args: any): any;
 declare function GetShowFileStatus(): string;
@@ -387,11 +406,25 @@ type FixtureIDTypeKeyword =
 	| 'MArker'
 	/**
 	 * Stage: The CID in this case is a relative address from ShowData/Patch/Stages.
+	 * Fixture get this address when it has no FID and no CID.
 	 * Also, this is not a valid Command syntax keyword. It is only used with ObjectList() function.
 	 */
 	| 'Stage';
-type FixtureCIDType = `${number}` | `${number}.${number}` | `${number}.${number}.${number}`;
 
+type SubFixtureIType = `${number}`
+type FixtureFIDType = `${number}` | `${number}.${SubFixtureIType}`
+
+type FixtureCIDOnlyType = `${number}`
+type FixtureCIDType = `${number}` | `${number}.${number}` | `${number}.${number}.${number}`;
+/**
+ * This is used when a fixture has no FId and no CID.
+ * The numbers are object index (1-based) relative to ShowData/Patch/Stages
+ */
+type FixtureRawRelativeAddressType = `${number}` 
+	| `${number}.${number}` 
+	| `${number}.${number}.${number}` 
+	| `${number}.${number}.${number}.${number}`
+	| `${number}.${number}.${number}.${number}.${number}`
 type FixtureIDTypeKeywordNoFixture =
 	| 'Channel'
 	| 'Universal'
@@ -403,9 +436,14 @@ type FixtureIDTypeKeywordNoFixture =
 	| 'Pyro'
 	| 'MArker';
 
+/**
+ * 
+ */
 type FixtureAddressAsPresetDataKey =
-	| `${FixtureCIDType}`
-	| `${FixtureIDTypeKeywordNoFixture} ${FixtureCIDType}`;
+	| FixtureFIDType
+	| `${FixtureIDTypeKeywordNoFixture} ${FixtureCIDOnlyType}`
+	| FixtureRawRelativeAddressType
+	 
 
 /**
  * Record<fixtureId, data>
