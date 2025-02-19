@@ -116,6 +116,7 @@ type PartProps = ObjProps & {
 	 * Raw Seconds. 1 sec = 16777216
 	 */
 	cueInDelay: number;
+	sync: boolean;
 };
 
 type Part = Obj<Cue, Recipe, PartProps> & {};
