@@ -11,7 +11,52 @@ declare type ObjectUserData = any; // TODO: find a way to represent this handle
  * Starting from MA3 version 2.2.x the MAObjectHandleStr is uppercase and does not allow leading 0-s.
  */
 declare type MAObjectHandleStr = `#${string}`;
-
+type DMXUniverseNumber = number; // 1-1024
+type DMXChannelNumber = number; // 1-512
+type DMXPatchAddr = `${DMXUniverseNumber}.${DMXChannelNumber}`;
+declare function AddFixtures(params: {
+	mode: DMXMode; // DMXMode
+	amount: number;
+	/**
+	 * Name of the first fixture
+	 */
+	name?: string;
+	/**
+	 * Fixture ID of the first fixture
+	 */
+	fid?: string;
+	/*
+	 * This is a string with the CID for the fixture.
+	 * This table field is only valid if the "idtype" is not "Fixture".
+	 */
+	cid?: string;
+	/**
+	 * This is a string with the name of the ID Type.
+	 * This is only needed if the type is different than "Fixture".
+	 */
+	idtype?: FixtureIDTypeKeyword;
+	/**
+	 * This is a table with up to eight strings.
+	 * The string must indicate a universe and a start address in the universe.
+	 * The two must be separated by a dot. Each table element is used for the up to eight DMX breaks in the patch.
+	 */
+	patch?: DMXPatchAddr[];
+	layer?: string;
+	class?: string;
+	/**
+	 * This is a handle of the parent fixture.
+	 * It is only needed if the fixture should be a sub-fixture of an existing fixture.
+	 */
+	parent?: Fixture;
+	/**
+	 * This is an integer indicating an insert index number
+	 */
+	insert_index?: number;
+	/**
+	 * This is a string with an undo text.
+	 */
+	undo?: string;
+}): boolean | undefined;
 declare function AddIPAddress(...args: any): any;
 declare function AddonVars(...args: any): any;
 declare function BuildDetails(...args: any): any;
@@ -90,7 +135,7 @@ declare function GetButton(...args: any): any;
 declare function GetChannelFunction(...args: any): any;
 declare function GetChannelFunctionIndex(...args: any): any;
 declare function GetDisplayByIndex(displayNumber: number): Display;
-declare function GetDisplayCollect(...args: any): any;
+declare function GetDisplayCollect(...args: any): DisplayCollect;
 declare function GetDMXUniverse(...args: any): any;
 declare function GetDMXValue(...args: any): any;
 declare function GetExecutor(...args: any): any;
@@ -106,23 +151,23 @@ declare function GetProgPhaser(...args: any): any;
 declare function GetProgPhaserValue(...args: any): any;
 declare function GetPropertyColumnId(...args: any): any;
 type RTChannel = {
-	freq: number,
-	dmx_channel: `FixtureType ${string}`, // e.g. FixtureType 14.6.2.1.2
-	rt_index: number,
-	info: object,
-	dmx_lowlight: number,
-	dmx_highlight: number,
-	dmx_default: number,
-	subfixture: SubFixture 
-	fixture: Fixture ,
-	ui_index_first: number,
+	freq: number;
+	dmx_channel: `FixtureType ${string}`; // e.g. FixtureType 14.6.2.1.2
+	rt_index: number;
+	info: object;
+	dmx_lowlight: number;
+	dmx_highlight: number;
+	dmx_default: number;
+	subfixture: SubFixture;
+	fixture: Fixture;
+	ui_index_first: number;
 	patch: {
-		break: number,
-       	ultra: number,
-       	fine: number,
-       	coarse: number
-	}
-}
+		break: number;
+		ultra: number;
+		fine: number;
+		coarse: number;
+	};
+};
 declare function GetRTChannel(...args: any): RTChannel;
 declare function GetRTChannelCount(...args: any): any;
 declare function GetSelectedAttribute(...args: any): any;
@@ -320,7 +365,7 @@ declare function Version(): MAVersionString;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
-type AttributeName = 'Dimmer' | 'Gobo1' | string;
+type AttributeName = 'Dimmer' | 'Pan' | 'Tilt' | 'Gobo1' | string; // TODO
 
 type PD_AttributeData = PD_AttributeStepValue[] & PD_AttributeValuesMeta;
 type PD_AccelDecelType = 1 | 2;
@@ -329,6 +374,7 @@ type PD_AttributeStepValue = {
 	 * Range 0-100 float
 	 */
 	absolute: number; //0-100
+	relative: number; //0-100
 	/**
 	 * 16777216 = 1 unit
 	 */
@@ -340,7 +386,7 @@ type PD_AttributeStepValue = {
 	 * Value of 1, labeled as "F" when 2-dimensional Circle is applied
 	 * Value of 2, labeled as "P" when 1-dimensional Sinus is applied
 	 **/
-	accel_type: PD_AccelDecelType; 
+	accel_type: PD_AccelDecelType;
 	channel_function: number;
 	decel: number; // Phaser
 	/**
@@ -348,7 +394,7 @@ type PD_AttributeStepValue = {
 	 * Value of 1, labeled as "F" when 2-dimensional Circle is applied
 	 * Value of 2, labeled as "P" when 1-dimensional Sinus is applied
 	 **/
-	decel_type: PD_AccelDecelType; 
+	decel_type: PD_AccelDecelType;
 	integrated: Preset;
 	mask_individual: number;
 	mask_integrated: number;
@@ -358,11 +404,11 @@ type PD_AttributeStepValue = {
 type PD_AttributeStepParamName = keyof PD_AttributeStepValue;
 type PD_AttributeStepParamValue = number | boolean | Preset | undefined;
 /**
-* Value is an integer x100 from the real value.
-* So 2 measures is value of 200.
-* The range is: 0 - 32 * 100 (32 measures is the max)
-* NOTE: This is a single value for all steps
-*/
+ * Value is an integer x100 from the real value.
+ * So 2 measures is value of 200.
+ * The range is: 0 - 32 * 100 (32 measures is the max)
+ * NOTE: This is a single value for all steps
+ */
 type PD_MeasurePercent = number;
 type PD_AttributeValuesMeta = {
 	gridposmatr: any;
@@ -411,20 +457,21 @@ type FixtureIDTypeKeyword =
 	 */
 	| 'Stage';
 
-type SubFixtureIType = `${number}`
-type FixtureFIDType = `${number}` | `${number}.${SubFixtureIType}`
+type SubFixtureIType = `${number}`;
+type FixtureFIDType = `${number}` | `${number}.${SubFixtureIType}`;
 
-type FixtureCIDOnlyType = `${number}`
+type FixtureCIDOnlyType = `${number}`;
 type FixtureCIDType = `${number}` | `${number}.${number}` | `${number}.${number}.${number}`;
 /**
  * This is used when a fixture has no FId and no CID.
  * The numbers are object index (1-based) relative to ShowData/Patch/Stages
  */
-type FixtureRawRelativeAddressType = `${number}` 
-	| `${number}.${number}` 
-	| `${number}.${number}.${number}` 
+type FixtureRawRelativeAddressType =
+	| `${number}`
+	| `${number}.${number}`
+	| `${number}.${number}.${number}`
 	| `${number}.${number}.${number}.${number}`
-	| `${number}.${number}.${number}.${number}.${number}`
+	| `${number}.${number}.${number}.${number}.${number}`;
 type FixtureIDTypeKeywordNoFixture =
 	| 'Channel'
 	| 'Universal'
@@ -437,13 +484,12 @@ type FixtureIDTypeKeywordNoFixture =
 	| 'MArker';
 
 /**
- * 
+ *
  */
 type FixtureAddressAsPresetDataKey =
 	| FixtureFIDType
 	| `${FixtureIDTypeKeywordNoFixture} ${FixtureCIDOnlyType}`
-	| FixtureRawRelativeAddressType
-	 
+	| FixtureRawRelativeAddressType;
 
 /**
  * Record<fixtureId, data>

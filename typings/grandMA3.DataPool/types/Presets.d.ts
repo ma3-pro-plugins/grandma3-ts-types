@@ -17,20 +17,10 @@ type PresetPools = Obj<DataPoolClass, Presets> & {
 	[25]: Presets;
 };
 type Presets = Obj<PresetPools, Preset>;
+type PresetMode = 'Universal' | 'Global' | 'Selective';
 type PresetProps = ObjProps & {
 	appearance: Appearance;
-	// invertStyle: MAtrickInvertStyle;
-	// invertX: boolean;
-	// invertY: boolean;
-	// invertZ: boolean;
-	// phaseFromX: number;
-	// phaseToX: number;
-	// phaserTransform: MAtrickTransform;
-	// speedFromX: number;
-	// speedToX: number;
 	scribble: Scribble;
-	// xBlock: number;
-	// xGroup: number;
-	// xWings: number;
+	storedData: PresetMode;
 } & MAtrickOnlyProps;
 type Preset = Obj<PresetPools, Recipe, PresetProps> & {};

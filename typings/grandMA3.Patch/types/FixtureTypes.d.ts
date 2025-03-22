@@ -29,9 +29,8 @@ type DMXChannelProps = ObjProps & {
 	lowLight: number;
 };
 
-type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> & {
-	[index: string]: LogicalChannel;
-};
+type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> &
+	LogicalChannel[] & { [index: string]: LogicalChannel };
 
 type LogicalChannelProps = ObjProps & {
 	attribute: string;

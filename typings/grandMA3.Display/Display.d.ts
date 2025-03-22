@@ -1,3 +1,4 @@
+type DisplayCollect = Obj<Pult, Display>;
 type Display = GenericObj &
 	UILayoutGrid & {
 		CmdLineSection: CmdLineSection;

@@ -14,6 +14,7 @@ type LivePatch = Obj<ShowData, any> &
 type Stages = Obj<LivePatch | Patch, Stage>;
 
 type Stage = Obj<Stages, any> & {
+	note: string;
 	Spaces: Spaces;
 	Fixtures: Fixtures;
 };
@@ -21,6 +22,7 @@ type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
 type Fixture = Obj<Fixtures, SubFixture> & {
 	fid: number | 'None';
+	cid: number | 'None';
 	fixtureType: FixtureTypeObj;
 	mode: DMXMode;
 	modeDirect: DMXMode;

@@ -17,6 +17,9 @@ type TextureProps = ObjProps & {
 };
 type Texture = Obj<Textures, undefined, TextureProps> & TextureProps;
 
-type PultCollect = Obj<GraphicsRoot, any> & {
-	[name: string]: any;
+type PultCollect = Obj<GraphicsRoot, Pult> & {
+	[name: string]: Pult;
 };
+type Pult = Obj<PultCollect, Devices | DisplayCollect, PultProps> & PultProps;
+type PultProps = ObjProps & {};
+type Devices = Obj<Pult, any> & {};
