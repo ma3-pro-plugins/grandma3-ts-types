@@ -11,7 +11,7 @@ type LivePatch = Obj<ShowData, any> &
 		UIChannels: UIChannels;
 	};
 
-type Stages = Obj<LivePatch | Patch, Stage>;
+type Stages = Obj<LivePatch | Patch, Stage> & { [index: number]: Stage };
 
 type Stage = Obj<Stages, any> & {
 	note: string;
@@ -20,7 +20,7 @@ type Stage = Obj<Stages, any> & {
 };
 type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
-type Fixture = Obj<Fixtures, SubFixture> & {
+type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
 	fid: number | 'None';
 	cid: number | 'None';
 	fixtureType: FixtureTypeObj;

@@ -1,8 +1,9 @@
 import './DataPools';
 import './DeviceConfigurations';
 import './EnvArgs';
-import './MediaPools';
 import './GraphicsRoot';
+import './MediaPools';
+import './Masters';
 import './Root';
 import './ShowData';
 import './ShowSettings';

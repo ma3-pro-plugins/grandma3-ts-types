@@ -3,6 +3,7 @@ type ShowData = Obj<Root, any> &
 		DataPools: DataPools;
 		LivePatch: LivePatch;
 		MediaPools: MediaPools;
+		Masters: Masters;
 		UserProfiles: UserProfiles;
 		Appearances: Appearances;
 		Remotes: Remotes;

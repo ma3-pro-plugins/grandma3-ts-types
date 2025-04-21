@@ -20,7 +20,7 @@ type sACN = Obj<DMXProtocols, sACNDataCollect | sACNDiscoveryCollect> & {
 // ArtNet
 type ArtNetDataCollect = Obj<ArtNet, ArtNetData>;
 type ArtNetDataProps = ObjProps & {
-	localUniverse: number;
+	localUniverse: DMXUniverseNumber;
 	mode: Enums.ArtNetDataMode;
 };
 type ArtNetData = Obj<ArtNetDataCollect, undefined, ArtNetDataProps> & ArtNetDataProps;

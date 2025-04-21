@@ -13,7 +13,7 @@ declare type ObjectUserData = any; // TODO: find a way to represent this handle
 declare type MAObjectHandleStr = `#${string}`;
 type DMXUniverseNumber = number; // 1-1024
 type DMXChannelNumber = number; // 1-512
-type DMXPatchAddr = `${DMXUniverseNumber}.${DMXChannelNumber}`;
+type DMXPatchAddrString = `${DMXUniverseNumber}.${DMXChannelNumber}`;
 declare function AddFixtures(params: {
 	mode: DMXMode; // DMXMode
 	amount: number;
@@ -40,7 +40,7 @@ declare function AddFixtures(params: {
 	 * The string must indicate a universe and a start address in the universe.
 	 * The two must be separated by a dot. Each table element is used for the up to eight DMX breaks in the patch.
 	 */
-	patch?: DMXPatchAddr[];
+	patch?: DMXPatchAddrString[];
 	layer?: string;
 	class?: string;
 	/**
@@ -146,7 +146,7 @@ declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
 declare function GetPathSeparator(): string;
 declare function GetPathType(...args: any): any;
-declare function GetPresetData(preset: Preset | Part): PresetData;
+declare function GetPresetData(presetOrPart: Preset | Part): PresetData;
 declare function GetProgPhaser(...args: any): any;
 declare function GetProgPhaserValue(...args: any): any;
 declare function GetPropertyColumnId(...args: any): any;
@@ -168,7 +168,7 @@ type RTChannel = {
 		coarse: number;
 	};
 };
-declare function GetRTChannel(...args: any): RTChannel;
+declare function GetRTChannel(rt_index: number): RTChannel;
 declare function GetRTChannelCount(...args: any): any;
 declare function GetSelectedAttribute(...args: any): any;
 declare function GetShowFileStatus(): string;
@@ -178,7 +178,7 @@ declare function GetTokenName(...args: any): any;
 declare function GetTokenNameByIndex(...args: any): any;
 declare function GetTopModal(...args: any): any;
 declare function GetTopOverlay(...args: any): any;
-declare function GetUIChannel(...args: any): UIChannel;
+declare function GetUIChannel(ui_channel_index: number): UIChannel;
 declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
 declare function GetUIChannels(...args: any): any;
@@ -372,13 +372,16 @@ type PD_AccelDecelType = 1 | 2;
 type PD_AttributeStepValue = {
 	/**
 	 * Range 0-100 float
+	 * This value is normalized to the range of the ChannelFunction.
+	 * For example, if a ChannelFunction has range of 0-127 (and not 0-255),
+	 * then the absolute value of 100, will be 127 in DMX, which is 50% of the range.
 	 */
 	absolute: number; //0-100
 	relative: number; //0-100
 	/**
-	 * 16777216 = 1 unit
+	 * 16777216 = 100%
 	 */
-	absolute_value: number; // 16777216 = 1 unit
+	absolute_value: number; // 16,777,216 = 100%
 	abs_release: boolean;
 	accel: number; // Phaser
 	/**
