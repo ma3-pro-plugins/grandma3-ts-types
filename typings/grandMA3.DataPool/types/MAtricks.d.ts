@@ -60,6 +60,8 @@ type MAtrickOnlyProps = {
 	phaseToZ: number | 'None';
 };
 
+type MAtrickOnlyPropName = keyof MAtrickOnlyProps;
+
 type MAtrick = Obj<MAtricks, undefined> &
 	MAtrickProps & {
 		appearance: Appearance;

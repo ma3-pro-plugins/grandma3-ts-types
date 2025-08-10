@@ -96,7 +96,7 @@ declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;
 declare function CurrentEnvironment(): Obj;
-declare function CurrentExecPage(...args: any): any;
+declare function CurrentExecPage(...args: any): Page;
 declare function CurrentProfile(): UserProfile;
 declare function CurrentScreenConfig(): ScreenConfiguration;
 declare function CurrentUser(...args: any): any;
@@ -181,7 +181,7 @@ declare function GetTopOverlay(...args: any): any;
 declare function GetUIChannel(ui_channel_index: number): UIChannel;
 declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
-declare function GetUIChannels(...args: any): any;
+declare function GetUIChannels(subFixture: Fixture |SubFixture, returnAsHandles: boolean): UIChannel[];
 declare function GetUIObjectAtPosition(...args: any): any;
 declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
@@ -334,7 +334,7 @@ declare function ShowData(): ShowData;
 declare function ShowSettings(): any;
 declare function StartProgress(...args: any): any;
 declare function StopProgress(...args: any): any;
-declare function StrToHandle(strHandle: MAObjectHandleStr): Obj;
+declare function StrToHandle<T extends Obj = Obj>(strHandle: MAObjectHandleStr): T;
 declare function SyncFS(...args: any): any;
 declare function TextInput(...args: any): string;
 declare function Time(): number;
@@ -365,7 +365,35 @@ declare function Version(): MAVersionString;
 declare function WaitModal(...args: any): any;
 declare function WaitObjectDelete(obj: Obj, secondsToWait?: number): true | undefined;
 
-type AttributeName = 'Dimmer' | 'Pan' | 'Tilt' | 'Gobo1' | string; // TODO
+type AttributeName =
+	| 'Dimmer'
+	| 'Pan'
+	| 'Tilt'
+	| 'Gobo1'
+	| ColorWheelAttributeName
+	| ColorRGBAttrName
+	| string; // TODO
+type ColorWheelAttributeName = 'Color1' | 'Color2' | 'Color3' | 'Color4';
+/**
+ * type of colorAttrNames
+ */
+type ColorRGBAttrName =
+	| 'ColorRGB_R'
+	| 'ColorRGB_G'
+	| 'ColorRGB_B'
+	| 'ColorRGB_C'
+	| 'ColorRGB_M'
+	| 'ColorRGB_Y'
+	| 'ColorRGB_RY'
+	| 'ColorRGB_GY'
+	| 'ColorRGB_GC'
+	| 'ColorRGB_BC'
+	| 'ColorRGB_BM'
+	| 'ColorRGB_RM'
+	| 'ColorRGB_W'
+	| 'ColorRGB_WW'
+	| 'ColorRGB_CW'
+	| 'ColorRGB_UV';
 
 type PD_AttributeData = PD_AttributeStepValue[] & PD_AttributeValuesMeta;
 type PD_AccelDecelType = 1 | 2;
@@ -377,6 +405,12 @@ type PD_AttributeStepValue = {
 	 * then the absolute value of 100, will be 127 in DMX, which is 50% of the range.
 	 */
 	absolute: number; //0-100
+	/**
+	 * Range 0-100 float
+	 * This is independent of the Physical range. (Not like ReleativePhys as it is exported when exporting a collection of a preset)
+	 * For example if the attribute is Tilt, and a preset exists for a fixture type with physical range or 360 degrees.
+	 * If you change the physical range of that fixture type, this value won't change, but when you look at relative values in the Fixture sheet or in 3D they will change.
+	 */
 	relative: number; //0-100
 	/**
 	 * 16777216 = 100%
@@ -413,7 +447,7 @@ type PD_AttributeStepParamValue = number | boolean | Preset | undefined;
  * NOTE: This is a single value for all steps
  */
 type PD_MeasurePercent = number;
-type PD_AttributeValuesMeta = {
+type PD_AttributeValuesMeta = PD_FixtureMetaData & {
 	gridposmatr: any;
 	mask_active_phaser: any;
 	/**
@@ -423,12 +457,16 @@ type PD_AttributeValuesMeta = {
 	 * NOTE: This is a single value for all steps
 	 */
 	measure: PD_MeasurePercent; // Phaser
-	selective: boolean;
 	/**
-	 * Speed 1.0 is 60 bpm
+	 * Units are abstract ratio from 60 bpm (Speed 1.0 is 60 bpm)
 	 * NOTE: This is a single value for all steps
 	 */
 	speed: number; // Phaser
+};
+type PD_AttributeValuesMetaParamName = keyof PD_AttributeValuesMeta;
+
+type PD_FixtureMetaData = {
+	selective: boolean;
 	ui_channel_index: number;
 };
 

@@ -21,6 +21,8 @@ type PresetMode = 'Universal' | 'Global' | 'Selective';
 type PresetProps = ObjProps & {
 	appearance: Appearance;
 	scribble: Scribble;
-	storedData: PresetMode;
+	storedData: PresetMode; // ReadOnly
+	presetMode: Enums.PresetMode; // ReadOnly
+	presetModeInternal: PresetMode;
 } & MAtrickOnlyProps;
-type Preset = Obj<PresetPools, Recipe, PresetProps> & {};
+type Preset = Obj<PresetPools, Recipe, PresetProps> & PresetProps;

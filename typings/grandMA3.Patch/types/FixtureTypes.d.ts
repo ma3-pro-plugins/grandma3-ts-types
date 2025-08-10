@@ -16,11 +16,14 @@ type DMXModes = Obj<FixtureTypeObj, DMXMode> &
 type DMXMode = Obj<DMXModes, any> &
 	any[] & { [index: string]: any } & {
 		DMXChannels: DMXChannels;
+		Relations: Relations;
+		SubfixtureOverview: SubfixtureOverview;
 	};
 
 type DMXChannels = Obj<DMXMode, DMXChannel> & DMXChannel[] & { [index: string]: DMXChannel };
 
 type DMXChannelProps = ObjProps & {
+	attribute: string;
 	dmxBreak: number;
 	coarse: number | 'None';
 	fine: number | 'None';
@@ -30,12 +33,15 @@ type DMXChannelProps = ObjProps & {
 };
 
 type DMXChannel = Obj<DMXChannels, LogicalChannel, DMXChannelProps> &
-	LogicalChannel[] & { [index: string]: LogicalChannel };
+DMXChannelProps& LogicalChannel[] & { [index: string]: LogicalChannel };
 
 type LogicalChannelProps = ObjProps & {
 	attribute: string;
 	snap: any;
 	master: any;
+	physicalFrom: number;
+	physicalTo: number;
+	
 };
 type LogicalChannel = Obj<DMXChannel, ChannelFunction, LogicalChannelProps> &
 	LogicalChannelProps & {
@@ -96,3 +102,9 @@ type Attribute = Obj<Attributes, any> & {
 	Feature: Feature;
 	Color: any;
 };
+
+type Relations = Obj<DMXMode, any> & { [key: string]: any };
+
+type SubfixtureOverview = Obj<DMXMode, FTSubfixture> & { [key: number]: FTSubfixture };
+
+type FTSubfixture = Obj<SubfixtureOverview, any> & any[];

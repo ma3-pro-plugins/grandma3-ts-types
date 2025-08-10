@@ -24,8 +24,12 @@ type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
 	fid: number | 'None';
 	cid: number | 'None';
 	fixtureType: FixtureTypeObj;
-	mode: DMXMode;
-	modeDirect: DMXMode;
+	/**
+	 * I saw one case where the Universal fixture has a child of class Fixture (Not Subfixture),
+	 * and it doesn't have any mode or modeDirect.
+	 */
+	mode?: DMXMode;
+	modeDirect?: DMXMode;
 };
 
 type SubFixture = Obj<Fixtures, SubFixture> & {
@@ -39,4 +43,5 @@ type UIChannel = {
 	logical_channel: LogicalChannel;
 	attr_index: number;
 	rt_index: number;
+	subAttribute: AttributeName;
 };

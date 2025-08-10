@@ -15,6 +15,10 @@ type LineEditProps = UIObjectProps & {
 	/** Some kind of path? */
 	target: string;
 
+	/**
+	 * IMPORTANT: When this is true, and the user uses the VirtualKeyboard,
+	 * then there is NO event when the user hits PLEASE and closes the keyboard.
+	 */
 	textChangeOnEnter: 1 | 0;
 	texture: string | `cornder${number}`;
 	iconAlignmentH: AlignmentH;

@@ -5,6 +5,7 @@ type ColorTheme = Obj<Root, ColorDefCollect | ColorGroups> & {
 
 type ColorGroups = Obj<ColorTheme, ColorGroup> & {
 	Global: ColorGroupGlobal;
+	PoolDefault: ColorGroupPoolDefault;
 	[name: string]: ColorGroup;
 };
 
@@ -19,6 +20,11 @@ type MAColor = Obj & {
 	 */
 	RGBA: string;
 };
+
+type ColorGroupPoolDefault= ColorGroup & {
+	// TODO: Add all pools
+	MATricks: MAColor;
+}
 
 type ColorGroupGlobal = ColorGroup & {
 	Disabled: MAColor;
@@ -41,6 +47,8 @@ type ColorGroupGlobal = ColorGroup & {
 	Background: MAColor;
 	BackgroundSelected: MAColor;
 	BackgroundSelectedInverted: MAColor;
+	ButtonBackground: MAColor;
+	ButtonBackgroundDarker: MAColor;
 	Default: MAColor;
 	Inactive: MAColor;
 	Bright: MAColor;

@@ -11,8 +11,14 @@ type Display = GenericObj &
 		FullScreen: PlaceHolder;
 		ScreenOverlay: PlaceHolder;
 		ModalOverlay: PlaceHolder;
-		w: number;
-		h: number;
+		/**
+		 * Integer number as string
+		 */
+		w: string;
+		/**
+		 * Integer number as string
+		 */
+		h: string;
 	} & {
 		scaleRatio: DisplayScaleRatio;
 	};

@@ -29,7 +29,7 @@ type UIObjectProps = ObjProps & {
 	alignmentV: AlignmentV;
 	font: Font;
 	hasHover: YesNo;
-	icon: string;
+	icon: string; // texture name
 	iconColor: MAColor;
 	iconAlignmentH: AlignmentH;
 	iconAlignmentV: AlignmentV;
