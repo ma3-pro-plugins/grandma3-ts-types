@@ -90,8 +90,10 @@ declare function CmdObj(): {
 	TempStoreSettings: any;
 	User: any;
 	Undos: any;
-	isFixed(exec: Executor): 1 | 0;
+	IsFixed: any //(exec: Executor)=> 1 | 0;
 };
+
+declare type IsFixedFn = (exec: Executor)=> 1 | 0;
 declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;
@@ -119,7 +121,7 @@ declare function ExportCSV(...args: any): any;
 declare function ExportJson(...args: any): any;
 declare function FileExists(...args: any): any;
 declare function FindBestDMXPatchAddr(...args: any): any;
-declare function FindBestFocus(...args: any): any;
+declare function FindBestFocus(uiObject: Obj): any;
 declare function FindNextFocus(...args: any): any;
 declare function FindTexture(...args: any): any;
 declare function FixtureType(...args: any): any;
@@ -172,7 +174,7 @@ declare function GetRTChannel(rt_index: number): RTChannel;
 declare function GetRTChannelCount(...args: any): any;
 declare function GetSelectedAttribute(...args: any): any;
 declare function GetShowFileStatus(): string;
-declare function GetSubfixture(...args: any): any;
+declare function GetSubfixture(...args: any): Fixture | SubFixture;
 declare function GetSubfixtureCount(...args: any): any;
 declare function GetTokenName(...args: any): any;
 declare function GetTokenNameByIndex(...args: any): any;
@@ -470,11 +472,15 @@ type PD_FixtureMetaData = {
 	ui_channel_index: number;
 };
 
+type FixtureName = string;
 /**
  * This fixture address is a unique identifier for a fixture.
  * Is can be directly used with ObjectList() to get the fixture object.
  */
-type FixtureAddress = `${FixtureIDTypeKeyword} ${FixtureCIDType}`;
+
+type FixtureAddressRaw = `Stage ${number}.${number}.${FixtureName}` | `Stage ${number}.${number}.${number}`;
+type FixtureAddressStandard = `${Exclude<FixtureIDTypeKeyword, 'Stage'>} ${FixtureCIDType}`;
+type FixtureAddress = FixtureAddressStandard | FixtureAddressRaw;
 /**
  * This corresponds to the IDType in an exported Group XML.
  * NOTE: The IDType of keyword "Stage" is 0  (same as Fixture), this might be an MA BUG. (MA3 v2.0.2.0)

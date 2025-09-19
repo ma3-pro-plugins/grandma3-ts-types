@@ -109,17 +109,19 @@ type PartProps = ObjProps & {
 	note: string;
 	part: number;
 	/**
-	 * Raw Seconds. 1 sec = 16777216
+	 * Before MA3 v2.3 : Raw Seconds. 1 sec = 16777216
+	 * Since MA3 v2.3 : Seconds.
 	 */
 	cueInFade: number;
 	/**
-	 * Raw Seconds. 1 sec = 16777216
+	 * Before MA3 v2.3 : Raw Seconds. 1 sec = 16777216
+	 * Since MA3 v2.3 : Seconds.
 	 */
 	cueInDelay: number;
 	sync: boolean;
 };
 
-type Part = Obj<Cue, Recipe, PartProps> & {};
+type Part = Obj<Cue, Recipe, PartProps> & PartProps &{};
 
 declare namespace MA3_v2_0_2 {
 	type SequenceProps = ObjProps & {

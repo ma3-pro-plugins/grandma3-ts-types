@@ -21,6 +21,11 @@ type Stage = Obj<Stages, any> & {
 type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
 type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
+	/**
+	 * If the fixture has a CID, then the index is the CID.
+	 * If not, it will be the 1-based index of the fixture within the Stage.
+	 */
+	index: number;
 	fid: number | 'None';
 	cid: number | 'None';
 	fixtureType: FixtureTypeObj;
@@ -30,6 +35,7 @@ type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
 	 */
 	mode?: DMXMode;
 	modeDirect?: DMXMode;
+	patch: DMXPatchAddrString | '';
 };
 
 type SubFixture = Obj<Fixtures, SubFixture> & {
@@ -39,6 +45,9 @@ type SubFixture = Obj<Fixtures, SubFixture> & {
 
 type UIChannels = Obj<LivePatch | Patch, UIChannel> & UIChannel[];
 
+/**
+ * This is a LUA table (not user_data type)
+ */
 type UIChannel = {
 	logical_channel: LogicalChannel;
 	attr_index: number;

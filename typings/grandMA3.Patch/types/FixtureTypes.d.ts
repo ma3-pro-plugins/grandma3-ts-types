@@ -18,6 +18,7 @@ type DMXMode = Obj<DMXModes, any> &
 		DMXChannels: DMXChannels;
 		Relations: Relations;
 		SubfixtureOverview: SubfixtureOverview;
+		totalFootPrint: number; // Number of DMX Channels
 	};
 
 type DMXChannels = Obj<DMXMode, DMXChannel> & DMXChannel[] & { [index: string]: DMXChannel };

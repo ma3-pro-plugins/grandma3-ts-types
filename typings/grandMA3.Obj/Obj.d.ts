@@ -77,8 +77,8 @@ interface Obj<
 	/** Get the child class name */
 	GetChildClass(): string;
 	GetClass: () => Clazz;
-	GetDisplay(...args: any): any;
-	GetDisplayIndex(...args: any): any;
+	GetDisplay(): Display;
+	GetDisplayIndex(index: number): Display;
 	GetExportFileName(...args: any): any;
 	/**
 	 * Get Fader value
@@ -191,7 +191,7 @@ interface Obj<
 	 * @param callback Unknown
 	 */
 	ShowModal(callback?: (...args: any) => void): void;
-	ToAddr(...args: any): any;
+	ToAddr(): FixtureAddress;
 	UIChildren(...args: any): any;
 	UILGGetColumnAbsXLeft(...args: any): any;
 	UILGGetColumnAbsXRight(...args: any): any;
