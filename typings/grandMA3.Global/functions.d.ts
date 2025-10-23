@@ -13,7 +13,7 @@ declare type ObjectUserData = any; // TODO: find a way to represent this handle
 declare type MAObjectHandleStr = `#${string}`;
 type DMXUniverseNumber = number; // 1-1024
 type DMXChannelNumber = number; // 1-512
-type DMXPatchAddrString = `${DMXUniverseNumber}.${DMXChannelNumber}`;
+type DMXAddrString = `${DMXUniverseNumber}.${DMXChannelNumber}`;
 declare function AddFixtures(params: {
 	mode: DMXMode; // DMXMode
 	amount: number;
@@ -40,7 +40,7 @@ declare function AddFixtures(params: {
 	 * The string must indicate a universe and a start address in the universe.
 	 * The two must be separated by a dot. Each table element is used for the up to eight DMX breaks in the patch.
 	 */
-	patch?: DMXPatchAddrString[];
+	patch?: DMXAddrString[];
 	layer?: string;
 	class?: string;
 	/**
@@ -90,10 +90,10 @@ declare function CmdObj(): {
 	TempStoreSettings: any;
 	User: any;
 	Undos: any;
-	IsFixed: any //(exec: Executor)=> 1 | 0;
+	IsFixed: any; //(exec: Executor)=> 1 | 0;
 };
 
-declare type IsFixedFn = (exec: Executor)=> 1 | 0;
+declare type IsFixedFn = (exec: Executor) => 1 | 0;
 declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;
@@ -142,7 +142,7 @@ declare function GetDMXUniverse(...args: any): any;
 declare function GetDMXValue(...args: any): any;
 declare function GetExecutor(...args: any): any;
 declare function GetFocus(...args: any): any;
-declare function GetFocusDisplay(...args: any): any;
+declare function GetFocusDisplay(): Display;
 declare function GetObject<T extends Obj = Obj>(address: string): T | undefined;
 declare function GetPath(...args: any): any;
 declare function GetPathOverrideFor(...args: any): any;
@@ -183,7 +183,10 @@ declare function GetTopOverlay(...args: any): any;
 declare function GetUIChannel(ui_channel_index: number): UIChannel;
 declare function GetUIChannelCount(...args: any): any;
 declare function GetUIChannelIndex(...args: any): any;
-declare function GetUIChannels(subFixture: Fixture |SubFixture, returnAsHandles: boolean): UIChannel[];
+declare function GetUIChannels(
+	subFixture: Fixture | SubFixture,
+	returnAsHandles: boolean,
+): UIChannel[];
 declare function GetUIObjectAtPosition(...args: any): any;
 declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
@@ -478,7 +481,9 @@ type FixtureName = string;
  * Is can be directly used with ObjectList() to get the fixture object.
  */
 
-type FixtureAddressRaw = `Stage ${number}.${number}.${FixtureName}` | `Stage ${number}.${number}.${number}`;
+type FixtureAddressRaw =
+	| `Stage ${number}.${number}.${FixtureName}`
+	| `Stage ${number}.${number}.${number}`;
 type FixtureAddressStandard = `${Exclude<FixtureIDTypeKeyword, 'Stage'>} ${FixtureCIDType}`;
 type FixtureAddress = FixtureAddressStandard | FixtureAddressRaw;
 /**

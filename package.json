@@ -26,8 +26,9 @@
 	},
 	"homepage": "https://github.com/ma3-pro-plugins/grandma3-ts-types#readme",
 	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"lua-types": "^2.13.1",
-		"prettier": "^2.7.1",
+		"prettier": "^3.6.2",
 		"typescript": "5.8.2",
 		"typescript-to-lua": "1.32.0"
 	},

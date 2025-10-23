@@ -20,6 +20,10 @@ type Stage = Obj<Stages, any> & {
 };
 type Spaces = Obj<Stage, any>;
 type Fixtures = Obj<Stage, Fixture>;
+type DMXMultiAddrString =
+	| DMXAddrString
+	| `${DMXAddrString},${DMXAddrString}`
+	| `${DMXAddrString},${DMXAddrString},${DMXAddrString}`; // May be more ?
 type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
 	/**
 	 * If the fixture has a CID, then the index is the CID.
@@ -35,7 +39,7 @@ type Fixture = Obj<Fixtures, Fixture | SubFixture> & {
 	 */
 	mode?: DMXMode;
 	modeDirect?: DMXMode;
-	patch: DMXPatchAddrString | '';
+	patch: DMXMultiAddrString | '';
 };
 
 type SubFixture = Obj<Fixtures, SubFixture> & {
