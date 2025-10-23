@@ -64,3 +64,11 @@ type UIObject = Obj &
 		readonly absClientRect: Rect;
 		GetOverlay(): Popup;
 	};
+
+type ScrollBox = Obj &
+	UIObjectProps &
+	UIObjectSignals & {
+		readonly absRect: Rect;
+		readonly absClientRect: Rect;
+		GetOverlay(): Popup;
+	};
