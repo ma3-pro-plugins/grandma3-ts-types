@@ -53,6 +53,7 @@ type SequencePlaybackMaster = 'None' | `Playback${number}`;
 type SequencePriority = 'Lowest' | 'Low' | 'LTP' | 'High' | 'Highest' | 'HTP' | 'Swap' | 'Super';
 type SequenceMib = 'Enabled' | 'Never' | 'Force Early' | 'Force UnpoGo' | 'Force Late';
 type SequenceMibMode = 'None' | 'Early' | 'UponGo' | 'Late';
+type SequenceXFadeMode = 'Split' | 'AB'; 
 type SequenceProps = ObjProps & {
 	autoStart: boolean;
 	autoStop: boolean;
@@ -81,7 +82,7 @@ type SequenceProps = ObjProps & {
 	swapProtect: boolean;
 	useExecutorTime: boolean;
 	wrapAround: boolean;
-	xFadeMode: boolean;
+	xFadeMode: SequenceXFadeMode;
 	xFadeReload: boolean;
 };
 
@@ -119,6 +120,7 @@ type PartProps = ObjProps & {
 	 */
 	cueInDelay: number;
 	sync: boolean;
+	transition: Enums.TransitionType
 };
 
 type Part = Obj<Cue, Recipe, PartProps> & PartProps &{};

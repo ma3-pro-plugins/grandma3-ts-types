@@ -5,6 +5,9 @@ type Page = Obj<Pages, Executor | ExecutorProxy>;
 
 type ExecutorBaseProps = {
 	fader: 'Master' | 'Temp'; //...
+	keyUseCustomCommand: 'true' | 'false';
+	keyCommand: string;
+	keyAddExec: 'true' | 'false';
 };
 type ExecutorProps = ObjProps &
 	ExecutorBaseProps & {

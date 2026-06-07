@@ -5,6 +5,7 @@ import './DialogFrame';
 import './Display';
 import './ItemCollect';
 import './IndicatorButton';
+import './IndicatorControl';
 import './LineEdit';
 import './MainDialog';
 import './PlaceHolder';

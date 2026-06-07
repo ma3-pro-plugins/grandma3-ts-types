@@ -4,6 +4,7 @@
 type DataPoolClass = Obj<DataPools, any> & {
 	index: DataPoolIndex;
 } & {
+	1: Worlds; // Worlds
 	2: Filters; // Filters
 	4: PresetPools; // PresetPools
 	5: Groups; // Groups
@@ -39,13 +40,17 @@ type Filters = Obj<DataPoolClass, Filter>;
 type FilterProps = ObjProps & {};
 type Filter = Obj<Filters, any, FilterProps>;
 
+type Worlds = Obj<DataPoolClass, World>;
+type WorldProps = ObjProps & {};
+type World = Obj<Worlds, any, WorldProps>;
+
 type RecipeProps = ObjProps & {};
 
 type Recipe = Obj<Part, undefined, RecipeProps> & {
 	selection: Group;
 	values: Preset;
-	matricks: Obj;
-	filter: Obj;
+	matricks: MAtrick;
+	filter: World | Filter;
 };
 
 type Timecodes = Obj<DataPoolClass, Timecode> & { [key: string]: Timecode };

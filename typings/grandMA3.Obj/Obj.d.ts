@@ -58,6 +58,11 @@ interface Obj<
 	 */
 	Create(childIndex: number, clazz?: string, undo?: UndoHandle): ChildType;
 	CurrentChild(): ChildType | undefined;
+	/**
+	 * Delete a child at a given 1-based index
+	 * @param childIndex 1-based
+	 * @param undo 
+	 */
 	Delete(childIndex: number, undo?: UndoHandle): void;
 	Dump(): string;
 	Export(...args: any): any;

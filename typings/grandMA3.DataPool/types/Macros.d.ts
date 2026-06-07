@@ -1,7 +1,10 @@
 type Macros = Obj<DataPoolClass, Macro> & Macro[] & { [index: string]: Macro };
-
-type Macro = Obj<Layouts, MacroLine> &
-	MacroLine[] & { [index: string]: MacroLine } & {
+type MacroProps = ObjProps & {
+	scribble: Scribble;
+	note: string;
+};
+type Macro = Obj<Layouts, MacroLine, MacroProps> &
+	MacroLine[] & MacroProps & { [index: string]: MacroLine } & {
 		appearance: Obj;
 	};
 

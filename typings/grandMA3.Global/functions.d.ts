@@ -11,9 +11,15 @@ declare type ObjectUserData = any; // TODO: find a way to represent this handle
  * Starting from MA3 version 2.2.x the MAObjectHandleStr is uppercase and does not allow leading 0-s.
  */
 declare type MAObjectHandleStr = `#${string}`;
+declare type MAObjectHandleInt = number;
 type DMXUniverseNumber = number; // 1-1024
 type DMXChannelNumber = number; // 1-512
 type DMXAddrString = `${DMXUniverseNumber}.${DMXChannelNumber}`;
+/**
+ * Arguments injected by grandMA3 when calling a plugin's main function.
+ * Tuple: [pluginObjectName: string, componentName: string, signalTable: object, componentHandle: LuaComponent]
+ */
+declare type MA3PluginInjectedArgs = [string, string, object, LuaComponent];
 declare function AddFixtures(params: {
 	mode: DMXMode; // DMXMode
 	amount: number;
@@ -105,7 +111,7 @@ declare function CurrentUser(...args: any): any;
 declare function DataPool(): DataPoolClass;
 declare function DefaultDisplayPositions(...args: any): any;
 declare function DeleteIPAddress(...args: any): any;
-declare function DelVar(...args: any): any;
+declare function DelVar(vars: any, varName: string): boolean;
 declare function DeskLocked(...args: any): any;
 declare function DeviceConfiguration(): any;
 declare function DirList(...args: any): any;
@@ -191,7 +197,7 @@ declare function GetUIObjectAtPosition(...args: any): any;
 declare function GetVar(...args: any): string | undefined;
 declare function GlobalVars(...args: any): any;
 declare function HandleToInt(obj: Obj): number;
-declare function HandleToStr(obj: Obj): MAObjectHandleStr;
+declare function HandleToStr(obj: Obj<any, any, any, any>): MAObjectHandleStr;
 declare type HookIndex = number;
 /**
  * Register a listener for object changes.
@@ -279,7 +285,7 @@ declare function MessageBox(options: MessageBoxOptions): MessageBoxResult;
 declare function Mouse(...args: any): any;
 declare function MouseObj(...args: any): any;
 declare const MultiLanguage: Array<[string, string]>;
-declare const Obj: Obj<any, any>;
+declare const Obj: Obj<any, any, any, any>;
 declare function ObjectList<T extends Obj>(address: string): T[];
 declare function OverallDeviceCertificate(...args: any): any;
 declare function Patch(): Patch;
@@ -309,6 +315,7 @@ declare function ProgrammerPart(...args: any): any;
 declare function Pult(...args: any): any;
 declare function RefreshLibrary(...args: any): any;
 declare function ReleaseType(...args: any): any;
+declare function RemoteCommand(ip: IpAddressString, command: string): boolean;
 declare function RenewLayoutHook(...args: any): any;
 declare function Root(): Root;
 declare function SaveExecConfig(...args: any): any;
@@ -494,6 +501,8 @@ type FixtureIDType = 0 | 2 | 1 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 type FixtureIDTypeKeyword =
 	| 'Fixture'
 	| 'Channel'
+	| 'Generic'
+	/** @deprecated Since MA3 2.4.0.0; patch ID type keyword renamed to 'Generic'. Kept for pre-2.4 consoles and legacy addresses. */
 	| 'Universal'
 	| 'HouseLights'
 	| 'NonDim'
@@ -526,6 +535,8 @@ type FixtureRawRelativeAddressType =
 	| `${number}.${number}.${number}.${number}.${number}`;
 type FixtureIDTypeKeywordNoFixture =
 	| 'Channel'
+	| 'Generic'
+	/** @deprecated Since MA3 2.4.0.0; patch ID type keyword renamed to 'Generic'. Kept for pre-2.4 consoles and legacy addresses. */
 	| 'Universal'
 	| 'HouseLights'
 	| 'NonDim'
@@ -551,3 +562,5 @@ type PresetData = {
 } & {
 	[key: number]: PD_AttributeData;
 };
+
+type IpAddressString = `${number}.${number}.${number}.${number}`;

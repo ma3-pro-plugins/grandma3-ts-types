@@ -13,11 +13,12 @@ type Plugin = Obj<Plugins, LuaComponent, PluginProps> &
 	PluginProps & { note: string } & { [index: string]: LuaComponent | undefined };
 
 type LuaComponentProps = ObjProps & {
+	fileContent: string;
 	fileName: string;
 	filePath: string;
-	fileSize: number;
+	readonly fileSize: number;
 	isResource: boolean;
 	inStream: boolean;
 	installed: boolean;
 };
-type LuaComponent = Obj<Plugin, undefined, LuaComponentProps> & { [index: string]: undefined };
+type LuaComponent = Obj<Plugin, undefined, LuaComponentProps> & LuaComponentProps;

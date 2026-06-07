@@ -7,6 +7,7 @@ type LineEditSignals = UIObjectSignals & {
 };
 
 type LineEditProps = UIObjectProps & {
+	contentBeforeCursor: string;
 	textAutoAdjust: YesNo;
 	prompt: string;
 	message: string;

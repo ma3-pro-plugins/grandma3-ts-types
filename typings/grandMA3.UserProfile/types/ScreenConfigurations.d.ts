@@ -9,6 +9,10 @@ type ScreenConfiguration = Obj<ScreenConfigurations, ScreenContents | ViewButton
 	'ViewButtonScreens 2': ViewButtonScreens;
 };
 
+type SequenceSelection = Obj<UserProfile, undefined, SequenceSelectionProps>  & SequenceSelectionProps;
+type SequenceSelectionProps = ObjProps & {
+	handles: MAObjectHandleInt[]; // Use IntToHandle to get the Sequences
+};
 type ScreenNumber = number;
 type ScreenContentKey = `ScreenContent ${ScreenNumber}`;
 type ScreenContents = Obj<ScreenConfiguration, ScreenContent> & Record<number, ScreenContent>;

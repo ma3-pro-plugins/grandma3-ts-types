@@ -31,7 +31,14 @@ type DriveProps = ObjProps & {
 	path: string;
 };
 
-type MANetSocket = Obj<Root, void, MANetSocketProps, 'MAnetSocket'> & MANetSocketProps;
+type MANetSocket = Obj<Root, void, MANetSocketProps, 'MAnetSocket'> &
+	MANetSocketProps & {
+		Sessions: Sessions;
+		HostTypes: {
+			onPC: Obj<MANetSocket, NetworkStation>;
+			Console: Obj<MANetSocket, NetworkStation>;
+		};
+	};
 type MANetSocketProps = ObjProps & {
 	hostName: string;
 	/**
@@ -43,9 +50,31 @@ type MANetSocketProps = ObjProps & {
 	/**
 	 * Readonly
 	 */
-	status: 'IdleMaster' | string;
+	status: StationStatus;
 	/**
 	 * Readonly
 	 */
 	sessionManager: 'Yes' | 'No';
 };
+type StationStatus = 'IdleMaster' | 'GlobalMaster' | 'Connected' | 'Standalone';
+type Sessions = Obj<MANetSocket, Session>;
+type Session = Obj<Sessions, void, SessionProps, 'Session'> & SessionProps;
+type SessionProps = ObjProps;
+
+type MasterPriority = 'High' | 'Normal' | 'Low' | 'VeryLow' | 'Never';
+type NetworkStation = Obj<MANetSocket, NetworkStation>;
+type NetworkStationProps = ObjProps & {
+	ip: string;
+	session: string;
+	location: string;
+	showfile: string;
+	status: StationStatus;
+	masterPrio: MasterPriority;
+	versionBig: SemanticVersionFullString;
+	versionSmall: SemanticVersionFullString;
+	enabled: YesNo;
+	sessionIndex: number;
+	sessionSlot: number;
+};
+
+type SemanticVersionFullString = `${number}.${number}.${number}.${number}`;

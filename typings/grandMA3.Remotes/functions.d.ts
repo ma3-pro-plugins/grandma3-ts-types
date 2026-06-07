@@ -88,4 +88,4 @@ type DmxRemoteProps = ObjProps & {
 	resolution: DmxRemoteResolution;
 };
 
-type DmxRemote = Obj<DmxRemotes, undefined, DmxRemoteProps>;
+type DmxRemote = Obj<DmxRemotes, undefined, DmxRemoteProps> & DmxRemoteProps;

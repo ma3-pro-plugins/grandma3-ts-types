@@ -4,8 +4,10 @@ type ColorTheme = Obj<Root, ColorDefCollect | ColorGroups> & {
 };
 
 type ColorGroups = Obj<ColorTheme, ColorGroup> & {
+	Assignment: ColorGroupAssignment;
 	Global: ColorGroupGlobal;
 	PoolDefault: ColorGroupPoolDefault;
+	ProgLayer: ColorGroupProgLayer;
 	[name: string]: ColorGroup;
 };
 
@@ -24,6 +26,17 @@ type MAColor = Obj & {
 type ColorGroupPoolDefault= ColorGroup & {
 	// TODO: Add all pools
 	MATricks: MAColor;
+}
+
+type ColorGroupAssignment = ColorGroup & {
+	Master: MAColor;
+}
+type ColorGroupProgLayer = ColorGroup & {
+	Absolute: MAColor;
+	Delay: MAColor;
+	Fade: MAColor;
+	Speed: MAColor;
+	Relative: MAColor;
 }
 
 type ColorGroupGlobal = ColorGroup & {

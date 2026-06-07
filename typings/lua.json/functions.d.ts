@@ -2,13 +2,15 @@
 
 /** @noSelfInFile */
 
-declare type JsonSerializableObj = { [key: string]: JsonSerializable };
+// NOTE: This proper definition is realy problematic )-:
+// declare type JsonSerializableObj = { [key: string]: JsonSerializable | undefined };
+declare type JsonSerializableObj = object
 
 declare type JsonSerializable =
 	| string
 	| number
 	| boolean
-	| null
+	// | null
 	| JsonSerializable[]
 	| JsonSerializableObj;
 

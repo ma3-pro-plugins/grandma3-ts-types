@@ -1,8 +1,8 @@
-type IndicatorButtonProps = ButtonProps & {
+type IndicatorControlProps = ButtonProps & {
 	colorIndicator: string | MAColor;
 	indicatorIcon: 'DialogButtonIcon';
 	indicatorIconAlignmentV: AlignmentV;
 	indicatorIconColor: string | MAColor;
 	textLeftCorner: string;
 };
-type IndicatorButton = UIObject & IndicatorButtonProps & ButtonSignals;
+type IndicatorControl = UIObject & IndicatorControlProps & ButtonSignals;

@@ -62,7 +62,7 @@ type MAtrickOnlyProps = {
 
 type MAtrickOnlyPropName = keyof MAtrickOnlyProps;
 
-type MAtrick = Obj<MAtricks, undefined> &
+type MAtrick = Obj<MAtricks, undefined, MAtrickProps, 'MAtrick'> &
 	MAtrickProps & {
 		appearance: Appearance;
 	};

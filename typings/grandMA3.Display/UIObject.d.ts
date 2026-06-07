@@ -35,6 +35,7 @@ type UIObjectProps = ObjProps & {
 	iconAlignmentV: AlignmentV;
 	text: string;
 	textAlignmentH: AlignmentH;
+	textAlignmentV: AlignmentV;
 	textColor: MAColor | string;
 	textShadow: number;
 	textShadowColor: Obj;
