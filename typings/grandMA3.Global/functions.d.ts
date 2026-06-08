@@ -105,6 +105,12 @@ declare function Confirm(...args: any): any;
 declare function CreateUndo(...args: any): UndoHandle;
 declare function CurrentEnvironment(): Obj;
 declare function CurrentExecPage(...args: any): Page;
+/**
+ * Returns the active pool-object selection (ObjectSelection) for the current context.
+ * Runtime 2.4.2.2: returns userdata handle (class ObjectSelection).
+ * Some builds may stringify as "UserProfile 1.1.1.8" before resolution — consumers should use the handle directly.
+ */
+declare function CurrentObjectSelection(): ObjectSelection;
 declare function CurrentProfile(): UserProfile;
 declare function CurrentScreenConfig(): ScreenConfiguration;
 declare function CurrentUser(...args: any): any;
@@ -182,6 +188,11 @@ declare function GetSelectedAttribute(...args: any): any;
 declare function GetShowFileStatus(): string;
 declare function GetSubfixture(...args: any): Fixture | SubFixture;
 declare function GetSubfixtureCount(...args: any): any;
+/**
+ * Returns target handles for a selection object.
+ * MA 2.4+ — pair with ObjectSelection when handles table is insufficient.
+ */
+declare function GetTargetList(handle: Obj<any, any>): Obj<any, any>[];
 declare function GetTokenName(...args: any): any;
 declare function GetTokenNameByIndex(...args: any): any;
 declare function GetTopModal(...args: any): any;

@@ -4,7 +4,7 @@ type UserProfileProps = ObjProps & {
 };
 
 type UserProfile = Obj<UserProfiles, any, UserProfileProps> &
-	any[] & { [index: string]: any } & {
+	any[] & {
 		Environments: Environments;
 		EncoderBarPool: EncoderBarPool;
 		Cameras: Cameras;
@@ -28,6 +28,26 @@ type UserProfile = Obj<UserProfiles, any, UserProfileProps> &
 	};
 
 declare namespace MA3_V2_3 {
+	type Environments = Obj<Environments, UserEnvironment> & {
+		/**
+		 * Main Programmer Environment
+		 */
+		1: UserEnvironment;
+		/**
+		 * Preview Programmer Environment
+		 */
+		2: UserEnvironment;
+	};
+	type UserEnvironment = Obj<
+		Environments,
+		Selection | Programmer | AtFilter | LivePatch3dSelection
+	> & {
+		1: Selection;
+		2: Selection;
+		3: Programmer;
+		4: AtFilter;
+		6: LivePatch3dSelection;
+	};
 	type UserProfile = Obj<UserProfiles, any, UserProfileProps> &
 		any[] & { [index: string]: any } & {
 			Environments: Environments;
@@ -72,11 +92,11 @@ type Collection = Obj<MA3_V2_3.UserProfile, any>;
 
 type Environments = Obj<Environments, UserEnvironment> & {
 	/**
-	 * Main Programmer Environment
+	 * Main Programmer Environment ("Normal")
 	 */
 	1: UserEnvironment;
 	/**
-	 * Preview Programmer Environment
+	 * Preview Programmer Environment ("Preview")
 	 */
 	2: UserEnvironment;
 };
@@ -91,17 +111,33 @@ type UserAttribute = Obj<UserAttributePreferences, void> & {
 	EncoderResolution: Enums.AttriebuteEncoderResolution;
 };
 
-type UserEnvironmentChildTypes = Selection;
+type UserEnvironmentChildTypes =
+	| Selection
+	| Programmer
+	| AtFilter
+	| LivePatch3dSelection
+	| RecipeEditor
+	| ObjectSelection;
+
 type UserEnvironment = Obj<Environments, UserEnvironmentChildTypes> & {
+	/** Fixture selection */
 	1: Selection;
 	2: Selection;
 	3: Programmer;
 	4: AtFilter;
 	6: LivePatch3dSelection;
+	/** MA 2.4+ */
+	7: RecipeEditor;
+	/** MA 2.4+ — replaces UserProfile.SequenceSelection for pool objects */
+	8: ObjectSelection;
+	/** Named access (verified on 2.4.2.2) */
+	ObjectSelection: ObjectSelection;
 };
+
 type Selection = Obj<UserEnvironment, any>;
 type Programmer = Obj<UserEnvironment, ProgPart>;
 type ProgPart = Obj<Programmer, any>;
-type AtFilterProps = ObjProps & { filterRef: Filter }
+type AtFilterProps = ObjProps & { filterRef: Filter };
 type AtFilter = Obj<UserEnvironment, any, AtFilterProps>;
 type LivePatch3dSelection = Obj<UserEnvironment, any>;
+type RecipeEditor = Obj<UserEnvironment, any>;
