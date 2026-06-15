@@ -114,6 +114,10 @@ declare function CurrentObjectSelection(): ObjectSelection;
 declare function CurrentProfile(): UserProfile;
 declare function CurrentScreenConfig(): ScreenConfiguration;
 declare function CurrentUser(...args: any): any;
+declare function CurrentDataPool(): DataPoolClass;
+/**
+ * @deprecated Since MA3 2.4.0.0; use CurrentDataPool() instead.
+ */
 declare function DataPool(): DataPoolClass;
 declare function DefaultDisplayPositions(...args: any): any;
 declare function DeleteIPAddress(...args: any): any;
