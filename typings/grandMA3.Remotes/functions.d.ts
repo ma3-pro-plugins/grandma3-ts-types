@@ -82,6 +82,7 @@ type DmxRemoteProps = ObjProps & {
 	out: string;
 	triggerOn: number;
 	triggerOff: number;
+	triggerOnSessionChange: boolean;
 	inFrom: number;
 	inTo: number;
 	address: number;
