@@ -83,23 +83,7 @@ declare function Cmd(cmd: string, undo?: UndoHandle): string;
  */
 declare function CmdIndirect(cmd: string, undo?: UndoHandle): undefined;
 declare function CmdIndirectWait(cmd: string, undo?: UndoHandle): undefined;
-declare function CmdObj(): {
-	ClearCmd(): void;
-	CmdText: string;
-	CueUpdates: any;
-	Destination: any;
-	Library: any;
-	MaxStep: any;
-	PresetUpdates: any;
-	RefreshMetaData(path: any): void;
-	ShowMetaDataCollect: object;
-	TempStoreSettings: any;
-	User: any;
-	Undos: any;
-	IsFixed: any; //(exec: Executor)=> 1 | 0;
-};
-
-declare type IsFixedFn = (exec: Executor) => 1 | 0;
+declare function CmdObj(): Cmdline;
 declare function Confirm(...args: any): any;
 
 declare function CreateUndo(...args: any): UndoHandle;

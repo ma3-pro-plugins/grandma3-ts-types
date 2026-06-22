@@ -7,6 +7,7 @@ import './grandMA3.Global';
 import './grandMA3.Obj';
 import './grandMA3.Patch';
 import './grandMA3.Remotes';
+import './grandMA3.Temp';
 import './grandMA3.Root';
 import './grandMA3.UserProfile';
 import './lua.ftp';

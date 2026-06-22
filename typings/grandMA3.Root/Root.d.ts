@@ -21,14 +21,8 @@ type USBDeviceStorageProps = ObjProps & {
 type USBDeviceStorage = Obj<USBDeviceStorage, void, USBDeviceStorageProps, 'USBDeviceStorage'>;
 
 type RootTemp = Obj<Root, any> & {
+	Cmdlines: Cmdlines;
 	DriveCollect: DriveCollect;
-};
-
-type DriveCollect = Obj<RootTemp, Drive>;
-type Drive = Obj<DriveCollect, void, DriveProps, 'Drive'> & DriveProps;
-type DriveProps = ObjProps & {
-	driveType: 'Removeable' | 'Internal' | 'OldVersion';
-	path: string;
 };
 
 type MANetSocket = Obj<Root, void, MANetSocketProps, 'MAnetSocket'> &
