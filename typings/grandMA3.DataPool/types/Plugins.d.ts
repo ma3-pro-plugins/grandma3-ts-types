@@ -9,7 +9,7 @@ type PluginProps = ObjProps & {
 	userRights: string;
 };
 
-type Plugin = Obj<Plugins, LuaComponent, PluginProps> &
+type Plugin = Obj<Plugins, LuaComponent, PluginProps, 'UserPlugin'> &
 	PluginProps & { note: string } & { [index: string]: LuaComponent | undefined };
 
 type LuaComponentProps = ObjProps & {
@@ -21,4 +21,4 @@ type LuaComponentProps = ObjProps & {
 	inStream: boolean;
 	installed: boolean;
 };
-type LuaComponent = Obj<Plugin, undefined, LuaComponentProps> & LuaComponentProps;
+type LuaComponent = Obj<Plugin, undefined, LuaComponentProps, 'ComponentLua'> & LuaComponentProps;

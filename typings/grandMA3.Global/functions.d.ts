@@ -210,7 +210,7 @@ declare type HookIndex = number;
 declare function HookObjectChange<T extends Obj<any, any>>(
 	callback: (obj: T, changeType: number) => void,
 	obj: T,
-	pluginHandle: any,
+	pluginHandle: Plugin,
 ): HookIndex;
 type HostOSString = 'Linux' | 'Windows' | 'Mac' | 'Rtos';
 declare function HostOS(): HostOSString;
