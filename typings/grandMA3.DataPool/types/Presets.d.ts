@@ -25,4 +25,4 @@ type PresetProps = ObjProps & {
 	presetMode: Enums.PresetMode; // ReadOnly
 	presetModeInternal: PresetMode;
 } & MAtrickOnlyProps;
-type Preset = Obj<PresetPools, Recipe, PresetProps> & PresetProps;
+type Preset = Obj<PresetPools, PartRecipe, PresetProps> & PresetProps;

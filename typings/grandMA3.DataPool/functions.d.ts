@@ -44,14 +44,210 @@ type Worlds = Obj<DataPoolClass, World>;
 type WorldProps = ObjProps & {};
 type World = Obj<Worlds, any, WorldProps>;
 
-type RecipeProps = ObjProps & {};
+/** Shared props of StandardRecipe and PhaserRecipe (from MA dumps). */
+type RecipeBaseProps = ObjProps &
+	MAtrickOnlyProps & {
+		tags: string;
+		previewCopy: any;
+		active: boolean;
+		hasAnyMatricksData: boolean;
+		shuffleMode: Enums.ShuffleMode;
+		initialName: string;
+		initialMatricks: any;
+		xInv: boolean;
+		xInvB: boolean;
+		xInvG: boolean;
+		xInvW: boolean;
+		yInv: boolean;
+		yInvB: boolean;
+		yInvG: boolean;
+		yInvW: boolean;
+		zInv: boolean;
+		zInvB: boolean;
+		zInvG: boolean;
+		zInvW: boolean;
+		alignRangeX: boolean;
+		alignRangeY: boolean;
+		alignRangeZ: boolean;
+		relativeFade: boolean;
+		relativeDelay: boolean;
+		relativePhase: boolean;
+		relativeSpeed: boolean;
+		relative: boolean;
+		doShuffle: any;
+		memoryType: string;
+		moveGridCursor: Enums.GridCursorMovement;
+		preserveGridPositions: boolean;
+		selectionData: any;
+		type: string;
+		user: any;
+		featureGroup: any;
+		trigger: any;
+		presetMode: Enums.PresetMode;
+		storedData: any;
+		presetData: any;
+		ownDataPresent: boolean;
+		directProgrammerCooking: boolean;
+		ownNonCookedDataPresent: boolean;
+		mode: any;
+		recipeTemplate: boolean;
+		dependencies: any;
+		references: any;
+		maxDepth: number;
+		action: any;
+		selection: Group;
+		selectionMode: string;
+		preset: Preset;
+		matricks: MAtrick;
+		filter: World | Filter;
+		generator: any;
+		values: Preset;
+		emptyLastCooking: boolean;
+		failedCookedPart: Enums.FailedCookedPart;
+		enabled: boolean;
+		selectionFromValue: boolean;
+		speedX: any;
+		phaseX: any;
+		fadeX: number;
+		delayX: number;
+		speedY: any;
+		phaseY: any;
+		fadeY: number;
+		delayY: number;
+		speedZ: any;
+		phaseZ: any;
+		fadeZ: number;
+		delayZ: number;
+	};
 
-type Recipe = Obj<Part, undefined, RecipeProps> & {
-	selection: Group;
-	values: Preset;
-	matricks: MAtrick;
-	filter: World | Filter;
+/** Non-phaser cue/preset recipe (class StandardRecipe). MA 2.4+. No children in dumps. */
+type StandardRecipeProps = RecipeBaseProps;
+
+type StandardRecipe = Obj<Part | Preset, undefined, StandardRecipeProps, 'StandardRecipe'> &
+	StandardRecipeProps;
+
+/** Cue-part / preset phaser recipe (class PhaserRecipe). MA 2.4+ */
+type PhaserRecipeProps = RecipeBaseProps & {
+	measure: any;
+	playbackNShot: any;
+	playbackDirection: Enums.PhaserRecipeDirection;
+	playbackAdaptiveMeasure: any;
+	playbackAdaptiveWidth: any;
+	playbackAdaptiveXYRotation: any;
+	shape: any;
+	has: any;
+	individual: any;
 };
+
+type PhaserRecipeChild = PhaserRecipeSteps | PhaserRecipeGroupedByFilterAttributeFake;
+
+type PhaserRecipe = Obj<Part | Preset, PhaserRecipeChild, PhaserRecipeProps, 'PhaserRecipe'> &
+	PhaserRecipeProps &
+	(PhaserRecipeChild | undefined)[] & { [index: string]: PhaserRecipeChild | undefined };
+
+/** Container of PhaserRecipeStep children under a PhaserRecipe. */
+type PhaserRecipeSteps = Obj<PhaserRecipe, PhaserRecipeStep, ObjProps, 'PhaserRecipeSteps'> &
+	(PhaserRecipeStep | undefined)[] & { [index: string]: PhaserRecipeStep | undefined };
+
+type PhaserRecipeStepProps = ObjProps & {
+	step: string;
+};
+
+type PhaserRecipeStep = Obj<
+	PhaserRecipeSteps,
+	PhaserRecipeValueSource,
+	PhaserRecipeStepProps,
+	'PhaserRecipeStep'
+> &
+	PhaserRecipeStepProps &
+	(PhaserRecipeValueSource | undefined)[] & {
+		[index: string]: PhaserRecipeValueSource | undefined;
+	};
+
+type PhaserRecipeValueSourceProps = ObjProps & {
+	attributes: any;
+	shape: string;
+	preset: any;
+	curve: any;
+	transX: any;
+	widthX: any;
+	accelX: any;
+	decelX: any;
+	transY: any;
+	widthY: any;
+	accelY: any;
+	decelY: any;
+	transZ: any;
+	widthZ: any;
+	accelZ: any;
+	decelZ: any;
+	rawValueAbs: any;
+	rawValueRel: any;
+	valueAbsolute: any;
+	valueRelative: any;
+};
+
+type PhaserRecipeValueSource = Obj<
+	PhaserRecipeStep,
+	undefined,
+	PhaserRecipeValueSourceProps,
+	'PhaserRecipeValueSource'
+> &
+	PhaserRecipeValueSourceProps;
+
+/** UI/filter grouping node under PhaserRecipe (class PhaserRecipeGroupedByFilterAttributeFake). */
+type PhaserRecipeGroupedByFilterAttributeFake = Obj<
+	PhaserRecipe,
+	PhaserRecipeFilterAttributeFake,
+	ObjProps,
+	'PhaserRecipeGroupedByFilterAttributeFake'
+> &
+	(PhaserRecipeFilterAttributeFake | undefined)[] & {
+		[index: string]: PhaserRecipeFilterAttributeFake | undefined;
+	};
+
+type PhaserRecipeFilterAttributeFakeProps = ObjProps & {
+	attributes: any;
+	steps: number;
+};
+
+type PhaserRecipeFilterAttributeFake = Obj<
+	PhaserRecipeGroupedByFilterAttributeFake,
+	PhaserRecipeFilterAttributeStepFake,
+	PhaserRecipeFilterAttributeFakeProps,
+	'PhaserRecipeFilterAttributeFake'
+> &
+	PhaserRecipeFilterAttributeFakeProps &
+	(PhaserRecipeFilterAttributeStepFake | undefined)[] & {
+		[index: string]: PhaserRecipeFilterAttributeStepFake | undefined;
+	};
+
+/** Listed under FilterAttributeFake in dumps; no specific props observed. */
+type PhaserRecipeFilterAttributeStepFake = Obj<
+	PhaserRecipeFilterAttributeFake,
+	undefined,
+	ObjProps,
+	'PhaserRecipeFilterAttributeStepFake'
+>;
+
+/** Recipe children of a Part or Preset (StandardRecipe or PhaserRecipe). MA 2.4+ */
+type PartRecipe = StandardRecipe | PhaserRecipe;
+
+/** Pre-2.4: single Recipe class (before StandardRecipe / PhaserRecipe split). */
+declare namespace MA3_V2_3 {
+	type RecipeProps = ObjProps & {};
+
+	type Recipe = Obj<Part, undefined, RecipeProps> & {
+		selection: Group;
+		values: Preset;
+		matricks: MAtrick;
+		filter: World | Filter;
+	};
+
+	type Part = Obj<Cue, Recipe, PartProps> & PartProps;
+
+	type Preset = Obj<PresetPools, Recipe, PresetProps> & PresetProps;
+}
 
 type Timecodes = Obj<DataPoolClass, Timecode> & { [key: string]: Timecode };
 type Timecode = Obj<Timecodes, Triggers> & { Triggers: Triggers };

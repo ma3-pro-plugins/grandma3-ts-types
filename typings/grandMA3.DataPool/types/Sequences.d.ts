@@ -53,7 +53,7 @@ type SequencePlaybackMaster = 'None' | `Playback${number}`;
 type SequencePriority = 'Lowest' | 'Low' | 'LTP' | 'High' | 'Highest' | 'HTP' | 'Swap' | 'Super';
 type SequenceMib = 'Enabled' | 'Never' | 'Force Early' | 'Force UnpoGo' | 'Force Late';
 type SequenceMibMode = 'None' | 'Early' | 'UponGo' | 'Late';
-type SequenceXFadeMode = 'Split' | 'AB'; 
+type SequenceXFadeMode = 'Split' | 'AB';
 type SequenceProps = ObjProps & {
 	autoStart: boolean;
 	autoStop: boolean;
@@ -104,6 +104,8 @@ type Cue = Obj<Sequence, Part> &
 		 */
 		no: number;
 	};
+type PartCueTiming = number | 'CueTiming';
+
 type PartProps = ObjProps & {
 	appearance: Obj;
 	command: string;
@@ -120,10 +122,87 @@ type PartProps = ObjProps & {
 	 */
 	cueInDelay: number;
 	sync: boolean;
-	transition: Enums.TransitionType
+	transition: Enums.TransitionType;
+	tags: string;
+	previewCopy: any;
+	hasAnyMatricksData: boolean;
+	alignRangeX: boolean;
+	alignRangeY: boolean;
+	alignRangeZ: boolean;
+	doShuffle: any;
+	memoryType: string;
+	moveGridCursor: Enums.GridCursorMovement;
+	preserveGridPositions: boolean;
+	selectionData: any;
+	inputFilter: any;
+	cuePart: string;
+	featureGroup: any;
+	trigger: any;
+	valuesMode: Enums.PresetValuesMode;
+	magic: boolean;
+	presetMode: Enums.PresetMode;
+	speedMaster: SequenceSpeedMaster | '';
+	speedScale: SequenceSpeedScale;
+	presetData: any;
+	ownDataPresent: boolean;
+	directProgrammerCooking: boolean;
+	ownNonCookedDataPresent: boolean;
+	mode: any;
+	delayToPhase: any;
+	dependencies: any;
+	references: any;
+	maxDepth: number;
+	action: any;
+	trackingDistance: any;
+	duration: number;
+	morph: any;
+	cueFade: number;
+	cueDelay: number;
+	cueOutFade: PartCueTiming;
+	cueOutDelay: PartCueTiming;
+	snapDelay: number;
+	individualTiming: Enums.IndividualTiming;
+	preset1Fade: PartCueTiming;
+	preset1Delay: PartCueTiming;
+	preset2Fade: PartCueTiming;
+	preset2Delay: PartCueTiming;
+	preset3Fade: PartCueTiming;
+	preset3Delay: PartCueTiming;
+	preset4Fade: PartCueTiming;
+	preset4Delay: PartCueTiming;
+	preset5Fade: PartCueTiming;
+	preset5Delay: PartCueTiming;
+	preset6Fade: PartCueTiming;
+	preset6Delay: PartCueTiming;
+	preset7Fade: PartCueTiming;
+	preset7Delay: PartCueTiming;
+	preset8Fade: PartCueTiming;
+	preset8Delay: PartCueTiming;
+	preset9Fade: PartCueTiming;
+	preset9Delay: PartCueTiming;
+	preset10Fade: PartCueTiming;
+	preset10Delay: PartCueTiming;
+	preset11Fade: PartCueTiming;
+	preset11Delay: PartCueTiming;
+	preset12Fade: PartCueTiming;
+	preset12Delay: PartCueTiming;
+	preset13Fade: PartCueTiming;
+	preset13Delay: PartCueTiming;
+	preset14Fade: PartCueTiming;
+	preset14Delay: PartCueTiming;
+	preset15Fade: PartCueTiming;
+	preset15Delay: PartCueTiming;
+	preset16Fade: PartCueTiming;
+	preset16Delay: PartCueTiming;
+	commandDelay: number;
+	indivFade: number;
+	indivDelay: number;
+	indivDuration: number;
 };
 
-type Part = Obj<Cue, Recipe, PartProps> & PartProps &{};
+type Part = Obj<Cue, PartRecipe, PartProps> &
+	PartProps &
+	(PartRecipe | undefined)[] & { [index: string]: PartRecipe | undefined };
 
 declare namespace MA3_v2_0_2 {
 	type SequenceProps = ObjProps & {
