@@ -99,10 +99,31 @@ type Feature = Obj<FeatureGroup, any> & {};
  */
 type Attributes = Obj<AttributeDefinitions, any> & { [key: string]: Attribute };
 
-type Attribute = Obj<Attributes, any> & {
-	Feature: Feature;
-	Color: any;
+type AttributeProps = ObjProps & {
+	Pretty: string;
+	MainAttribute: string;
+	ActivationGroup: string;
+	Special: Enums.SpecialAttribute;
+	SpecialIndex: number;
+	PhysicalUnit: Enums.PhysicalUnit;
+	GeometryType: Enums.GeometryType;
+	/** R,G,B,A normalized 0-1 */
+	Color: string;
+	Intensity: number;
+	NaturalReadout: Enums.ValueReadoutModeNatural;
+	EncoderResolution: Enums.AttriebuteEncoderResolution;
+	readonly LogChannels: number;
+	readonly ChannelFunctions: number;
+	Hide: string;
+	MIB: string;
+	readonly AttributeIndex: number;
+	readonly AttributeIndexOld: number;
 };
+
+type Attribute = Obj<Attributes, any, AttributeProps> &
+	AttributeProps & {
+		Feature: Feature;
+	};
 
 type Relations = Obj<DMXMode, any> & { [key: string]: any };
 
