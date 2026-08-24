@@ -1,12 +1,10 @@
 /*
  * Pool can be renamed !! So better
  */
-type DataPoolClass = Obj<DataPools, any> & {
-	index: DataPoolIndex;
-} & {
+type DataPoolChildrenByIndex = {
 	1: Worlds; // Worlds
 	2: Filters; // Filters
-	4: PresetPools; // PresetPools
+	4: PresetPools; // PresetPools (pre-2.5; Shapes at 4 since 2.5)
 	5: Groups; // Groups
 	6: Sequences; // Sequences
 	7: Plugins; // Plugins
@@ -16,6 +14,31 @@ type DataPoolClass = Obj<DataPools, any> & {
 	13: Layouts; // Layouts
 	14: Timecodes; // Timecodes
 };
+
+/** Name-based access; stable across MA child-slot reshuffles (e.g. Shapes 16→4 in 2.5). */
+type DataPoolChildrenByName = {
+	Worlds: Worlds;
+	Filters: Filters;
+	GeneratorTypes: GeneratorTypes;
+	Shapes: Shapes;
+	PresetPools: PresetPools;
+	Groups: Groups;
+	Sequences: Sequences;
+	Plugins: Plugins;
+	Macros: Macros;
+	Quickeys: Quickeys;
+	MAtricks: MAtricks;
+	Configurations: Configurations;
+	Pages: Pages;
+	Layouts: Layouts;
+	Timecodes: Timecodes;
+	Timers: Timers;
+};
+
+type DataPoolClass = Obj<DataPools, any> & {
+	index: DataPoolIndex;
+} & DataPoolChildrenByIndex &
+	DataPoolChildrenByName;
 
 type Groups = Obj<DataPoolClass, Group> & {
 	Resize: (size: number) => void;
