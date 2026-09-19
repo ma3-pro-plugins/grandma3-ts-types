@@ -3,6 +3,7 @@ import './Button';
 import './CloseButton';
 import './DialogFrame';
 import './Display';
+import './DriveSelector';
 import './ItemCollect';
 import './IndicatorButton';
 import './IndicatorControl';

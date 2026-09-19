@@ -15,6 +15,15 @@ type PresetPools = Obj<DataPoolClass, Presets> & {
 	[23]: Presets;
 	[24]: Presets;
 	[25]: Presets;
+	Dimmer: Presets;
+	Position: Presets;
+	Gobo: Presets;
+	Color: Presets;
+	Beam: Presets;
+	Focus: Presets;
+	Control: Presets;
+	Shapers: Presets;
+	Video: Presets;
 };
 type Presets = Obj<PresetPools, Preset>;
 type PresetMode = 'Universal' | 'Global' | 'Selective';
